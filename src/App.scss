@@ -158,9 +158,9 @@ nav {
   height: 500px;
   width: 300px;
   overflow: scroll;
+  scrollbar-color: none;
   @include media(768px) {
     left: 10%;
-    background-color: #c28335;
     padding: 10px;
   }
 }
