@@ -7,6 +7,7 @@ import Art from "./Art";
 import Events from "./Events";
 
 export function Main() {
+  console.log("main is awake");
   const initialScale: number = 0.4;
   const [zoom, setZoom] = useState<string>(
     `translate(0, 0) scale(${initialScale})`

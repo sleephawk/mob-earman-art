@@ -1,4 +1,5 @@
 import Page from "./Page";
+import Piece from "./Piece";
 
 export default function Art({
   cb,
@@ -14,12 +15,21 @@ export default function Art({
       classN="artPage"
       visible={visible}
       content={
-        <>
-          <p>
+        <div id="piecesContainer" aria-label="container for all art pieces">
+          {/* <p>
             It exists, just not here yet. Watch the beautiful animation and wait
             for it to appear organically. There is a little something something
             on here though:
-          </p>
+          </p> */}
+          <Piece
+            title="October Locks"
+            desc="..."
+            imgSrc="public/assets/og-img.png"
+          ></Piece>
+          <Piece title="" desc="" imgSrc=""></Piece>
+          <Piece title="" desc="" imgSrc=""></Piece>
+          <Piece title="" desc="" imgSrc=""></Piece>
+          <Piece title="" desc="" imgSrc=""></Piece>
           <a
             href="https://www.instagram.com/mob.earman.art/"
             aria-label="instagram profile of Mob Earman represented by icon"
@@ -32,7 +42,7 @@ export default function Art({
               alt="instagram icon"
             />
           </a>
-        </>
+        </div>
       }
     />
   );
