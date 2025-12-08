@@ -19,37 +19,8 @@ export default function Bio({
           style={{ padding: "10px" }}
         >
           <section
-            id="quote"
-            aria-label="description of Mob Earman by the character Mob Earman himself"
-            style={{ fontSize: "1.1rem" }}
-          >
-            <p>
-              <em>
-                "I once heard someone at a Buddhist commune call their lifestyle
-                'Homeless with Style'. Id like to think I was the same, but
-                really, I’m high-functioning chaotic-good as seen on a sofa near
-                you.
-              </em>
-            </p>
-            <p>
-              <em>
-                These strange little oddscapes of warped perspective, wobbly
-                geometry and google-y eyes are my therapy whilst I attempt to
-                sort it all out. I make them when I'm too stressed to look at
-                big list on my phone. It works.
-              </em>
-            </p>
-            <p>
-              <em>
-                Oh and I’m Mob Earman, don’t ask. I know where the name comes
-                from, but it won’t make any sense to explain. Just follow the
-                blobs and lines. It’s blobs and lines all the way down."
-              </em>
-            </p>
-          </section>
-          <section
             style={{
-              border: "solid whitesmoke 2px",
+              // border: "solid whitesmoke 2px",
               padding: "10px",
               fontSize: "1rem",
             }}

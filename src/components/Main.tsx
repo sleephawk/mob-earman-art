@@ -5,9 +5,11 @@ import Contact from "./Contact";
 import Bio from "./Bio";
 import Art from "./Art";
 import Events from "./Events";
+import { Canvas } from "@react-three/fiber";
+import * as METHODS from "../curveHelpers/CurveMethods.js";
+import Mob3d from "./models/Mob3d.js";
 
 export function Main() {
-  console.log("main is awake");
   const initialScale: number = 0.4;
   const [zoom, setZoom] = useState<string>(
     `translate(0, 0) scale(${initialScale})`
@@ -62,11 +64,13 @@ export function Main() {
   }
   return (
     <Template
+      height="100%"
       content={
         <div
           className="main"
           style={{
-            position: "relative",
+            // position: "relative",
+            height: "100%",
           }}
         >
           <Nav
@@ -99,16 +103,14 @@ export function Main() {
             }}
             visible={contactSwitch}
           />
-          <video
-            className="main__video"
-            autoPlay
-            loop
-            muted
-            playsInline // could only render this way
-            style={{ transform: `${zoom}` }}
-          >
-            <source src="./assets/mob.webm" type="video/webm" />
-          </video>
+
+          <div id="canvas-container">
+            <Canvas>
+              <mesh>
+                <Mob3d />
+              </mesh>
+            </Canvas>
+          </div>
         </div>
       }
     />

@@ -3,12 +3,16 @@ export default function Template({
   heading,
   content,
   buttonText,
+  height,
+  width,
   op = 1,
   pos = "relative",
   display = "flex",
   onClick,
 }: {
   classN?: string;
+  width?: string;
+  height?: string;
   heading?: string;
   content: React.ReactNode;
   buttonText?: string;
@@ -21,6 +25,8 @@ export default function Template({
     <div
       style={{
         display: display,
+        width: width,
+        height: height,
         flexDirection: "column",
         textAlign: "left",
         opacity: op,

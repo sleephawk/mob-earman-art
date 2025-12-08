@@ -26,10 +26,7 @@ export default function Art({
             desc="..."
             imgSrc="public/assets/og-img.png"
           ></Piece>
-          <Piece title="" desc="" imgSrc=""></Piece>
-          <Piece title="" desc="" imgSrc=""></Piece>
-          <Piece title="" desc="" imgSrc=""></Piece>
-          <Piece title="" desc="" imgSrc=""></Piece>
+
           <a
             href="https://www.instagram.com/mob.earman.art/"
             aria-label="instagram profile of Mob Earman represented by icon"
