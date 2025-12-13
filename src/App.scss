@@ -1,10 +1,8 @@
 @use "./scss/borders.scss" as *;
 @use "./scss/media.scss" as *;
 
-html {
-  width: 100vw;
-  height: 100vh;
-}
+/** CORE **/
+
 a {
   color: whitesmoke;
 }
@@ -16,12 +14,20 @@ a:hover {
 
 html,
 body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body,
 .component {
   margin: 0;
   padding: 0;
   color: whitesmoke;
   font-family: "Futura", Arial, sans-serif;
 }
+
 button:hover {
   cursor: pointer;
   background-color: black;
@@ -43,189 +49,6 @@ body {
   overflow: hidden;
 }
 
-.main {
-  .main {
-    display: flex;
-    width: 100vw;
-    height: 100vh; 
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
 
-  &__video {
-    pointer-events: none;
 
-    transition: transform 1.5s ease-in;
-  }
-}
-
-nav {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-ul {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  list-style: none;
-  width: 50%;
-  @include media(768px) {
-    width: 90%;
-  }
-
-  margin: 0;
-  padding: 0;
-  &__link a {
-    position: relative;
-    text-decoration: none;
-    font-size: 50px;
-    transition: transform 5s ease-out, opacity 1s linear;
-    @include media(768px) {
-      font-size: 40px;
-      right: unset;
-    }
-  }
-  // &__link {
-  //   font-size: 150px;
-  //   @include borders(red);
-  //   width: 15px;
-
-  //   @include media(768px) {
-  //     font-size: 40px;
-  //   }
-
-  //   //     &--bio {
-  //   //       animation: driftA 10s ease-out infinite;
-
-  //   //       left: 65%;
-  //   //       bottom: 30%;
-  //   //       @include media(768px) {
-  //   //         left: 75%;
-  //   //         bottom: 10%;
-  //   //       }
-  //   //     }
-  //   //     &--art {
-  //   //       animation: driftB 10s ease-out infinite;
-  //   //       left: 5%;
-  //   //       bottom: 29%;
-  //   //       @include media(768px) {
-  //   //         left: 10%;
-  //   //       }
-  //   //     }
-  //   //     &--events {
-  //   //       animation: driftC 10s ease-out infinite;
-  //   //       left: 90%;
-  //   //       bottom: 40%;
-  //   //       @include media(768px) {
-  //   //         left: 70%;
-  //   //         top: 20%;
-  //   //       }
-  //   //     }
-  //   //     &--contact {
-  //   //       animation: driftD 10s ease-out infinite;
-  //   //       left: 73%;
-  //   //       bottom: 10%;
-  //   //       @include media(768px) {
-  //   //         bottom: 100%;
-  //   //         left: 30%;
-  //   //       }
-  //   //     }
-  // }
-}
-.page {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  position: absolute;
-  transition: opacity 0.5s ease-in;
-  top: 0;
-  z-index: 11;
-  background-color: rgba(218, 119, 48, 0.217);
-}
-
-.bioPage {
-  font-size: 0.85rem;
-  top: 10%;
-  left: 40%;
-  height: 500px;
-  width: 50%;
-  overflow: scroll;
-  scrollbar-color: none;
-  @include media(768px) {
-    left: 10%;
-    padding: 10px;
-  }
-}
-.artPage {
-  width: 300px;
-  top: 20%;
-  left: 30%;
-  @include media(768px) {
-    left: 5%;
-  }
-}
-.eventsPage {
-  top: 30%;
-  left: 50%;
-}
-.contactPage {
-  top: 75%;
-  left: 50%;
-  justify-content: center;
-  align-items: center;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes driftA {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-5px, 10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes driftB {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-5px, -10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes driftC {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-10px, 10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes driftD {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(10px, 3px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
+/** STRUCTURE **/

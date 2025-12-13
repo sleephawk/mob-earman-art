@@ -1,9 +1,9 @@
 import "./App.scss";
-import { Main } from "./components/Main";
+import { Home } from "./Home";
 function App() {
   return (
-    <div id="app">
-      <Main />
+    <div style={{ height: "100%" }} id="app">
+      <Home />
     </div>
   );
 }
