@@ -4,7 +4,11 @@ import { Canvas } from "@react-three/fiber";
 export default function MobCanvas() {
   return (
     <div
-      style={{ border: "solid 10px white", height: "100%" }}
+      style={{
+        height: "100%",
+        width: "100%",
+        position: "fixed",
+      }}
       id="canvas-container"
     >
       <Canvas>
