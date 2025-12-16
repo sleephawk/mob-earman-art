@@ -8,7 +8,7 @@ export function Home() {
     scene.traverse((obj) => {
       if ((obj as Mesh).isMesh) {
         const mesh: Mesh = obj;
-        //
+        //note
         const materialsArray = Array.isArray(mesh.material)
           ? mesh.material
           : [mesh.material];
