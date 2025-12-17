@@ -6,8 +6,8 @@ import {
 } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import type { Group } from "three";
-import type { GroupProps } from "@react-three/fiber";
+import type { Group, GroupProps } from "three";
+
 import { useFrame } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
@@ -23,11 +23,11 @@ export default function Mob3d(props: GroupProps) {
   const light1Ref = useRef<THREE.PointLight>(null);
   const light2Ref = useRef<THREE.PointLight>(null);
 
-  const { scene, animations } = useGLTF("/assets/glb/ART3.glb");
-  const glbForLog = useGLTF("/assets/glb/ART3.glb");
-  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
+  const gltf = useGLTF("/assets/glb/ART3.glb");
 
-  console.log(glbForLog);
+  const { scene, animations } = gltf;
+
+  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
   // Debug helpers (safe, non-visual unless debugging)
   useHelper(light1Ref, THREE.PointLightHelper, 1.5);
