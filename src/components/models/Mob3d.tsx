@@ -4,15 +4,17 @@ import {
   useGLTF,
   useHelper,
 } from "@react-three/drei";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
 import type { Group, GroupProps } from "three";
 
 import { useFrame } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { SkinRefContext } from "../../skinRefContext";
 
 export default function Mob3d(props: GroupProps) {
   const groupRef = useRef<Group>(null);
+  const debug = true;
 
   /**workflow for debug helpers:
    * 1) Create a reference to store the light so it doent change with state
@@ -23,7 +25,9 @@ export default function Mob3d(props: GroupProps) {
   const light1Ref = useRef<THREE.PointLight>(null);
   const light2Ref = useRef<THREE.PointLight>(null);
 
-  const gltf = useGLTF("/assets/glb/ART3.glb");
+  const path = useContext(SkinRefContext);
+
+  const gltf = useGLTF(path);
 
   const { scene, animations } = gltf;
 
@@ -43,7 +47,7 @@ export default function Mob3d(props: GroupProps) {
         mixerRef.current?.clipAction(clip).stop();
       });
     };
-  }, [scene, animations]);
+  }, [scene, animations, debug]);
 
   useFrame((_, delta) => {
     mixerRef.current?.update(delta);
@@ -60,7 +64,7 @@ export default function Mob3d(props: GroupProps) {
           mipmapBlur
         />
       </EffectComposer>
-      <pointLight ref={light2Ref} position={[-12, 20, 4]} intensity={500} />
+      <pointLight ref={light2Ref} position={[-12, 20, 4]} intensity={100} />
 
       <primitive ref={groupRef} object={scene} {...props} />
 
