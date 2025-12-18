@@ -1,4 +1,3 @@
-import type { Path } from "three";
 import MobCanvas from "./components/core/mobCanvas.js";
 import { SkinRefContext } from "./skinRefContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
