@@ -29,7 +29,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       paint: "whitesmoke",
     };
     const animations = {
-      idle: "idle",
+      idle: "Idle",
       checkout: "checkout",
     };
 
@@ -42,15 +42,12 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     switch (mode) {
       case "paint":
         handleCase(skins.paint, backgrounds.paint, animations.checkout);
-        setTimeout(() => setClipName(animations.idle), 833);
         break;
       case "paper":
         handleCase(skins.paper, backgrounds.paper, animations.checkout);
-        setTimeout(() => setClipName(animations.idle), 833);
         break;
       case "primary":
         handleCase(skins.primary, backgrounds.primary, animations.checkout);
-        setTimeout(() => setClipName(animations.idle), 833);
         break;
     }
   }, [mode, cb]);

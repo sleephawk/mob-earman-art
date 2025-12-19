@@ -1,12 +1,6 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useContext, useEffect, useRef } from "react";
-import * as THREE from "three";
 // import MobPaper from "../MobPaper";
-import { useFrame } from "@react-three/fiber";
-
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { SkinRefContext } from "../../SkinRefContext";
-import { ClipNameContext } from "../../ClipNameContext";
 import TEST3 from "../TEST3";
 
 export default function Mob3d() {
@@ -17,29 +11,27 @@ export default function Mob3d() {
    * then we pass the ref into the component
    */
 
-  const clipName = useContext(ClipNameContext);
-
   // const gltf = useGLTF(path);
 
   // const { scene, animations } = gltf;
 
   // const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
-  useEffect(() => {
-    mixerRef.current = new THREE.AnimationMixer(scene);
-    animations.forEach((clip) => {
-      if (!clip.name.includes(clipName)) {
-        mixerRef.current!.clipAction(clip).stop();
-      } else {
-        mixerRef.current!.clipAction(clip).play();
-      }
-    });
-    return () => {
-      animations.forEach((clip) => {
-        mixerRef.current?.clipAction(clip).stop();
-      });
-    };
-  }, [scene, animations, clipName]);
+  // useEffect(() => {
+  //   mixerRef.current = new THREE.AnimationMixer(scene);
+  //   animations.forEach((clip) => {
+  //     if (!clip.name.includes(clipName)) {
+  //       mixerRef.current!.clipAction(clip).stop();
+  //     } else {
+  //       mixerRef.current!.clipAction(clip).play();
+  //     }
+  //   });
+  //   return () => {
+  //     animations.forEach((clip) => {
+  //       mixerRef.current?.clipAction(clip).stop();
+  //     });
+  //   };
+  // }, [scene, animations, clipName]);
 
   // useFrame((_, delta) => {
   //   mixerRef.current?.update(delta);
