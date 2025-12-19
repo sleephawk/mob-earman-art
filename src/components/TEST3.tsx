@@ -19,9 +19,23 @@ export default function TEST3(props) {
   const { actions } = useAnimations(animations, group);
   console.dir(actions);
 
-  Object.values(actions).forEach((a) => {
-    if (a) a.reset().play();
-  });
+  useEffect(() => {
+    const idleActions = Object.values(actions).filter((a) =>
+      a?.getClip().name.includes("Idle")
+    );
+
+    idleActions.forEach((a) => {
+      console.log(a);
+      a.reset().play();
+    });
+
+    return () => {
+      idleActions.forEach((a) => {
+        console.log(a);
+        a.stop();
+      });
+    };
+  }, [actions]);
 
   return (
     <group ref={group} {...props} dispose={null}>
