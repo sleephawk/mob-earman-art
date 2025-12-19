@@ -1,77 +1,65 @@
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  useGLTF,
-  useHelper,
-} from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
-import type { Group, GroupProps } from "three";
-
+// import MobPaper from "../MobPaper";
 import { useFrame } from "@react-three/fiber";
+
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { SkinRefContext } from "../../skinRefContext";
+import { SkinRefContext } from "../../SkinRefContext";
+import { ClipNameContext } from "../../ClipNameContext";
+import TEST3 from "../TEST3";
 
-export default function Mob3d(props: GroupProps) {
-  const groupRef = useRef<Group>(null);
-  const debug = true;
-
+export default function Mob3d() {
   /**workflow for debug helpers:
    * 1) Create a reference to store the light so it doent change with state
    * useHelper, the drei hook, allows us to pass in the ref and make a pointer
    * we pass the  ref the pointlight helper and the size.
    * then we pass the ref into the component
    */
-  const light1Ref = useRef<THREE.PointLight>(null);
-  const light2Ref = useRef<THREE.PointLight>(null);
 
-  const path = useContext(SkinRefContext);
+  const clipName = useContext(ClipNameContext);
 
-  const gltf = useGLTF(path);
+  // const gltf = useGLTF(path);
 
-  const { scene, animations } = gltf;
+  // const { scene, animations } = gltf;
 
-  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
+  // const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
-  // Debug helpers (safe, non-visual unless debugging)
-  useHelper(light1Ref, THREE.PointLightHelper, 1.5);
-  useHelper(light2Ref, THREE.PointLightHelper, 1.5);
+  // useEffect(() => {
+  //   mixerRef.current = new THREE.AnimationMixer(scene);
+  //   animations.forEach((clip) => {
+  //     if (!clip.name.includes(clipName)) {
+  //       mixerRef.current!.clipAction(clip).stop();
+  //     } else {
+  //       mixerRef.current!.clipAction(clip).play();
+  //     }
+  //   });
+  //   return () => {
+  //     animations.forEach((clip) => {
+  //       mixerRef.current?.clipAction(clip).stop();
+  //     });
+  //   };
+  // }, [scene, animations, clipName]);
 
-  useEffect(() => {
-    mixerRef.current = new THREE.AnimationMixer(scene);
-    animations.forEach((clip) => {
-      mixerRef.current!.clipAction(clip).play();
-    });
-    return () => {
-      animations.forEach((clip) => {
-        mixerRef.current?.clipAction(clip).stop();
-      });
-    };
-  }, [scene, animations, debug]);
-
-  useFrame((_, delta) => {
-    mixerRef.current?.update(delta);
-  });
+  // useFrame((_, delta) => {
+  //   mixerRef.current?.update(delta);
+  // });
 
   return (
     <>
-      <pointLight ref={light1Ref} position={[15, 5, 0]} intensity={100} />
       <EffectComposer>
         <Bloom
-          intensity={5.5} // strength of bloom
+          intensity={3} // strength of bloom
           luminanceThreshold={0.3} // what brightness blooms
           luminanceSmoothing={1}
           mipmapBlur
         />
+        <ambientLight intensity={2} />
       </EffectComposer>
-      <pointLight ref={light2Ref} position={[-12, 20, 4]} intensity={100} />
-
-      <primitive ref={groupRef} object={scene} {...props} />
-
-      <PerspectiveCamera makeDefault position={[70, 30, -10]} fov={50} />
+      <TEST3 scale={2.5} />
       <OrbitControls enableZoom={false} />
     </>
   );
 }
 
-useGLTF.preload("/assets/glb/ART3.glb");
+useGLTF.preload("/assets/glb/MobPaper.glb");

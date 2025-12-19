@@ -2,11 +2,14 @@ import MobCanvas from "./components/core/mobCanvas.js";
 import { SkinRefContext } from "./skinRefContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import Button from "./components/basic/Button.js";
+import { ClipNameContext } from "./ClipNameContext.js";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [path, setPath]: [string, Dispatch<SetStateAction<string>>] = useState(
     "/assets/glb/ART3.glb"
   );
+
+  const [clipName, setClipName] = useState("Idle");
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
     useState("paint");
 
@@ -14,27 +17,40 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     const skins = {
       paper: "/assets/glb/MobPaper.glb",
       primary: "/assets/glb/MobPrimary.glb",
-      paint: "/assets/glb/MobPaint.glb",
+      paint: "/assets/glb/TEST2.glb",
     };
+
+    //need an interval which is running in the background - maybe I can track three js's time?
+    //need to randomly select one of the animations
 
     const backgrounds = {
       paper: "black",
       primary: "#c28335",
       paint: "whitesmoke",
     };
+    const animations = {
+      idle: "idle",
+      checkout: "checkout",
+    };
+
+    const handleCase = (p: string, c: string, cn: string) => {
+      setPath(p);
+      cb(c);
+      setClipName(cn);
+    };
 
     switch (mode) {
       case "paint":
-        setPath(skins.paint);
-        cb(backgrounds.paint);
+        handleCase(skins.paint, backgrounds.paint, animations.checkout);
+        setTimeout(() => setClipName(animations.idle), 833);
         break;
       case "paper":
-        setPath(skins.paper);
-        cb(backgrounds.paper);
+        handleCase(skins.paper, backgrounds.paper, animations.checkout);
+        setTimeout(() => setClipName(animations.idle), 833);
         break;
       case "primary":
-        setPath(skins.primary);
-        cb(backgrounds.primary);
+        handleCase(skins.primary, backgrounds.primary, animations.checkout);
+        setTimeout(() => setClipName(animations.idle), 833);
         break;
     }
   }, [mode, cb]);
@@ -45,7 +61,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         <Button content={"PAPER"} event={() => setMode("paper")}></Button>
         <Button content={"PAINT"} event={() => setMode("paint")}></Button>
         <Button content={"PRIMARY"} event={() => setMode("primary")}></Button>
-        <MobCanvas />
+        <ClipNameContext.Provider value={clipName}>
+          <MobCanvas />
+        </ClipNameContext.Provider>
       </div>
     </SkinRefContext.Provider>
   );
