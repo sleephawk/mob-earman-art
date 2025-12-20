@@ -1,7 +1,7 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 // import MobPaper from "../MobPaper";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import TEST3 from "../TEST3";
+import MobV2 from "../MobV2";
 
 export default function Mob3d() {
   /**workflow for debug helpers:
@@ -48,7 +48,7 @@ export default function Mob3d() {
         />
         <ambientLight intensity={2} />
       </EffectComposer>
-      <TEST3 scale={2.5} />
+      <MobV2 scale={2.5} />
       <OrbitControls enableZoom={false} />
     </>
   );

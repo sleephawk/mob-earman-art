@@ -1,5 +1,5 @@
 import MobCanvas from "./components/core/mobCanvas.js";
-import { SkinRefContext } from "./skinRefContext.js";
+import { ModeContext } from "./ModeContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import Button from "./components/basic/Button.js";
 import { ClipNameContext } from "./ClipNameContext.js";
@@ -14,12 +14,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     useState("paint");
 
   useEffect(() => {
-    const skins = {
-      paper: "/assets/glb/MobPaper.glb",
-      primary: "/assets/glb/MobPrimary.glb",
-      paint: "/assets/glb/TEST2.glb",
-    };
-
     //need an interval which is running in the background - maybe I can track three js's time?
     //need to randomly select one of the animations
 
@@ -33,27 +27,26 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       checkout: "checkout",
     };
 
-    const handleCase = (p: string, c: string, cn: string) => {
-      setPath(p);
+    const handleCase = (c: string, cn: string) => {
       cb(c);
       setClipName(cn);
     };
 
     switch (mode) {
       case "paint":
-        handleCase(skins.paint, backgrounds.paint, animations.checkout);
+        handleCase(backgrounds.paint, animations.idle);
         break;
       case "paper":
-        handleCase(skins.paper, backgrounds.paper, animations.checkout);
+        handleCase(backgrounds.paper, animations.checkout);
         break;
       case "primary":
-        handleCase(skins.primary, backgrounds.primary, animations.checkout);
+        handleCase(backgrounds.primary, animations.checkout);
         break;
     }
   }, [mode, cb]);
 
   return (
-    <SkinRefContext.Provider value={path}>
+    <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
         <Button content={"PAPER"} event={() => setMode("paper")}></Button>
         <Button content={"PAINT"} event={() => setMode("paint")}></Button>
@@ -62,6 +55,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           <MobCanvas />
         </ClipNameContext.Provider>
       </div>
-    </SkinRefContext.Provider>
+    </ModeContext.Provider>
   );
 }
