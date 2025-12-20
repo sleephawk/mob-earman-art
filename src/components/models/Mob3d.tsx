@@ -11,32 +11,6 @@ export default function Mob3d() {
    * then we pass the ref into the component
    */
 
-  // const gltf = useGLTF(path);
-
-  // const { scene, animations } = gltf;
-
-  // const mixerRef = useRef<THREE.AnimationMixer | null>(null);
-
-  // useEffect(() => {
-  //   mixerRef.current = new THREE.AnimationMixer(scene);
-  //   animations.forEach((clip) => {
-  //     if (!clip.name.includes(clipName)) {
-  //       mixerRef.current!.clipAction(clip).stop();
-  //     } else {
-  //       mixerRef.current!.clipAction(clip).play();
-  //     }
-  //   });
-  //   return () => {
-  //     animations.forEach((clip) => {
-  //       mixerRef.current?.clipAction(clip).stop();
-  //     });
-  //   };
-  // }, [scene, animations, clipName]);
-
-  // useFrame((_, delta) => {
-  //   mixerRef.current?.update(delta);
-  // });
-
   return (
     <>
       <EffectComposer>
@@ -49,7 +23,7 @@ export default function Mob3d() {
         <ambientLight intensity={2} />
       </EffectComposer>
       <MobV2 scale={2.5} />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls enableZoom={true} />
     </>
   );
 }

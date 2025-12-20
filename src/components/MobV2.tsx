@@ -38,29 +38,87 @@ export default function MobV2(props) {
     }
   };
 
-  const cubeYellowMaterial = useMemo(() => {
-    return switchMode(
-      materials.cubeYellowPaint,
-      materials.cubePaper,
-      materials.cubeYellowPrimary
-    );
-  }, [mode]);
-
-  const lilBombMaterial = useMemo(() => {
-    console.log(mode);
-    return switchMode(
-      materials.lilBomb,
-      materials.lilBombPaper,
-      materials.lilBombPrimary
-    );
-  }, [mode]);
-
   const bigBlockMaterial = useMemo(() => {
     return switchMode(
       materials["Big Block"],
       materials.bigBlockPaper,
       materials.bigBlockPrimary
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const cubeBlueMaterial = useMemo(() => {
+    return switchMode(
+      materials.cubePaint,
+      materials.cubePaper,
+      materials.cubeBluePrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const cubeYellowMaterial = useMemo(() => {
+    return switchMode(
+      materials.cubeYellowPaint,
+      materials.cubePaper,
+      materials.cubeYellowPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+  const cylinderMaterial = useMemo(() => {
+    return switchMode(
+      materials.cylinder,
+      materials.cylinderPaper,
+      materials.cylinderPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const eyeMaterial = useMemo(() => {
+    return switchMode(
+      materials.eyePaint,
+      materials.eyePaper,
+      materials.eyePaint
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const gemMaterial = useMemo(() => {
+    return switchMode(materials.gem, materials.gemPaper, materials.gemPrimary);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+  const giantPawMaterial = useMemo(() => {
+    return switchMode(
+      materials.giantPaw,
+      materials.giantPawPaper,
+      materials.giantPawPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const handMaterial = useMemo(() => {
+    return switchMode(
+      materials.handPaint,
+      materials.handPaper,
+      materials.handPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  const lilBombMaterial = useMemo(() => {
+    return switchMode(
+      materials.lilBomb,
+      materials.lilBombPaper,
+      materials.lilBombPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+  const smallPawMaterial = useMemo(() => {
+    return switchMode(
+      materials.smallPaw,
+      materials.smallPawPaper,
+      materials.smallPawPrimary
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
 
   /**
@@ -111,11 +169,7 @@ export default function MobV2(props) {
           <mesh
             name="Cube"
             geometry={nodes.Cube.geometry}
-            material={switchMode(
-              materials.cubePaint,
-              materials.cubePaper,
-              materials.cubeBluePrimary
-            )}
+            material={cubeBlueMaterial}
             position={[-3.674, 1.795, 6.297]}
             rotation={[0.811, 0.792, -0.616]}
             scale={[-0.368, -1.684, -0.368]}
@@ -123,11 +177,7 @@ export default function MobV2(props) {
           <mesh
             name="Cube007"
             geometry={nodes.Cube007.geometry}
-            material={switchMode(
-              materials.cubeYellowPaint,
-              materials.cubePaper,
-              materials.cubeYellowPrimary
-            )}
+            material={cubeYellowMaterial}
             position={[-7.678, 0.899, 1.808]}
             rotation={[-2.52, -0.48, -2.96]}
             scale={0.359}
@@ -168,7 +218,7 @@ export default function MobV2(props) {
             <skinnedMesh
               name="Cube003"
               geometry={nodes.Cube003.geometry}
-              material={materials.giantPaw}
+              material={giantPawMaterial}
               skeleton={nodes.Cube003.skeleton}
             />
           </group>
@@ -182,13 +232,13 @@ export default function MobV2(props) {
             <skinnedMesh
               name="Cube008"
               geometry={nodes.Cube008.geometry}
-              material={materials.smallPaw}
+              material={smallPawMaterial}
               skeleton={nodes.Cube008.skeleton}
             />
             <skinnedMesh
               name="Cube010"
               geometry={nodes.Cube010.geometry}
-              material={materials.cubeYellowPaint}
+              material={cubeYellowMaterial}
               skeleton={nodes.Cube010.skeleton}
             />
           </group>
@@ -211,7 +261,7 @@ export default function MobV2(props) {
           <mesh
             name="Cube006"
             geometry={nodes.Cube006.geometry}
-            material={materials.gem}
+            material={gemMaterial}
             position={[0.615, -1.322, 0.714]}
             rotation={[2.911, -0.023, -0.119]}
             scale={[2.777, 0.378, 0.378]}
@@ -220,7 +270,7 @@ export default function MobV2(props) {
         <mesh
           name="smallEye"
           geometry={nodes.smallEye.geometry}
-          material={materials.eyePaint}
+          material={eyeMaterial}
           position={[0.759, 0.19, -0.152]}
           rotation={[-0.057, -0.051, -1.394]}
           scale={0.033}
@@ -236,7 +286,7 @@ export default function MobV2(props) {
           <mesh
             name="Cylinder"
             geometry={nodes.Cylinder.geometry}
-            material={materials.cylinder}
+            material={cylinderMaterial}
             position={[-0.332, -0.345, 2.454]}
             rotation={[3.084, -0.066, 0.042]}
             scale={[-0.241, -2.579, -0.241]}
@@ -245,7 +295,7 @@ export default function MobV2(props) {
         <mesh
           name="EYE"
           geometry={nodes.EYE.geometry}
-          material={materials.eyePaint}
+          material={eyeMaterial}
           position={[0.565, 0.24, -0.252]}
           rotation={[1.546, 0.272, 1.356]}
           scale={0.046}
@@ -293,7 +343,7 @@ export default function MobV2(props) {
         <skinnedMesh
           name="Cube019"
           geometry={nodes.Cube019.geometry}
-          material={materials.handPaint}
+          material={handMaterial}
           skeleton={nodes.Cube019.skeleton}
           position={[0.593, 0.22, -0.35]}
           rotation={[0.293, 0.069, -0.634]}
@@ -429,7 +479,7 @@ export default function MobV2(props) {
         <mesh
           name="Cube005_25"
           geometry={nodes.Cube005_25.geometry}
-          material={materials.smallPaw}
+          material={smallPawMaterial}
         />
         <mesh
           name="Cube005_26"

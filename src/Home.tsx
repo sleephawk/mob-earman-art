@@ -5,10 +5,6 @@ import Button from "./components/basic/Button.js";
 import { ClipNameContext } from "./ClipNameContext.js";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
-  const [path, setPath]: [string, Dispatch<SetStateAction<string>>] = useState(
-    "/assets/glb/ART3.glb"
-  );
-
   const [clipName, setClipName] = useState("Idle");
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
     useState("paint");
@@ -37,15 +33,17 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         handleCase(backgrounds.paint, animations.idle);
         break;
       case "paper":
-        handleCase(backgrounds.paper, animations.checkout);
+        handleCase(backgrounds.paper, animations.idle);
         break;
       case "primary":
-        handleCase(backgrounds.primary, animations.checkout);
+        handleCase(backgrounds.primary, animations.idle);
         break;
     }
   }, [mode, cb]);
 
   return (
+    //COMPONENT
+
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
         <Button content={"PAPER"} event={() => setMode("paper")}></Button>
