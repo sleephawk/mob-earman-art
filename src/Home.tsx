@@ -51,6 +51,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     //pages need creating with conditional rendering too
     //need a div that overlays the whole thing and is fixed, then position things
     //within that context
+    //can change debug mode to low res mode
+    //could add a theme with 3d pixelated
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
         {!page && (
