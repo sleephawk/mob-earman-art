@@ -1,19 +1,24 @@
 export default function Button({
   content,
   event,
+  round,
+  color,
 }: {
-  content: string;
+  content?: string;
   event?: () => void;
+  round?: boolean;
+  color?: string;
 }) {
   return (
     <button
       onClick={event}
       style={{
         position: "relative",
-        height: "100px",
-        left: "10px",
-        top: "10px",
+        height: "50px",
+        width: "50px",
+        borderRadius: round ? "100%" : "20%",
         zIndex: 10,
+        backgroundColor: color,
       }}
     >
       {content}
