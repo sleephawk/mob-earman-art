@@ -19,7 +19,15 @@ export default function Artwork({
         height: height ? height : "auto",
       }}
     >
-      <img src={src} alt={alt} />
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          maxWidth: "100%",
+          objectFit: "contain",
+          border: "10px solid black",
+        }}
+      />
     </div>
   );
 }
