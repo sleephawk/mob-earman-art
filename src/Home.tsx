@@ -1,8 +1,8 @@
-import MobCanvas from "./components/core/mobCanvas.js";
+import MobCanvas from "./components/core/mobCanvas.tsx";
 import { ModeContext } from "./ModeContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import Button from "./components/basic/Button.js";
-import { ClipNameContext } from "./ClipNameContext.js";
+import Button from "./components/basic/Button.tsx";
+import { ClipNameContext } from "./ClipNameContext.ts";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
 import Shop from "./components/pages/Shop.tsx";
@@ -240,7 +240,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         {page && lore && <Lore />}
         {page && contact && <Contact />}
         <ClipNameContext.Provider value={clipName}>
-          {!debug && <MobCanvas />}
+          {!debug && !page && <MobCanvas />}
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>
