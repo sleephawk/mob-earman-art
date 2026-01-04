@@ -2,7 +2,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 // import MobPaper from "../MobPaper";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import MobV2 from "../MobV2";
-import { Camera, PerspectiveCamera } from "three";
+import TEST4 from "../TEST4";
 
 export default function Mob3d() {
   console.dir(MobV2);
@@ -24,9 +24,10 @@ export default function Mob3d() {
         />
         <ambientLight intensity={2} />
       </EffectComposer>
-      <MobV2 scale={2.5} />
+      <TEST4 scale={3}></TEST4>
+      {/* <MobV2 scale={2.5} /> */}
 
-      <OrbitControls enableZoom={true} />
+      <OrbitControls enableZoom={true} autoRotate={true} />
     </>
   );
 }

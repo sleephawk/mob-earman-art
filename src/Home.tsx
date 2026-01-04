@@ -3,14 +3,47 @@ import { ModeContext } from "./ModeContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import Button from "./components/basic/Button.js";
 import { ClipNameContext } from "./ClipNameContext.js";
+import About from "./components/pages/About.js";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [debug, setDebug] = useState(false);
   const [about, setAbout] = useState(false);
+  const [shop, setShop] = useState(false);
+  const [art, setArt] = useState(false);
+  const [lore, setLore] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [events, setEvents] = useState(false);
   const [page, setPage] = useState(false);
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
     useState("paint");
+
+  const handleNavClick = (pageName: string): void => {
+    setPage(true);
+    switch (pageName) {
+      case "about":
+        setAbout(true);
+        break;
+      case "art":
+        setArt(true);
+        break;
+      case "events":
+        setEvents(true);
+        break;
+      case "shop":
+        setShop(true);
+        break;
+      case "lore":
+        setLore(true);
+        break;
+      case "contact":
+        setContact(true);
+        break;
+      default:
+        console.log("argument passed by the button did not match a case");
+        break;
+    }
+  };
 
   useEffect(() => {
     //need an interval which is running in the background - maybe I can track three js's time?
@@ -48,7 +81,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   return (
     //COMPONENT
     //nav needs plumbing out, but will also therefore need to import the context
-    //pages need creating with conditional rendering too
+    //Page is a flag toggle
     //need a div that overlays the whole thing and is fixed, then position things
     //within that context
     //can change debug mode to low res mode
@@ -79,8 +112,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 <a
                   onClick={(e) => {
                     e.preventDefault();
-                    setAbout(true);
-                    setPage(true);
+                    handleNavClick("about");
                   }}
                   href=""
                 >
@@ -88,20 +120,59 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 </a>
               </li>
               <li>
-                <a href="#">ART</a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("art");
+                  }}
+                  href=""
+                >
+                  ART
+                </a>
               </li>
               <li>
-                <a href="#">SHOP</a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("shop");
+                  }}
+                  href=""
+                >
+                  SHOP
+                </a>
               </li>
-
               <li>
-                <a href="#">EVENTS</a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("events");
+                  }}
+                  href=""
+                >
+                  EVENTS
+                </a>
               </li>
               <li>
-                <a href="#">LORE</a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("lore");
+                  }}
+                  href=""
+                >
+                  LORE
+                </a>
               </li>
               <li>
-                <a href="#">CONTACT</a>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick("contact");
+                  }}
+                  href=""
+                >
+                  CONTACT
+                </a>
               </li>
             </ul>
             <h2
@@ -148,13 +219,14 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 content="DEBUG MODE"
               ></Button>
             </div>
-          </nav>
+          </nav> // collapsed for ease of reading
         )}
-        {page && (
-          <section style={{ position: "fixed", justifySelf: "center" }}>
-            <h1>ABOUT</h1>
-          </section>
-        )}
+        {page && about && <About />}
+        {page && art && <Art />}
+        {page && shop && <Shop />}
+        {page && events && <Events />}
+        {page && lore && <Lore />}
+        {page && contact && <Contact />}
         <ClipNameContext.Provider value={clipName}>
           {!debug && <MobCanvas />}
         </ClipNameContext.Provider>
