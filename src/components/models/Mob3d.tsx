@@ -18,7 +18,7 @@ export default function Mob3d() {
       <EffectComposer>
         <Bloom
           intensity={3} // strength of bloom
-          luminanceThreshold={0.3} // what brightness blooms
+          luminanceThreshold={0.3} // brightness
           luminanceSmoothing={1}
           mipmapBlur
         />
@@ -27,7 +27,7 @@ export default function Mob3d() {
       <TEST4 scale={3}></TEST4>
       {/* <MobV2 scale={2.5} /> */}
 
-      <OrbitControls enableZoom={true} autoRotate={true} />
+      <OrbitControls enableZoom={true} />
     </>
   );
 }
