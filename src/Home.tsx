@@ -3,7 +3,12 @@ import { ModeContext } from "./ModeContext.js";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import Button from "./components/basic/Button.js";
 import { ClipNameContext } from "./ClipNameContext.js";
-import About from "./components/pages/About.js";
+import About from "./components/pages/About.tsx";
+import Art from "./components/pages/Art.tsx";
+import Shop from "./components/pages/Shop.tsx";
+import Events from "./components/pages/Events.tsx";
+import Lore from "./components/pages/Lore.tsx";
+import Contact from "./components/pages/Contact.tsx";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
@@ -77,6 +82,13 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         break;
     }
   }, [mode, cb]);
+
+  useEffect(() => {
+    if (!debug) return;
+    console.log(
+      `about: ${about}, art: ${art}, shop: ${shop}, events: ${events}, lore:${lore}, contact: ${contact}`
+    );
+  }, [about, art, contact, debug, events, lore, shop]);
 
   return (
     //COMPONENT
