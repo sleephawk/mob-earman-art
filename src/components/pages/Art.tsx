@@ -32,14 +32,16 @@ export default function Art() {
           alignItems: "center",
         }}
       >
-        <Artwork src={srcCatalogue.rocky} alt="" />
-        <Artwork src={srcCatalogue.oddSignal} alt="" />
-        <Artwork src={srcCatalogue.topo} alt="" />
-        <Artwork src={srcCatalogue.autumn} alt="" />
-        <Artwork src={srcCatalogue.jellyfish} alt="" />
-        <Artwork src={srcCatalogue.warthog} alt="" />
+        <Artwork src={srcCatalogue.rocky.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.oddSignal.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.topo.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.autumn.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.jellyfish.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.warthog.whiteWall} alt="" />
+        <Artwork src={srcCatalogue.october.whiteWall} alt="" />
       </div>
-      <button>RETURN</button> // need the context for this
+      <button>RETURN</button>
+      {/* context */}
     </section>
   );
 }
