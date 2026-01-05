@@ -71,11 +71,6 @@ export default function Art() {
               alt=""
             />
             <Artwork
-              onClick={() => turnOnSpotlight("warthog")}
-              src={srcCatalogue.warthog.whiteWall}
-              alt=""
-            />
-            <Artwork
               onClick={() => turnOnSpotlight("october")}
               src={srcCatalogue.october.whiteWall}
               alt=""
