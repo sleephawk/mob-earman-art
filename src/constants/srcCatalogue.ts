@@ -49,4 +49,9 @@ export const srcCatalogue: Catalogue = {
     woodNFrame: "/assets/art/photos/woodNFrame/octoberW.jpg",
     alt: "an abstract black white and grey pen drawing of mathematical looking 3d shapes, with a mushroom like shape donning one eye in the top left.",
   },
+  calendar: {
+    src: "",
+    alt: "",
+    info: "",
+  },
 };

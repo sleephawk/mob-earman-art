@@ -53,13 +53,31 @@ body {
 
 .spotli {
   position: relative;
-  width: 50%;
+  width: 30%;
+}
+
+.spotliContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
 }
 .spotli:hover {
   cursor: pointer;
 }
 
 /** PAGES **/
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
 
 .artwork:hover {
   cursor: pointer;

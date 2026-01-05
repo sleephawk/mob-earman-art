@@ -15,19 +15,7 @@ export default function Art() {
   return (
     <section
       aria-label="a catalogue of Mob Earman named original pieces."
-      style={{
-        position: "relative",
-
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        margin: 0,
-        padding: 0,
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        overflow: "auto",
-      }} // maybe chonk into css
+      className="page"
     >
       <h1>Art</h1>
 
@@ -47,12 +35,12 @@ export default function Art() {
           <>
             <Artwork
               onClick={() => turnOnSpotlight("rocky")}
-              src={srcCatalogue.rocky.whiteWall}
+              src={srcCatalogue.rocky.noFrame}
               alt={srcCatalogue.rocky.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("oddSignal")}
-              src={srcCatalogue.oddSignal.whiteWall}
+              src={srcCatalogue.oddSignal.noFrame}
               alt={srcCatalogue.oddSignal.alt}
             />
             <Artwork
@@ -62,27 +50,27 @@ export default function Art() {
             />
             <Artwork
               onClick={() => turnOnSpotlight("autumn")}
-              src={srcCatalogue.autumn.whiteWall}
+              src={srcCatalogue.autumn.noFrame}
               alt={srcCatalogue.autumn.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("jellyfish")}
-              src={srcCatalogue.jellyfish.whiteWall}
+              src={srcCatalogue.jellyfish.noFrame}
               alt={srcCatalogue.jellyfish.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("october")}
-              src={srcCatalogue.october.whiteWall}
+              src={srcCatalogue.october.noFrame}
               alt={srcCatalogue.october.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("saturn")}
-              src={srcCatalogue.saturn.whiteWall}
+              src={srcCatalogue.saturn.noFrame}
               alt={srcCatalogue.saturn.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("sucker")}
-              src={srcCatalogue.sucker.whiteWall}
+              src={srcCatalogue.sucker.noFrame}
               alt={srcCatalogue.sucker.alt}
             />
           </>

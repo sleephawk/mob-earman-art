@@ -7,16 +7,22 @@ export default function Spotli({
   name: string;
 }) {
   return (
-    <div style={{ width: "100vw", position: "relative" }}>
-      <figure>
-        <figcaption></figcaption>
-        <img
-          className="spotli"
-          src={srcCatalogue[name].woodNFrame}
-          onClick={onClick}
-          alt=""
-        />
-      </figure>
+    <div
+      className="spotliContainer"
+      style={{ width: "100vw", position: "relative" }}
+    >
+      <img
+        className="spotli"
+        src={srcCatalogue[name].whiteWall}
+        onClick={onClick}
+        alt=""
+      />
+      <img
+        className="spotli"
+        src={srcCatalogue[name].woodNFrame}
+        onClick={onClick}
+        alt=""
+      />
     </div>
   );
 }
