@@ -48,37 +48,42 @@ export default function Art() {
             <Artwork
               onClick={() => turnOnSpotlight("rocky")}
               src={srcCatalogue.rocky.whiteWall}
-              alt=""
+              alt={srcCatalogue.rocky.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("oddSignal")}
               src={srcCatalogue.oddSignal.whiteWall}
-              alt=""
+              alt={srcCatalogue.oddSignal.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("topo")}
               src={srcCatalogue.topo.whiteWall}
-              alt=""
+              alt={srcCatalogue.topo.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("autumn")}
               src={srcCatalogue.autumn.whiteWall}
-              alt=""
+              alt={srcCatalogue.autumn.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("jellyfish")}
               src={srcCatalogue.jellyfish.whiteWall}
-              alt=""
+              alt={srcCatalogue.jellyfish.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("october")}
               src={srcCatalogue.october.whiteWall}
-              alt=""
+              alt={srcCatalogue.october.alt}
             />
             <Artwork
               onClick={() => turnOnSpotlight("saturn")}
               src={srcCatalogue.saturn.whiteWall}
-              alt=""
+              alt={srcCatalogue.saturn.alt}
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("sucker")}
+              src={srcCatalogue.sucker.whiteWall}
+              alt={srcCatalogue.sucker.alt}
             />
           </>
         )}
