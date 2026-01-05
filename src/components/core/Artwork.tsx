@@ -1,18 +1,19 @@
-import { div } from "three/tsl";
-
 export default function Artwork({
   width,
   height,
   src,
   alt,
+  onClick,
 }: {
   width?: number;
   height?: number;
   src: string;
   alt: string;
+  onClick?: () => void;
 }) {
   return (
     <div
+      className="artwork"
       style={{
         objectFit: "contain",
         width: width ? width : "300px",
@@ -22,6 +23,7 @@ export default function Artwork({
       <img
         src={src}
         alt={alt}
+        onClick={onClick}
         style={{
           display: "block",
           maxWidth: "100%",

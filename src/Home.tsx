@@ -12,7 +12,7 @@ import Contact from "./components/pages/Contact.tsx";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
-  const [debug, setDebug] = useState(false);
+  const [debug, setDebug] = useState(true);
   const [about, setAbout] = useState(false);
   const [shop, setShop] = useState(false);
   const [art, setArt] = useState(false);

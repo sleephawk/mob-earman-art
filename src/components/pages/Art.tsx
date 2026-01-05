@@ -1,7 +1,17 @@
 import Artwork from "../core/Artwork";
 import { srcCatalogue } from "../../constants/srcCatalogue";
+import Spotli from "../core/Spotli";
+import { useState } from "react";
+
 //could maybe make a src catalogue as an enum somewhere.....
 export default function Art() {
+  const [spotli, setSpotli] = useState<boolean>(false);
+  const [name, setName] = useState<string>("rocky");
+  const turnOnSpotlight = (nameArg: string) => {
+    setSpotli(true);
+    setName(nameArg);
+  };
+
   return (
     <section
       aria-label="a catalogue of Mob Earman named original pieces."
@@ -20,6 +30,7 @@ export default function Art() {
       }} // maybe chonk into css
     >
       <h1>Art</h1>
+
       <div
         style={{
           display: "flex",
@@ -32,15 +43,53 @@ export default function Art() {
           alignItems: "center",
         }}
       >
-        <Artwork src={srcCatalogue.rocky.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.oddSignal.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.topo.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.autumn.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.jellyfish.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.warthog.whiteWall} alt="" />
-        <Artwork src={srcCatalogue.october.whiteWall} alt="" />
+        {!spotli && (
+          <>
+            <Artwork
+              onClick={() => turnOnSpotlight("rocky")}
+              src={srcCatalogue.rocky.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("oddSignal")}
+              src={srcCatalogue.oddSignal.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("topo")}
+              src={srcCatalogue.topo.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("autumn")}
+              src={srcCatalogue.autumn.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("jellyfish")}
+              src={srcCatalogue.jellyfish.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("warthog")}
+              src={srcCatalogue.warthog.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("october")}
+              src={srcCatalogue.october.whiteWall}
+              alt=""
+            />
+            <Artwork
+              onClick={() => turnOnSpotlight("saturn")}
+              src={srcCatalogue.saturn.whiteWall}
+              alt=""
+            />
+          </>
+        )}
+        {spotli && <Spotli name={name} onClick={() => setSpotli(false)} />}
       </div>
-      <button>RETURN</button>
+      <button onClick={() => setSpotli(false)}>RETURN</button>
       {/* context */}
     </section>
   );

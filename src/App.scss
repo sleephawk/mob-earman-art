@@ -49,4 +49,18 @@ body {
   overflow: hidden;
 }
 
-/** STRUCTURE **/
+/** CORE **/
+
+.spotli {
+  position: relative;
+  width: 50%;
+}
+.spotli:hover {
+  cursor: pointer;
+}
+
+/** PAGES **/
+
+.artwork:hover {
+  cursor: pointer;
+}
