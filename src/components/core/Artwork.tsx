@@ -23,8 +23,10 @@ export default function Artwork({
         src={src}
         alt={alt}
         style={{
+          display: "block",
           maxWidth: "100%",
           objectFit: "contain",
+          boxSizing: "border-box",
           border: "10px solid black",
         }}
       />

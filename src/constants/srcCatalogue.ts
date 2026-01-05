@@ -1,5 +1,8 @@
 export enum srcCatalogue {
-  rocky = "/assets/art/photos/rocky.jpg",
-  octoberLocks = "/assets/art/photos/octoberLocks.jpg",
-  oddSignal = "/assets/art/photos/oddSignal.jpg",
+  rocky = "/assets/art/photos/Rocky.jpg",
+  oddSignal = "/assets/art/photos/TheOddSignal.jpg",
+  warthog = "/assets/art/photos/SandiCalledHim'Warthog'.jpg",
+  autumn = "/assets/art/photos/AutumnClaimsAMartyr.jpg",
+  jellyfish = "/assets/art/photos/SleeveoftheBoxJellyfish.jpg",
+  topo = "/assets/art/photos/TopologyVents.jpg",
 }
