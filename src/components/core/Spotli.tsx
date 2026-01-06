@@ -13,7 +13,7 @@ export default function Spotli({
     >
       <img
         className="spotli"
-        src={srcCatalogue[name].whiteWall}
+        src={srcCatalogue[name].noFrame}
         onClick={onClick}
         alt=""
       />
