@@ -17,7 +17,7 @@ export default function Shop() {
         overflow: "auto",
       }} // maybe chonk into css
     >
-      <h1>Shop</h1>
+      <h1>SHOP</h1>
 
       <div className="calendar" style={{ display: "flex" }}>
         <div>

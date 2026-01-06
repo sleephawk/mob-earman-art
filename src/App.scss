@@ -40,13 +40,17 @@ button {
   background-color: #362f2a;
   color: rgb(255, 255, 136);
   font-weight: bold;
-  border-radius: 10%;
+  border-radius: 20px;
   border: none;
 }
 
 body {
   background-color: #c28335;
   overflow: hidden;
+}
+
+h1 {
+  letter-spacing: 10px;
 }
 
 /** CORE **/
@@ -74,8 +78,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   overflow: auto;
 }
 

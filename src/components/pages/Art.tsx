@@ -17,18 +17,34 @@ export default function Art() {
       aria-label="a catalogue of Mob Earman named original pieces."
       className="page"
     >
-      <h1>Art</h1>
-
       <div
         style={{
           display: "flex",
-          padding: "20px",
+          flexDirection: "column",
+          padding: "50px",
+        }}
+      >
+        <h1>ARTWORKS</h1>
+        <p>
+          Each piece is hand painted or penned, summoning earmen around existing
+          structures all garbled in rawest form.
+        </p>
+        <p>Prices on request via email. Commissions considered.</p>
+        <button onClick={() => setSpotli(false)}>Home</button>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          padding: "60px 10px 60px 10px",
+          margin: "20px",
           objectFit: "contain",
           flexWrap: "wrap",
-          maxWidth: "80%",
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
+          border: "5px solid rgb(0,0,0,0.5)",
+          borderRadius: "30px",
+          overflow: "scroll",
         }}
       >
         {!spotli && (
@@ -77,7 +93,7 @@ export default function Art() {
         )}
         {spotli && <Spotli name={name} onClick={() => setSpotli(false)} />}
       </div>
-      <button onClick={() => setSpotli(false)}>RETURN</button>
+
       {/* context */}
     </section>
   );
