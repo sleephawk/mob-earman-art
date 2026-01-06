@@ -36,12 +36,12 @@ button:hover {
 
 button {
   width: 100px;
-  padding: 5px;
+  padding: 10px;
   background-color: #362f2a;
   color: rgb(255, 255, 136);
   font-weight: bold;
   border-radius: 20px;
-  border: none;
+  border: 1.5px solid #362f2a;
 }
 
 body {
@@ -57,6 +57,7 @@ h1 {
 
 .cssStandardBorder {
   border: 5px solid rgb(0, 0, 0, 0.5);
+  box-sizing: border-box;
   border-radius: 30px;
   overflow: scroll;
 }

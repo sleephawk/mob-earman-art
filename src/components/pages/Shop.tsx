@@ -19,13 +19,38 @@ export default function Shop() {
     >
       <h1>SHOP</h1>
 
-      <div className="calendar" style={{ display: "flex" }}>
+      <div
+        className="calendar cssStandardBorder"
+        style={{
+          display: "flex",
+          padding: "30px",
+          margin: "20px",
+          backgroundImage: "url(/assets/bgs/basePaper.png)",
+        }}
+      >
         <div>
-          <p>{srcCatalogue.calendar.info}</p>
-          <button>GET IT ON ETSY</button>
-          <button>RETURN</button>
+          <p style={{ color: "black", marginTop: "20px" }}>
+            {srcCatalogue.calendar.info}
+          </p>
+          <div
+            aria-hidden="true"
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
+            <button>GET IT ON ETSY</button>
+            <button>RETURN</button>
+          </div>
         </div>
-        <div style={{ width: "80%", maxHeight: "800px", display: "flex" }}>
+        <div
+          className="calendar cssStandardBorder"
+          style={{
+            width: "80%",
+            maxHeight: "800px",
+            display: "flex",
+            padding: "30px",
+            margin: "20px",
+            backgroundColor: "#c28335",
+          }}
+        >
           <img
             style={{ width: "100%", height: "100%", objectFit: "contain" }}
             src={srcCatalogue.calendar.front}

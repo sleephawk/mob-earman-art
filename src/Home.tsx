@@ -102,6 +102,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       <div style={{ position: "relative" }}>
         {!page && (
           <nav
+            className="cssStandardBorder"
             style={{
               zIndex: 10,
               position: "absolute",

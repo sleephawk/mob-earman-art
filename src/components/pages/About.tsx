@@ -42,10 +42,10 @@ export default function About() {
           <div aria-hidden={true}>T</div>
         </div>
         <p>
-          I, Matt, an abstract cartoon artist under the monika Mob Earman. My
-          focus on fun and expression combine with perspective and composition
-          play to make unique geometric oddscapes, critters, knots &,
-          ultimately, <em>earmen</em>,<br></br>
+          I am a cartoonist of surreal and abstract art under the monika Mob
+          Earman. My focus on fun and expression combine with perspective and
+          composition play to make unique geometric oddscapes, critters, knots
+          &, ultimately, <em>earmen</em>,<br></br>
           <br></br>
           My approach is therapeutic, using them as a coping mechanism for the
           daily symptoms of ADHD and Autism, which have been the subject of a
@@ -57,7 +57,7 @@ export default function About() {
           <br></br>
           They are experimental, with the simple motif of large, often green,
           set of googly, puppet-like eyes keeping the characters consistent. My
-          ifluences span from art nouveau to the muppets, Kandinsky and
+          influences span from art nouveau to the muppets, Kandinsky and
           Adventure Time; whilst a deep love for many creative ventures feed
           into them, these are often accidental drivers of what is seen on the
           page. I wants you to find what lives in them for yourself.
