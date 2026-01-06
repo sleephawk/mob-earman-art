@@ -21,7 +21,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const [events, setEvents] = useState(false);
   const [page, setPage] = useState(false);
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
-    useState("paint");
+    useState("primary");
 
   const handleNavClick = (pageName: string): void => {
     setPage(true);
@@ -58,7 +58,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     const backgrounds = {
       paper: "black",
       primary: "#c28335",
-      paint: "blue",
+      paint: "#379f79",
     };
     const animations = {
       idle: "Idle",
@@ -211,7 +211,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 event={() => setMode("paper")}
               ></Button>
               <Button
-                color={"blue"}
+                color={"#379f79"}
                 round={true}
                 event={() => setMode("paint")}
               ></Button>

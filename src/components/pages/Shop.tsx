@@ -23,15 +23,26 @@ export default function Shop() {
         <div>
           <p>{srcCatalogue.calendar.info}</p>
           <button>GET IT ON ETSY</button>
+          <button>RETURN</button>
         </div>
-        <div>
+        <div style={{ width: "80%", maxHeight: "800px", display: "flex" }}>
           <img
-            src={srcCatalogue.calendar.src}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            src={srcCatalogue.calendar.front}
             alt={srcCatalogue.calendar.alt}
+          />
+          <img
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            src={srcCatalogue.calendar.jan}
+            alt={srcCatalogue.calendar.altFront}
+          />
+          <img
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            src={srcCatalogue.calendar.feb}
+            alt={srcCatalogue.calendar.altFront}
           />
         </div>
       </div>
-      <button>RETURN</button>
     </section>
   );
 }

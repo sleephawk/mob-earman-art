@@ -33,6 +33,7 @@ export default function Art() {
         <button onClick={() => setSpotli(false)}>Home</button>
       </div>
       <div
+        className="cssStandardBorder"
         style={{
           display: "flex",
           padding: "60px 10px 60px 10px",
@@ -42,9 +43,6 @@ export default function Art() {
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
-          border: "5px solid rgb(0,0,0,0.5)",
-          borderRadius: "30px",
-          overflow: "scroll",
         }}
       >
         {!spotli && (

@@ -47,8 +47,11 @@ export const srcCatalogue: Catalogue = {
     alt: "an abstract black white and grey pen drawing of mathematical looking 3d shapes, with a mushroom like shape donning one eye in the top left.",
   },
   calendar: {
-    src: "",
-    alt: "",
-    info: "",
+    front: "/assets/art/calendar/calendarFront.jpeg",
+    jan: "/assets/art/calendar/jan.jpeg",
+    feb: "/assets/art/calendar/feb.jpeg",
+    altFront:
+      "the front page of Mob's 2026 calendar with the art piece Topology Vents on the front",
+    info: "For now this is the info about the calendar",
   },
 };

@@ -55,6 +55,12 @@ h1 {
 
 /** CORE **/
 
+.cssStandardBorder {
+  border: 5px solid rgb(0, 0, 0, 0.5);
+  border-radius: 30px;
+  overflow: scroll;
+}
+
 .spotli {
   position: relative;
   width: 30%;
