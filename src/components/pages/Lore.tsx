@@ -44,37 +44,48 @@ export default function Lore() {
         </div>
         <p style={{ fontSize: "1.5rem", margin: "30px" }}>
           <em>
-            I, Matt, an abstract cartoon artist under the monika Mob Earman. My
-            focus on fun and expression combine with perspective and composition
-            play to make unique geometric oddscapes, critters, knots &,
-            ultimately
+            "The night I decided to meet the bird known as Mob Earman was the
+            same night the ghost greeted me at 3:15 with a new friend..."
           </em>
-          ,
         </p>
         <p>
-          My approach is therapeutic, using them as a coping mechanism for the
-          daily symptoms of ADHD and Autism, which have been the subject of a
-          life of searching for relief. Since diagnosis, I changed my approach
-          to creating art, since I found the pressure of perfectionism is
-          debilitating, whilst creating these pieces is a form of low pressure
-          meditation that yields unique, insightful results every time.
+          Snoozecrow is an ambient musician with a strange collaborator; a
+          small, relatively friendly, sheet ghost who found him in the nest,
+          proceeding to haunt him throughout his 30 years on earth. It's a
+          balancing act, living a normal life with an inexplicable, clearly
+          visible, sheet ghost on your shoulder, but one adapts. The music
+          helped.
+          <br></br>
+          <br></br>This was all under his wing, he thought, until the ghost
+          started arriving with, well, <em>other</em> things. After seeing one
+          of these things painted and named an 'earman' on a band poster for a
+          local artist known as
+          <strong>
+            <span style={{ fontSize: "1rem" }}> Mob Earman</span>
+          </strong>
+          , the rare magpie-wheatear, Snoozy knew his week was going to play out
+          more strangely than usual.
           <br></br>
           <br></br>
-          They are experimental, with the simple motif of large, often green,
-          set of googly, puppet-like eyes keeping the characters consistent. My
-          ifluences span from art nouveau to the muppets, Kandinsky and
-          Adventure Time; whilst a deep love for many creative ventures feed
-          into them, these are often accidental drivers of what is seen on the
-          page. I wants you to find what lives in them for yourself.
+          This is the story of{" "}
+          <strong>
+            <span style={{ fontSize: "1rem" }}>Snoozy & Mob</span>
+          </strong>
+          . It is a story about music, the unknown, and of all things, the
+          balancing of those two forces tranquility and chaos.
           <br></br>
           <br></br>
-          Why Mob? Why Earman and earmen? Well, this is the beginning of all my
-          creative worlds colliding under the banner of Snoozecrow Studio. Mob
-          has a story that's intertwined with the character Snoozecrow, and will
-          be soundtracked by my music persona Sleephawk. Yes, I am three birds
-          in a trenchcoat. Needless to say, this is only gonna grow, however
-          slow or chaotically. For now, enjoy the strange world of the earmen,
-          created via the soothing of my central nervous system.
+          It is <em>also</em> a story I don't want to tell with one medium. Yes
+          yes, you'll get your words, but I want to show you{" "}
+          <strong>
+            <span style={{ fontSize: "1rem" }}>
+              the songs, the summonings, the world in 3d video game form, the
+              magic as it happened for them
+            </span>
+          </strong>
+          . You will see this tale from multiple angles, and every follow, sale
+          and share will support its creation. If you want to hear the tale,
+          follow along.
         </p>
       </article>
     </section>

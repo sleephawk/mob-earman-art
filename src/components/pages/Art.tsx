@@ -24,7 +24,7 @@ export default function Art() {
           padding: "50px",
         }}
       >
-        <h1>ARTWORKS</h1>
+        <h1>ARTWORK</h1>
         <p>
           Each piece is hand painted or penned, summoning earmen around existing
           structures all garbled in rawest form.
