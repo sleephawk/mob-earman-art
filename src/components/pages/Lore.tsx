@@ -1,8 +1,7 @@
-import CSSTransitionCom from "../core/CSSTransitionCom";
-
 export default function Lore() {
   return (
     <section
+      className="page"
       style={{
         justifyContent: "center",
         alignSelf: "center",

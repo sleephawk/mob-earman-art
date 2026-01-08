@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section aria-label="the about page with a bio of the artist and some details around the work">
       <article
-        className="cssStandardBorder"
+        className="cssStandardBorder page"
         style={{
           display: "flex",
           position: "relative",

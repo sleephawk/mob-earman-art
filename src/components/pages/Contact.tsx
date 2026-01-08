@@ -1,5 +1,3 @@
-import CSSTransitionCom from "../core/CSSTransitionCom";
-
 export default function Contact() {
   return (
     <div

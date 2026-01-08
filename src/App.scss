@@ -59,7 +59,7 @@ h1 {
 /** CORE **/
 
 .cssStandardBorder {
-  border: 5px solid rgb(0, 0, 0, 0.5);
+  border: 5px solid teal;
   box-sizing: border-box;
   border-radius: 30px;
   overflow: scroll;
@@ -109,6 +109,7 @@ h1 {
   padding: 0;
   flex-direction: row;
   overflow: auto;
+  z-index: 100;
 }
 
 .artwork:hover {
@@ -123,7 +124,7 @@ h1 {
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 200ms ease;
+  transition: opacity 800ms ease;
 }
 
 .fade-exit {

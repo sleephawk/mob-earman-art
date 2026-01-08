@@ -20,14 +20,16 @@ import Nav from "./components/core/Nav.tsx";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
-  const [debug, setDebug] = useState(true);
   const [activePage, setActivePage] = useState<
-    "about" | "art" | "shop" | "events" | "lore" | "contact" | null
+    "home" | "about" | "art" | "shop" | "events" | "lore" | "contact" | null
   >(null);
   const nodeRef = useRef<HTMLDivElement>(null);
 
   function renderPage(page: typeof activePage) {
     switch (page) {
+      case "home":
+        setActivePage(null);
+        return null;
       case "about":
         return <About />;
       case "art":
@@ -85,8 +87,10 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       <div style={{ position: "relative" }}>
         <div style={{ display: "flex" }}>
           <Nav
+            className={"cssStandardBorder"}
             aria={"main menu"}
             anchors={[
+              <Anchor cb={handleNavClick} link={"home"} />,
               <Anchor cb={handleNavClick} link={"about"} />,
               <Anchor cb={handleNavClick} link={"art"} />,
               <Anchor cb={handleNavClick} link={"shop"} />,
@@ -122,16 +126,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                     round={true}
                     event={() => setMode("primary")}
                   ></Button>
-                  <Button
-                    event={() => {
-                      if (debug) {
-                        setDebug(false);
-                      } else {
-                        setDebug(true);
-                      }
-                    }}
-                    content="DEBUG MODE"
-                  ></Button>
                 </div>
               </>
             }
@@ -154,9 +148,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
             renderPage(activePage)
           )}
         </div>
-
         <ClipNameContext.Provider value={clipName}>
-          {!debug && <MobCanvas />}
+          <MobCanvas />
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>
