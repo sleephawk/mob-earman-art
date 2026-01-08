@@ -17,13 +17,33 @@ import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
-
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [debug, setDebug] = useState(true);
   const [activePage, setActivePage] = useState<
     "about" | "art" | "shop" | "events" | "lore" | "contact" | null
   >(null);
+  const nodeRef = useRef<HTMLDivElement>(null);
+
+  function renderPage(page: typeof activePage) {
+    switch (page) {
+      case "about":
+        return <About />;
+      case "art":
+        return <Art />;
+      case "shop":
+        return <Shop />;
+      case "events":
+        return <Events />;
+      case "lore":
+        return <Lore />;
+      case "contact":
+        return <Contact />;
+      default:
+        return null;
+    }
+  }
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
     useState("primary");
 
@@ -63,65 +83,77 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
-        <Nav
-          aria={"main menu"}
-          anchors={[
-            <Anchor cb={handleNavClick} link={"about"} />,
-            <Anchor cb={handleNavClick} link={"art"} />,
-            <Anchor cb={handleNavClick} link={"shop"} />,
-            <Anchor cb={handleNavClick} link={"events"} />,
-            <Anchor cb={handleNavClick} link={"lore"} />,
-            <Anchor cb={handleNavClick} link={"contact"} />,
-          ]}
-          content={
-            <>
-              <h2
-                style={{
-                  color: "white",
-                  width: "100%",
-                  textAlign: "center",
-                  paddingLeft: "20px",
-                }}
-              >
-                THEME
-              </h2>
-              <div className="theme-box , cssStandardBorder">
-                <Button
-                  color={"white"}
-                  round={true}
-                  event={() => setMode("paper")}
-                ></Button>
-                <Button
-                  color={"#379f79"}
-                  round={true}
-                  event={() => setMode("paint")}
-                ></Button>
-                <Button
-                  color={"orange"}
-                  round={true}
-                  event={() => setMode("primary")}
-                ></Button>
-                <Button
-                  event={() => {
-                    if (debug) {
-                      setDebug(false);
-                    } else {
-                      setDebug(true);
-                    }
+        <div style={{ display: "flex" }}>
+          <Nav
+            aria={"main menu"}
+            anchors={[
+              <Anchor cb={handleNavClick} link={"about"} />,
+              <Anchor cb={handleNavClick} link={"art"} />,
+              <Anchor cb={handleNavClick} link={"shop"} />,
+              <Anchor cb={handleNavClick} link={"events"} />,
+              <Anchor cb={handleNavClick} link={"lore"} />,
+              <Anchor cb={handleNavClick} link={"contact"} />,
+            ]}
+            content={
+              <>
+                <h2
+                  style={{
+                    color: "white",
+                    width: "100%",
+                    textAlign: "center",
+                    paddingLeft: "20px",
                   }}
-                  content="DEBUG MODE"
-                ></Button>
-              </div>
-            </>
-          }
-        ></Nav>
-
-        <About flag={activePage === "about"} />
-        <Art flag={activePage === "art"} />
-        <Shop flag={activePage === "shop"} />
-        <Events flag={activePage === "events"} />
-        <Lore flag={activePage === "lore"} />
-        <Contact flag={activePage === "contact"} />
+                >
+                  THEME
+                </h2>
+                <div className="theme-box , cssStandardBorder">
+                  <Button
+                    color={"white"}
+                    round={true}
+                    event={() => setMode("paper")}
+                  ></Button>
+                  <Button
+                    color={"#379f79"}
+                    round={true}
+                    event={() => setMode("paint")}
+                  ></Button>
+                  <Button
+                    color={"orange"}
+                    round={true}
+                    event={() => setMode("primary")}
+                  ></Button>
+                  <Button
+                    event={() => {
+                      if (debug) {
+                        setDebug(false);
+                      } else {
+                        setDebug(true);
+                      }
+                    }}
+                    content="DEBUG MODE"
+                  ></Button>
+                </div>
+              </>
+            }
+          ></Nav>
+          {activePage ? (
+            <SwitchTransition mode="out-in">
+              <CSSTransition
+                key={activePage}
+                nodeRef={nodeRef}
+                timeout={800}
+                classNames="fade"
+                unmountOnExit
+              >
+                <div ref={nodeRef} className="page">
+                  {renderPage(activePage)}
+                </div>
+              </CSSTransition>
+            </SwitchTransition>
+          ) : (
+            renderPage(activePage)
+          )}
+        </div>
 
         <ClipNameContext.Provider value={clipName}>
           {!debug && <MobCanvas />}

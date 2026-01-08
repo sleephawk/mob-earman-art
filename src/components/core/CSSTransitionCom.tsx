@@ -1,31 +1,33 @@
-import { ReactNode, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+import { useRef } from "react";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 type CSSTransitionComProps = {
   show: boolean; // controls enter/exit
   children: ReactNode | ReactNode[]; // content to render
   timeout?: number; // optional, default 800ms
-  classNames?: string;
+  classN?: string;
 };
 
 export default function CSSTransitionCom({
   show,
   children,
   timeout = 800,
-  classNames = "fade-out",
+  classN = "fade-out",
 }: CSSTransitionComProps) {
   // Internal ref for CSSTransition to target
   const nodeRef = useRef<HTMLDivElement>(null);
 
   return (
-    <CSSTransition
-      in={show}
-      nodeRef={nodeRef}
-      classNames={classNames}
-      timeout={timeout}
-      unmountOnExit
-    >
-      <div ref={nodeRef}>{children}</div>
-    </CSSTransition>
+    <SwitchTransition mode={"out-in"}>
+      <CSSTransition
+        key={show}
+        nodeRef={nodeRef}
+        classNames={classN}
+        timeout={timeout}
+        unmountOnExit
+      >
+        <div ref={nodeRef}>{children}</div>
+      </CSSTransition>
+    </SwitchTransition>
   );
 }
