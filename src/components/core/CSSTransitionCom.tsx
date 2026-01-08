@@ -5,7 +5,7 @@ type CSSTransitionComProps = {
   show: boolean; // controls enter/exit
   children: ReactNode | ReactNode[]; // content to render
   timeout?: number; // optional, default 800ms
-  classNames?: string; // optional, default "fade-out"
+  classNames?: string;
 };
 
 export default function CSSTransitionCom({

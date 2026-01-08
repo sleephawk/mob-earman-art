@@ -17,46 +17,18 @@ import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
-import CSSTransitionCom from "./components/core/CSSTransitionCom.tsx";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [debug, setDebug] = useState(true);
-  const [about, setAbout] = useState(false);
-  const [shop, setShop] = useState(false);
-  const [art, setArt] = useState(false);
-  const [lore, setLore] = useState(false);
-  const [contact, setContact] = useState(false);
-  const [events, setEvents] = useState(false);
-  const [page, setPage] = useState(false);
+  const [activePage, setActivePage] = useState<
+    "about" | "art" | "shop" | "events" | "lore" | "contact" | null
+  >(null);
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
     useState("primary");
 
-  const handleNavClick = (pageName: string): void => {
-    setPage(true);
-    switch (pageName) {
-      case "about":
-        setAbout(true);
-        break;
-      case "art":
-        setArt(true);
-        break;
-      case "events":
-        setEvents(true);
-        break;
-      case "shop":
-        setShop(true);
-        break;
-      case "lore":
-        setLore(true);
-        break;
-      case "contact":
-        setContact(true);
-        break;
-      default:
-        console.log("argument passed by the button did not match a case");
-        break;
-    }
+  const handleNavClick = (pageName: string) => {
+    setActivePage(pageName as any);
   };
 
   useEffect(() => {
@@ -87,13 +59,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         break;
     }
   }, [mode, cb]);
-
-  useEffect(() => {
-    if (!debug) return;
-    console.log(
-      `about: ${about}, art: ${art}, shop: ${shop}, events: ${events}, lore:${lore}, contact: ${contact}`
-    );
-  }, [about, art, contact, debug, events, lore, shop]);
 
   return (
     <ModeContext.Provider value={mode}>
@@ -151,15 +116,15 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           }
         ></Nav>
 
-        {page && about && <About />}
-        {page && art && <Art />}
-        {page && shop && <Shop />}
-        {page && events && <Events />}
-        {page && lore && <Lore />}
-        {page && contact && <Contact />}
+        <About flag={activePage === "about"} />
+        <Art flag={activePage === "art"} />
+        <Shop flag={activePage === "shop"} />
+        <Events flag={activePage === "events"} />
+        <Lore flag={activePage === "lore"} />
+        <Contact flag={activePage === "contact"} />
 
         <ClipNameContext.Provider value={clipName}>
-          {!debug && !page && <MobCanvas />}
+          {!debug && <MobCanvas />}
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>

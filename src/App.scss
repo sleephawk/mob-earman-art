@@ -112,3 +112,23 @@ h1 {
 .artwork:hover {
   cursor: pointer;
 }
+
+/**TRANSITION**/
+
+.fade-out-enter {
+  opacity: 0;
+}
+
+.fade-out-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease;
+}
+
+.fade-out-exit {
+  opacity: 1;
+}
+
+.fade-out-exit-active {
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
