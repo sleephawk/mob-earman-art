@@ -1,14 +1,18 @@
 import type { ReactNode } from "react";
 
 type NavProps = {
-  anchors: ReactNode[];
-  content: ReactNode[];
+  anchors?: ReactNode[];
+  content?: ReactNode[];
   aria: string;
+  border: boolean;
 };
 
-export default function Nav({ content, anchors, aria }: NavProps) {
+export default function Nav({ border, content, anchors, aria }: NavProps) {
   return (
-    <nav className="main-menu cssStandardBorder" aria-label={aria}>
+    <nav
+      className={`main-menu ${border && "cssStandardBorder"}`}
+      aria-label={aria}
+    >
       <ul
         style={{
           listStyle: "none",
@@ -16,9 +20,7 @@ export default function Nav({ content, anchors, aria }: NavProps) {
           fontSize: "3rem",
         }}
       >
-        {anchors.map((a, i) => (
-          <li key={i}>{a}</li>
-        ))}
+        {anchors && anchors.map((a, i) => <li key={i}>{a}</li>)}
       </ul>
       {content}
     </nav>

@@ -91,6 +91,13 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
+        <Nav
+          content={
+            <a>
+              <img></img>
+            </a>
+          }
+        ></Nav>
         {!page && (
           <Nav
             aria={"main menu"}
@@ -114,14 +121,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 >
                   THEME
                 </h2>
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "space-around",
-                    padding: "20px 20px 30px 20px",
-                  }}
-                >
+                <div className="theme-box , cssStandardBorder">
                   <Button
                     color={"white"}
                     round={true}
