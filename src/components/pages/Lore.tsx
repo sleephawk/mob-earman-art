@@ -84,8 +84,8 @@ export default function Lore() {
             </span>
           </strong>
           . You will see this tale from multiple angles, and every follow, sale
-          and share will support its creation. If you want to hear the tale,
-          follow along.
+          and share will support its creation. If you like the sound of that,
+          you're in the right place.
         </p>
       </article>
     </section>

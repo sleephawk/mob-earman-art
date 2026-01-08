@@ -9,6 +9,8 @@ import Shop from "./components/pages/Shop.tsx";
 import Events from "./components/pages/Events.tsx";
 import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
+import Anchor from "./components/basic/Anchor.tsx";
+import Nav from "./components/core/Nav.tsx";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
@@ -51,10 +53,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   };
 
   useEffect(() => {
-    //need an interval which is running in the background - maybe I can track three js's time?
-    //need to randomly select one of the animations
-    //could have all objects as a different ts module
-
     const backgrounds = {
       paper: "black",
       primary: "#c28335",
@@ -91,148 +89,68 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   }, [about, art, contact, debug, events, lore, shop]);
 
   return (
-    //COMPONENT
-    //nav needs plumbing out, but will also therefore need to import the context
-    //Page is a flag toggle
-    //need a div that overlays the whole thing and is fixed, then position things
-    //within that context
-    //can change debug mode to low res mode
-    //could add a theme with 3d pixelated
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
         {!page && (
-          <nav
-            className="cssStandardBorder"
-            style={{
-              zIndex: 10,
-              position: "absolute",
-              top: "70%",
-              left: "50%",
-              transform: "translate(50%, 25%)",
-              color: "black",
-              backgroundColor: "rgb(0,0,0, 0.5)",
-              paddingRight: "40px",
-            }}
-          >
-            <ul
-              style={{
-                listStyle: "none",
-                textDecoration: "none",
-                fontSize: "3rem",
-              }}
-            >
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("about");
+          <Nav
+            aria={"main menu"}
+            anchors={[
+              <Anchor cb={handleNavClick} link={"about"} />,
+              <Anchor cb={handleNavClick} link={"art"} />,
+              <Anchor cb={handleNavClick} link={"shop"} />,
+              <Anchor cb={handleNavClick} link={"events"} />,
+              <Anchor cb={handleNavClick} link={"lore"} />,
+              <Anchor cb={handleNavClick} link={"contact"} />,
+            ]}
+            content={
+              <>
+                <h2
+                  style={{
+                    color: "white",
+                    width: "100%",
+                    textAlign: "center",
+                    paddingLeft: "20px",
                   }}
-                  href=""
                 >
-                  ABOUT
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("art");
+                  THEME
+                </h2>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    padding: "20px 20px 30px 20px",
                   }}
-                  href=""
                 >
-                  ART
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("shop");
-                  }}
-                  href=""
-                >
-                  SHOP
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("events");
-                  }}
-                  href=""
-                >
-                  EVENTS
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("lore");
-                  }}
-                  href=""
-                >
-                  LORE
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("contact");
-                  }}
-                  href=""
-                >
-                  CONTACT
-                </a>
-              </li>
-            </ul>
-            <h2
-              style={{
-                color: "white",
-                width: "100%",
-                textAlign: "center",
-                paddingLeft: "20px",
-              }}
-            >
-              THEME
-            </h2>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-around",
-                padding: "20px 20px 30px 20px",
-              }}
-            >
-              <Button
-                color={"white"}
-                round={true}
-                event={() => setMode("paper")}
-              ></Button>
-              <Button
-                color={"#379f79"}
-                round={true}
-                event={() => setMode("paint")}
-              ></Button>
-              <Button
-                color={"orange"}
-                round={true}
-                event={() => setMode("primary")}
-              ></Button>
-              <Button
-                event={() => {
-                  if (debug) {
-                    setDebug(false);
-                  } else {
-                    setDebug(true);
-                  }
-                }}
-                content="DEBUG MODE"
-              ></Button>
-            </div>
-          </nav> // collapsed for ease of reading
+                  <Button
+                    color={"white"}
+                    round={true}
+                    event={() => setMode("paper")}
+                  ></Button>
+                  <Button
+                    color={"#379f79"}
+                    round={true}
+                    event={() => setMode("paint")}
+                  ></Button>
+                  <Button
+                    color={"orange"}
+                    round={true}
+                    event={() => setMode("primary")}
+                  ></Button>
+                  <Button
+                    event={() => {
+                      if (debug) {
+                        setDebug(false);
+                      } else {
+                        setDebug(true);
+                      }
+                    }}
+                    content="DEBUG MODE"
+                  ></Button>
+                </div>
+              </>
+            }
+          ></Nav>
         )}
         {page && about && <About />}
         {page && art && <Art />}

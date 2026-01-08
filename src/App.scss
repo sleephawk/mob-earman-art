@@ -47,6 +47,9 @@ button {
 body {
   background-color: #c28335;
   overflow: hidden;
+  @include media(1080px) {
+    overflow: unset;
+  }
 }
 
 h1 {
@@ -60,6 +63,17 @@ h1 {
   box-sizing: border-box;
   border-radius: 30px;
   overflow: scroll;
+}
+
+.main-menu {
+  z-index: 10;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(50%, 25%);
+  color: black;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding-right: 40px;
 }
 
 .spotli {
