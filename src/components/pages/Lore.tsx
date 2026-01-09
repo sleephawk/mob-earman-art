@@ -1,38 +1,8 @@
 export default function Lore() {
   return (
-    <section
-      className="page"
-      style={{
-        justifyContent: "center",
-        alignSelf: "center",
-        justifySelf: "center",
-        alignItems: "center",
-        width: "100vw",
-        height: "100vh",
-        border: "4px black solid",
-        position: "relative",
-        overflow: "auto",
-      }}
-    >
+    <section className="page lore">
       {/*these are the same style rules as ABOUT so make into page component rulings*/}
-      <article
-        className="cssStandardBorder"
-        style={{
-          display: "flex",
-          position: "relative",
-          top: "50%",
-          transform: "translate(-0%,-50%)",
-          gap: "10px",
-          width: "70%",
-          alignContent: "center",
-          justifyContent: "center",
-          alignSelf: "center",
-          justifySelf: "center",
-          overflow: "scroll",
-
-          padding: "30px",
-        }}
-      >
+      <article className="cssStandardBorder lore__article">
         <h1 hidden={true}>LORE</h1>
         <div
           aria-hidden={true}

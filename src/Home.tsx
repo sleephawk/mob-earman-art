@@ -84,7 +84,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
   return (
     <ModeContext.Provider value={mode}>
-      <div style={{ position: "relative" }}>
+      <div className="home" style={{ position: "relative" }}>
         <div style={{ display: "flex" }}>
           <Nav
             className={"cssStandardBorder"}

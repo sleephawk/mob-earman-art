@@ -15,7 +15,7 @@ a:hover {
 html,
 body,
 #root {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
@@ -131,6 +131,18 @@ h1 {
 
 .artwork:hover {
   cursor: pointer;
+}
+
+.lore {
+  position: relative;
+  top: 30px;
+  overflow: hidden;
+
+  &__article {
+    display: flex;
+    padding: 20px;
+    margin: 30px;
+  }
 }
 
 /**TRANSITION**/
