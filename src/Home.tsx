@@ -100,28 +100,21 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
             ]}
             content={
               <>
-                <h2
-                  style={{
-                    color: "white",
-                    width: "100%",
-                    textAlign: "center",
-                    paddingLeft: "20px",
-                  }}
-                >
-                  THEME
-                </h2>
                 <div className="theme-box , cssStandardBorder">
                   <Button
+                    className="theme-box__button theme-box__button--white"
                     color={"white"}
                     round={true}
                     event={() => setMode("paper")}
                   ></Button>
                   <Button
+                    className="theme-box__button theme-box__button--green"
                     color={"#379f79"}
                     round={true}
                     event={() => setMode("paint")}
                   ></Button>
                   <Button
+                    className="theme-box__button theme-box__button--orange"
                     color={"orange"}
                     round={true}
                     event={() => setMode("primary")}
@@ -149,7 +142,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           )}
         </div>
         <ClipNameContext.Provider value={clipName}>
-          <MobCanvas />
+          {/* <MobCanvas /> */}
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>
