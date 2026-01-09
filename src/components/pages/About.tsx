@@ -1,23 +1,10 @@
 export default function About() {
   return (
-    <section aria-label="the about page with a bio of the artist and some details around the work">
-      <article
-        className="cssStandardBorder page"
-        style={{
-          display: "flex",
-          position: "relative",
-          top: "50%",
-          transform: "translate(-0%,-50%)",
-          gap: "10px",
-          width: "70%",
-          alignContent: "center",
-          justifyContent: "center",
-          alignSelf: "center",
-          justifySelf: "center",
-
-          padding: "30px",
-        }}
-      >
+    <section
+      className="about"
+      aria-label="the about page with a bio of the artist and some details around the work"
+    >
+      <article className="cssStandardBorder page about__article">
         <h1 hidden={true}>ABOUT</h1>
         <div
           aria-hidden={true}

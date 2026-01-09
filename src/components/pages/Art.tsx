@@ -22,7 +22,6 @@ export default function Art() {
         <button onClick={() => setSpotli(false)}>Home</button>
       </div>
       <div
-        className="cssStandardBorder"
         style={{
           display: "flex",
           padding: "60px 10px 60px 10px",
