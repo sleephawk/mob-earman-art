@@ -11,17 +11,8 @@ export default function Art() {
   };
 
   return (
-    <section
-      aria-label="a catalogue of Mob Earman named original pieces."
-      className="page"
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "50px",
-        }}
-      >
+    <section aria-label="a catalogue of Mob Earman named original pieces.">
+      <div className="artworkPage">
         <h1>ARTWORK</h1>
         <p>
           Each piece is hand painted or penned, summoning earmen around existing

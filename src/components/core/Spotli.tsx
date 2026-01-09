@@ -7,10 +7,7 @@ export default function Spotli({
   name: string;
 }) {
   return (
-    <div
-      className="spotliContainer"
-      style={{ width: "100vw", position: "relative" }}
-    >
+    <div className="spotliContainer">
       <img
         className="spotliContainer__spotli"
         src={
