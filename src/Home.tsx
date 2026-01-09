@@ -18,6 +18,7 @@ import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { srcCatalogue } from "./constants/srcCatalogue.ts";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
@@ -85,6 +86,25 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   return (
     <ModeContext.Provider value={mode}>
       <div className="home" style={{ position: "relative" }}>
+        <Nav
+          aria="nav-bar"
+          className="nav"
+          border={false}
+          content={
+            <>
+              <img
+                className="nav__icon nav__icon--snoozy"
+                src={srcCatalogue.icons.snoozy}
+              />
+              <img
+                className="nav__icon nav__icon--mob"
+                src={srcCatalogue.icons.mob}
+              />
+            </>
+          }
+        >
+          <></>
+        </Nav>
         <div style={{ display: "flex" }}>
           <Nav
             className={"cssStandardBorder"}

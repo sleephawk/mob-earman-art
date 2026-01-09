@@ -54,4 +54,8 @@ export const srcCatalogue: Catalogue = {
       "the front page of Mob's 2026 calendar with the art piece Topology Vents on the front",
     info: "For now this is the info about the calendar",
   },
+  icons: {
+    snoozy: "/assets/snoozecrowstudio.svg",
+    mob: "/assets/fav3.png",
+  },
 };
