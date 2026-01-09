@@ -1,18 +1,11 @@
+import HeadingVertical from "../core/HeadingVertical";
+
 export default function Lore() {
   return (
     <section className="page lore">
       {/*these are the same style rules as ABOUT so make into page component rulings*/}
       <article className="cssStandardBorder lore__article">
-        <h1 hidden={true}>LORE</h1>
-        <div
-          aria-hidden={true}
-          style={{ fontSize: "40px", textAlign: "center", padding: "30px" }}
-        >
-          <div aria-hidden={true}>L</div>
-          <div aria-hidden={true}>O</div>
-          <div aria-hidden={true}>R</div>
-          <div aria-hidden={true}>E</div>
-        </div>
+        <HeadingVertical heading="lore"></HeadingVertical>
         <p style={{ fontSize: "1.5rem", margin: "30px" }}>
           <em>
             "The night I decided to meet the bird known as Mob Earman was the

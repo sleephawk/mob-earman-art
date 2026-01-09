@@ -1,3 +1,5 @@
+import HeadingVertical from "../core/HeadingVertical";
+
 export default function About() {
   return (
     <section
@@ -5,17 +7,7 @@ export default function About() {
       aria-label="the about page with a bio of the artist and some details around the work"
     >
       <article className="cssStandardBorder page about__article">
-        <h1 hidden={true}>ABOUT</h1>
-        <div
-          aria-hidden={true}
-          style={{ fontSize: "40px", textAlign: "center", padding: "30px" }}
-        >
-          <div aria-hidden={true}>A</div>
-          <div aria-hidden={true}>B</div>
-          <div aria-hidden={true}>O</div>
-          <div aria-hidden={true}>U</div>
-          <div aria-hidden={true}>T</div>
-        </div>
+        <HeadingVertical heading="about"></HeadingVertical>
         <p>
           I am a cartoonist of surreal and abstract art under the monika Mob
           Earman. My focus on fun and expression combine with perspective and
