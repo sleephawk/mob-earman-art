@@ -101,18 +101,16 @@ h1 {
   }
 }
 
-.spotli {
-  position: relative;
-  width: 30%;
-}
-
 .spotliContainer {
-  display: flex;
-  justify-content: center;
-  gap: 5%;
-}
-.spotli:hover {
-  cursor: pointer;
+  &__spotli {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: auto;
+  }
+  &__spotli:hover {
+    cursor: pointer;
+  }
 }
 
 /** PAGES **/

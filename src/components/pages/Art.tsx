@@ -57,7 +57,7 @@ export default function Art() {
             />
             <Artwork
               onClick={() => turnOnSpotlight("topo")}
-              src={srcCatalogue.topo.whiteWall}
+              src={srcCatalogue.topo.noFrame}
               alt={srcCatalogue.topo.alt}
             />
             <Artwork

@@ -12,14 +12,12 @@ export default function Spotli({
       style={{ width: "100vw", position: "relative" }}
     >
       <img
-        className="spotli"
-        src={srcCatalogue[name].noFrame}
-        onClick={onClick}
-        alt=""
-      />
-      <img
-        className="spotli"
-        src={srcCatalogue[name].woodNFrame}
+        className="spotliContainer__spotli"
+        src={
+          srcCatalogue[name].woodNFrame
+            ? srcCatalogue[name].woodNFrame
+            : srcCatalogue[name].frame
+        }
         onClick={onClick}
         alt=""
       />

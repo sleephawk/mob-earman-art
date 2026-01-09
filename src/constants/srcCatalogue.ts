@@ -32,8 +32,8 @@ export const srcCatalogue: Catalogue = {
     alt: "a black and white pen abstract drawing of box shapes culminating in a sleeve of cloth, with two eyes at the head of the structure",
   },
   topo: {
-    noFrame: "",
-    woodNFrame: "",
+    noFrame: "/assets/art/photos/noFrame/topologyVents.jpg",
+    frame: "/assets/art/photos/frame/topoFrame.jpg",
     alt: "a surreal cartoonish watercolour and pen painting of two odd characters looking at each other longingly, one fractured, one towering.",
   },
   sucker: {
