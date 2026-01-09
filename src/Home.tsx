@@ -92,33 +92,42 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           border={false}
           content={
             <>
-              <img
-                className="nav__icon nav__icon--snoozy"
-                src={srcCatalogue.icons.snoozy}
-              />
-              <img
-                className="nav__icon nav__icon--mob"
-                src={srcCatalogue.icons.mob}
-              />
-              <div className="theme-box">
-                <Button
-                  className="theme-box__button theme-box__button--white"
-                  color={"white"}
-                  round={true}
-                  event={() => setMode("paper")}
-                ></Button>
-                <Button
-                  className="theme-box__button theme-box__button--green"
-                  color={"#379f79"}
-                  round={true}
-                  event={() => setMode("paint")}
-                ></Button>
-                <Button
-                  className="theme-box__button theme-box__button--orange"
-                  color={"orange"}
-                  round={true}
-                  event={() => setMode("primary")}
-                ></Button>
+              <div className="nav__container nav__container--left">
+                <img
+                  className="nav__icon nav__icon--snoozy"
+                  src={srcCatalogue.icons.snoozy}
+                />
+                <img
+                  className="nav__icon nav__icon--mob"
+                  src={srcCatalogue.icons.mob}
+                />
+                <div className="theme-box">
+                  <Button
+                    className="theme-box__button theme-box__button--white"
+                    color={"white"}
+                    round={true}
+                    event={() => setMode("paper")}
+                  ></Button>
+                  <Button
+                    className="theme-box__button theme-box__button--green"
+                    color={"#379f79"}
+                    round={true}
+                    event={() => setMode("paint")}
+                  ></Button>
+                  <Button
+                    className="theme-box__button theme-box__button--orange"
+                    color={"orange"}
+                    round={true}
+                    event={() => setMode("primary")}
+                  ></Button>
+                </div>
+              </div>
+              <div className="nav__container nav___container--right">
+                <img
+                  className="nav__icon--burg"
+                  src="/assets/mini-burg.png"
+                  alt=""
+                />
               </div>
             </>
           }
@@ -127,7 +136,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         </Nav>
         <div style={{ display: "flex" }}>
           <Nav
-            className={"main menu"}
+            className={"main-menu"}
             aria={"main menu"}
             border={false}
             anchors={[

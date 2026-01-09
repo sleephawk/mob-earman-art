@@ -20,15 +20,19 @@ export default function Nav({
       className={`${className} ${border && "cssStandardBorder"}`}
       aria-label={aria}
     >
-      <ul
-        style={{
-          listStyle: "none",
-          textDecoration: "none",
-          fontSize: "3rem",
-        }}
-      >
-        {anchors && anchors.map((a, i) => <li key={i}>{a}</li>)}
-      </ul>
+      {anchors && (
+        <ul
+          style={{
+            listStyle: "none",
+            textDecoration: "none",
+            fontSize: "3rem",
+          }}
+        >
+          {anchors.map((a, i) => (
+            <li key={i}>{a}</li>
+          ))}
+        </ul>
+      )}
       {content}
     </nav>
   );

@@ -69,19 +69,44 @@ h1 {
 
 .nav {
   display: flex;
-  position: relative;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  gap: 30px;
+  box-sizing: border-box;
+  @include media(1080px) {
+    margin-top: 40px;
+  }
+  &__container {
+    &--left {
+      display: flex;
+      position: relative;
+      align-items: center;
+      gap: 30px;
+      margin-left: 55px;
+      @include media(1080px) {
+        margin-left: 55px;
+      }
+    }
+  }
   &__icon {
     box-sizing: border-box;
-    &--snoozy {
+    width: 70px;
+    height: 70px;
+    @include media(820px) {
       width: 50px;
       height: 50px;
     }
-    &--mob {
+    &--burg {
+      display: none;
+      box-sizing: border-box;
+      margin-right: 50px;
       width: 50px;
-      height: 50px;
+      burg:hover {
+        cursor: pointer;
+      }
+      @include media(1080px) {
+        display: block;
+        width: 40px;
+      }
     }
   }
 }
@@ -109,10 +134,12 @@ h1 {
 
 .main-menu {
   z-index: 10;
-  top: 300px;
   position: relative;
   margin: 30px;
   width: 30%;
+  @include media(820px) {
+    display: none;
+  }
 }
 
 .spotliContainer {
