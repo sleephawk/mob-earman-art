@@ -5,12 +5,19 @@ type NavProps = {
   content?: ReactNode[];
   aria: string;
   border: boolean;
+  className: string;
 };
 
-export default function Nav({ border, content, anchors, aria }: NavProps) {
+export default function Nav({
+  border,
+  className,
+  content,
+  anchors,
+  aria,
+}: NavProps) {
   return (
     <nav
-      className={`main-menu ${border && "cssStandardBorder"}`}
+      className={`${className} ${border && "cssStandardBorder"}`}
       aria-label={aria}
     >
       <ul

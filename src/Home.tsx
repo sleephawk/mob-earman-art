@@ -100,6 +100,26 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 className="nav__icon nav__icon--mob"
                 src={srcCatalogue.icons.mob}
               />
+              <div className="theme-box">
+                <Button
+                  className="theme-box__button theme-box__button--white"
+                  color={"white"}
+                  round={true}
+                  event={() => setMode("paper")}
+                ></Button>
+                <Button
+                  className="theme-box__button theme-box__button--green"
+                  color={"#379f79"}
+                  round={true}
+                  event={() => setMode("paint")}
+                ></Button>
+                <Button
+                  className="theme-box__button theme-box__button--orange"
+                  color={"orange"}
+                  round={true}
+                  event={() => setMode("primary")}
+                ></Button>
+              </div>
             </>
           }
         >
@@ -107,8 +127,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         </Nav>
         <div style={{ display: "flex" }}>
           <Nav
-            className={"cssStandardBorder"}
+            className={"main menu"}
             aria={"main menu"}
+            border={false}
             anchors={[
               <Anchor cb={handleNavClick} link={"home"} />,
               <Anchor cb={handleNavClick} link={"about"} />,
@@ -118,30 +139,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               <Anchor cb={handleNavClick} link={"lore"} />,
               <Anchor cb={handleNavClick} link={"contact"} />,
             ]}
-            content={
-              <>
-                <div className="theme-box , cssStandardBorder">
-                  <Button
-                    className="theme-box__button theme-box__button--white"
-                    color={"white"}
-                    round={true}
-                    event={() => setMode("paper")}
-                  ></Button>
-                  <Button
-                    className="theme-box__button theme-box__button--green"
-                    color={"#379f79"}
-                    round={true}
-                    event={() => setMode("paint")}
-                  ></Button>
-                  <Button
-                    className="theme-box__button theme-box__button--orange"
-                    color={"orange"}
-                    round={true}
-                    event={() => setMode("primary")}
-                  ></Button>
-                </div>
-              </>
-            }
           ></Nav>
           {activePage ? (
             <SwitchTransition mode="out-in">
