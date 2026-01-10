@@ -87,7 +87,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
   return (
     <ModeContext.Provider value={mode}>
-      <div className="home" style={{ position: "relative" }}>
+      <div style={{ position: "relative" }}>
         <Nav
           aria="nav-bar"
           className="nav"
@@ -131,7 +131,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         >
           <></>
         </Nav>
-        <div style={{ display: "flex" }}>
+        <div className={"home"}>
           <Nav
             className={"main-menu"}
             aria={"main menu"}
