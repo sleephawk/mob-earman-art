@@ -5,11 +5,11 @@ export default function Carousel({ images }: { images: CarouselObject[] }) {
   return (
     <div className="carousel">
       <button className="carousel__button carousel__button--left">
-        <>&#8701</> {/* left */}
+        &lsaquo;
       </button>
 
       <button className="carousel__button carousel__button--right">
-        <>&#8702</> {/* right */}
+        &rsaquo;
       </button>
     </div>
   );
