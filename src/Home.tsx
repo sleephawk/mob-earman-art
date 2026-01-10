@@ -12,7 +12,7 @@ import { ClipNameContext } from "./ClipNameContext.ts";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
 import Shop from "./components/pages/Shop.tsx";
-import Events from "./components/pages/Events.tsx";
+
 import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
@@ -23,7 +23,7 @@ import ThemeMenu from "./components/core/ThemeMenu.tsx";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
-    "home" | "about" | "art" | "shop" | "events" | "lore" | "contact" | null
+    "home" | "about" | "art" | "shop" | "lore" | "contact" | null
   >(null);
   const [burgOrientation, setBurgOrientation] = useState<
     "normal" | "turn" | null
@@ -41,8 +41,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         return <Art />;
       case "shop":
         return <Shop />;
-      case "events":
-        return <Events />;
       case "lore":
         return <Lore />;
       case "contact":
@@ -143,7 +141,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               <Anchor cb={handleNavClick} link={"about"} />,
               <Anchor cb={handleNavClick} link={"art"} />,
               <Anchor cb={handleNavClick} link={"shop"} />,
-              <Anchor cb={handleNavClick} link={"events"} />,
               <Anchor cb={handleNavClick} link={"lore"} />,
               <Anchor cb={handleNavClick} link={"contact"} />,
             ]}
