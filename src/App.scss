@@ -93,14 +93,23 @@ h1 {
       height: 50px;
     }
     &--burg {
+      transition: transform 0.8s ease;
+      transform: rotate(0deg);
       display: none;
       box-sizing: border-box;
       margin-right: 50px;
       width: 50px;
-      @include media(1080px) {
+      z-index: 100;
+      @include media(820px) {
         display: block;
         width: 40px;
       }
+    }
+    &--burg.turn {
+      transform: rotate(90deg);
+    }
+    &--burg:hover {
+      cursor: pointer;
     }
   }
 }
@@ -210,7 +219,8 @@ h1 {
   }
 }
 
-/**TRANSITION**/
+/**TRANSITIONS**/
+/**fade**/
 
 .fade-enter {
   opacity: 0;

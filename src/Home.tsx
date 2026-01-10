@@ -1,6 +1,7 @@
 import MobCanvas from "./components/core/mobCanvas.tsx";
 import { ModeContext } from "./ModeContext.js";
 import {
+  use,
   useEffect,
   useRef,
   useState,
@@ -24,6 +25,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const [activePage, setActivePage] = useState<
     "home" | "about" | "art" | "shop" | "events" | "lore" | "contact" | null
   >(null);
+  const [burgOrientation, setBurgOrientation] = useState<
+    "normal" | "turn" | null
+  >("normal");
   const nodeRef = useRef<HTMLDivElement>(null);
 
   function renderPage(page: typeof activePage) {
@@ -112,9 +116,16 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               </div>
               <div className="nav__container nav___container--right">
                 <img
-                  className="nav__icon--burg"
+                  className={`nav__icon--burg ${
+                    burgOrientation === "turn" ? "turn" : ""
+                  }`}
                   src="/assets/mini-burg.png"
-                  alt="burger icon for menu on small screens"
+                  alt="burger icon"
+                  onClick={() =>
+                    setBurgOrientation(
+                      burgOrientation === "normal" ? "turn" : "normal"
+                    )
+                  }
                 />
               </div>
             </>
