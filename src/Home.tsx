@@ -12,7 +12,6 @@ import { ClipNameContext } from "./ClipNameContext.ts";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
 import Shop from "./components/pages/Shop.tsx";
-
 import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
@@ -20,6 +19,7 @@ import Nav from "./components/core/Nav.tsx";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
 import ThemeMenu from "./components/core/ThemeMenu.tsx";
+import MobilePages from "./components/core/MobilePages.tsx";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
@@ -163,6 +163,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
             renderPage(activePage)
           )}
         </div>
+        <MobilePages></MobilePages>
         <ClipNameContext.Provider value={clipName}>
           {/* <MobCanvas /> */}
         </ClipNameContext.Provider>

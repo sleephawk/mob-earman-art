@@ -114,6 +114,13 @@ h1 {
   }
 }
 
+.mobile-pages {
+  display: none;
+  @include media(820px) {
+    display: block;
+  }
+}
+
 .theme-box {
   color: black;
   padding-right: 40px;
@@ -183,12 +190,10 @@ h1 {
 .about {
   position: relative;
   margin: 50px;
-  box-sizing: border-boxf;
+  box-sizing: border-box;
   &__article {
     display: flex;
     position: relative;
-    top: 50%;
-    transform: translate(-0%, -50%);
     gap: 10px;
     width: 70%;
     align-content: center;
@@ -196,6 +201,9 @@ h1 {
     align-self: center;
     justify-self: center;
     padding: 30px;
+    @include media(820px) {
+      display: block;
+    }
   }
 }
 
@@ -238,4 +246,8 @@ h1 {
 .fade-exit-active {
   opacity: 0;
   transition: opacity 200ms ease;
+}
+
+.opacityTransition {
+  transition: opacity 1s ease;
 }
