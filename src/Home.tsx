@@ -7,7 +7,6 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
-import Button from "./components/basic/Button.tsx";
 import { ClipNameContext } from "./ClipNameContext.ts";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
@@ -19,6 +18,7 @@ import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
+import ThemeMenu from "./components/core/ThemeMenu.tsx";
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
@@ -101,32 +101,20 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                   className="nav__icon nav__icon--mob"
                   src={srcCatalogue.icons.mob}
                 />
-                <div className="theme-box">
-                  <Button
-                    className="theme-box__button theme-box__button--white"
-                    color={"white"}
-                    round={true}
-                    event={() => setMode("paper")}
-                  ></Button>
-                  <Button
-                    className="theme-box__button theme-box__button--green"
-                    color={"#379f79"}
-                    round={true}
-                    event={() => setMode("paint")}
-                  ></Button>
-                  <Button
-                    className="theme-box__button theme-box__button--orange"
-                    color={"orange"}
-                    round={true}
-                    event={() => setMode("primary")}
-                  ></Button>
-                </div>
+                <ThemeMenu
+                  cb={setMode}
+                  themes={[
+                    { color: "white", theme: "paper" },
+                    { color: "#379f79", theme: "paint" },
+                    { color: "orange", theme: "primary" },
+                  ]}
+                />
               </div>
               <div className="nav__container nav___container--right">
                 <img
                   className="nav__icon--burg"
                   src="/assets/mini-burg.png"
-                  alt=""
+                  alt="burger icon for menu on small screens"
                 />
               </div>
             </>

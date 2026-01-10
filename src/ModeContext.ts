@@ -1,3 +1,3 @@
-import { createContext, type RefObject } from "react";
+import { createContext } from "react";
 
 export const ModeContext = createContext<string | null>(null);
