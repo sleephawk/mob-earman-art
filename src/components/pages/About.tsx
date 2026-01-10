@@ -1,3 +1,5 @@
+import { srcCatalogue } from "../../constants/srcCatalogue";
+import Carousel from "../core/Carousel";
 import HeadingVertical from "../core/HeadingVertical";
 
 export default function About() {
@@ -7,7 +9,23 @@ export default function About() {
       aria-label="the about page with a bio of the artist and some details around the work"
     >
       <article className="cssStandardBorder page about__article">
-        <HeadingVertical heading="about"></HeadingVertical>
+        <div aria-hidden="true">
+          <HeadingVertical heading="about"></HeadingVertical>
+          <Carousel
+            images={[
+              {
+                src: srcCatalogue.matt.src,
+                alt: srcCatalogue.matt.alt,
+              },
+              { src: srcCatalogue.setup.src, alt: srcCatalogue.setup.alt },
+              { src: srcCatalogue.window.src, alt: srcCatalogue.window.alt },
+              {
+                src: srcCatalogue.topoWindow.src,
+                alt: srcCatalogue.topoWindow.alt,
+              },
+            ]}
+          ></Carousel>
+        </div>
         <p>
           I am a cartoonist of surreal and abstract art under the monika Mob
           Earman. My focus on fun and expression combine with perspective and

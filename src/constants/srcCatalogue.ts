@@ -58,4 +58,20 @@ export const srcCatalogue: Catalogue = {
     snoozy: "/assets/snoozecrowstudio.svg",
     mob: "/assets/fav3.png",
   },
+  topoWindow: {
+    src: "/assets/irl/openStudio/topoWindow.jpg",
+    alt: "the painting topology vents in the window of the electric elephant cafe london",
+  },
+  window: {
+    src: "/assets/irl/openStudio/window.jpg",
+    alt: "an array of 6 original pieces displayed in the window of the electric elephant cafe london",
+  },
+  matt: {
+    src: "/assets/irl/openStudio/matt.jpg",
+    alt: "artist Matt in a colourful unique jumper painting at their art stall in the electric elephant cafe london",
+  },
+  setup: {
+    src: "/assets/irl/openStudio/setup.jpg",
+    alt: "artist Matt in a colourful unique jumper painting signage in ready for the Open Studios in Illife Yard, London",
+  },
 };
