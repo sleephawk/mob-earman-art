@@ -2,13 +2,15 @@ import { useState } from "react";
 
 export default function ShopItem({
   src,
-  alt,
+  spotlightSrc,
+  spotlightAlt,
   productName,
   desc,
   href,
 }: {
   src: string;
-  alt: string;
+  spotlightSrc: string;
+  spotlightAlt: string;
   productName: string;
   desc: string;
   button: string;
@@ -19,7 +21,9 @@ export default function ShopItem({
     <>
       <div
         className={"shop-item cssStandardBorder"}
-        style={{ display: `${shopHighlight ? "none" : "flex"}` }}
+        style={{
+          display: `${shopHighlight ? "none" : "flex"}`,
+        }}
       >
         <div
           onClick={() => setShopHighlight(true)}
@@ -38,8 +42,6 @@ export default function ShopItem({
             role="button"
             style={{ textDecoration: "none" }}
             onClick={() => setShopHighlight(true)}
-            target="_blank"
-            rel="noopener noreferrer"
           >
             VIEW
           </a>
@@ -57,10 +59,36 @@ export default function ShopItem({
       </div>
       <div
         className="shop-highlight"
-        style={{ display: `${shopHighlight ? "block" : "none"}` }}
+        style={{
+          display: `${shopHighlight ? "flex" : "none"}`,
+        }}
       >
-        <img src="" alt="" />
+        <img
+          className="shop-highlight__image"
+          src={spotlightSrc}
+          alt={spotlightAlt}
+        />
         <p className="shop-highlight__description">{desc}</p>
+        <div aria-hidden="true" className="button-flex-box">
+          <a
+            className="shop-item__button shop-item__button--view"
+            role="button"
+            style={{ textDecoration: "none" }}
+            onClick={() => setShopHighlight(false)}
+          >
+            BACK
+          </a>
+          <a
+            className="shop-item__button shop-item__button--buy"
+            role="button"
+            style={{ textDecoration: "none" }}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            BUY
+          </a>
+        </div>
       </div>
     </>
   );

@@ -53,7 +53,10 @@ export const srcCatalogue: Catalogue = {
     composite: "/assets/art/calendar/calendar.jpg",
     altFront:
       "the front page of Mob's 2026 calendar with the art piece Topology Vents on the front",
-    info: "For now this is the info about the calendar",
+    info: `My 2026 calendar! Let the earmen guide you through the strange corners of the year with their odd spirit architecture. \n
+            Gelato Print Details: \n
+            High-Quality Printing: Printed in vibrant, full-color on 250gsm coated silk paper (100 lb cover) with professional packaging for a flawless delivery. \n
+            Eco-Friendly: Made with FSC/PESC-certified papers and local production to minimize our environmental impact. `,
   },
   icons: {
     snoozy: "/assets/snoozecrowstudio.svg",
@@ -75,17 +78,11 @@ export const srcCatalogue: Catalogue = {
     src: "/assets/irl/openStudio/setup.jpg",
     alt: "artist Matt in a colourful unique jumper painting signage in ready for the Open Studios in Illife Yard, London",
   },
-  calenDigi1: {
-    src: "/assets/art/calendar/digital/mobCalendarPreview1.jpg",
-    alt: "front page of the print-your-own calendar on Etsy, with the title calendar 2026 and art named Topology Vents on the front",
-  },
-  calenDigi2: {
-    src: "/assets/art/calendar/digital/mobCalendarPreview2.jpg",
-    alt: "January page of the print-your-own calendar including art named Creatures in the Fauna",
-  },
-  calenDigi3: {
+  calenDigi: {
     src: "/assets/art/calendar/digital/mobCalendarPreview3.jpg",
-    alt: "February page of the print-your-own calendar including art named The Odd Signal",
+    alt: "January page of the print-your-own calendar including art named Creatures in the Fauna",
+    info: `A digital download for those who want or need to print something themselves, be it cause Gelato doesn't post there (e.g. untuk teman-temanku di Indonesia) or because you gotta keep that budget on a leash, I got you covered! \n
+          Featuring 12 earmen summons for you enthusiasts or curiosity chasers. `,
   },
   calenDigiMini: {
     src: "/assets/art/calendar/digital/calenDigi.jpg",
