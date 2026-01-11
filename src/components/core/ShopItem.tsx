@@ -21,14 +21,16 @@ export default function ShopItem({
         className={"shop-item cssStandardBorder"}
         style={{ display: `${shopHighlight ? "none" : "flex"}` }}
       >
-        <img
-          onClick={() => setShopHighlight(true)}
-          src={src}
-          alt={alt}
-          className="shop-item__image"
-        />
+        <div className="shop-image-box">
+          <img
+            onClick={() => setShopHighlight(true)}
+            src={src}
+            alt={alt}
+            className="shop-item__image"
+          />
+        </div>
         <h2 onClick={() => setShopHighlight(true)}>{productName}</h2>
-        <div aria-hidden="true" className="button-flex-box" style={{}}>
+        <div aria-hidden="true" className="button-flex-box">
           <a
             className="shop-item__button shop-item__button--view"
             role="button"
@@ -56,7 +58,7 @@ export default function ShopItem({
         style={{ display: `${shopHighlight ? "block" : "none"}` }}
       >
         <img src="" alt="" />
-        <p className="shop-item__description">{desc}</p>
+        <p className="shop-highlight__description">{desc}</p>
       </div>
     </>
   );

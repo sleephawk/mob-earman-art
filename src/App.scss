@@ -235,6 +235,7 @@ p {
 .about {
   position: relative;
   margin: 50px;
+  padding: 50px;
   box-sizing: border-box;
   &__article {
     display: flex;
@@ -284,26 +285,28 @@ p {
   cursor: pointer;
 }
 
-.shopContainer {
+.shop-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   justify-content: center;
 }
+
 .shop {
   position: relative;
   margin: 0;
   padding: 0;
   align-items: center;
   gap: 20px;
+  padding: 50px;
   justify-content: center;
-  padding: 80px;
   flex-wrap: wrap;
 }
 
 .shop-item {
   display: flex;
+  background-color: teal;
   flex-direction: column;
   box-sizing: border-box;
   max-width: 400px;
@@ -326,35 +329,53 @@ p {
   &__image:hover {
     cursor: pointer;
   }
-  &__description {
-    text-align: left;
-    white-space: pre-line;
-  }
   &__button {
     font-size: 1.6rem;
     padding: 40px;
     color: whitesmoke;
+    background-color: #362f2a;
     border: solid rgba(0, 0, 0, 0);
     align-content: center;
     justify-content: center;
     height: 30px;
+    border-radius: 20px;
+    &--buy {
+      color: gold;
+    }
   }
   &__button:hover {
-    border-radius: 20px;
     border: 1.5px rgb(2, 236, 236) solid;
     color: gold;
   }
 }
 
+.shop-highlight {
+  &__description {
+    text-align: left;
+    white-space: pre-line;
+  }
+}
+.shop-image-box {
+  width: 100%;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+
 .button-flex-box {
   display: flex;
   gap: 20px;
+  height: 100%;
+  width: 100%;
   justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
 }
 
 .lore {
   position: relative;
-  top: 30px;
+  padding: 50px;
+
   overflow: hidden;
 
   &__quote {

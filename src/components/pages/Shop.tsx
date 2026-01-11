@@ -8,7 +8,7 @@ export default function Shop() {
       className="page shop"
     >
       <h1>SHOP</h1>
-      <div className="shopContainer">
+      <div className="shop-container">
         <ShopItem
           src={srcCatalogue.calendar.front}
           alt={srcCatalogue.calendar.altFront}
