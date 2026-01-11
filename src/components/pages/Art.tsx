@@ -1,13 +1,21 @@
 import Artwork from "../core/Artwork";
 import { srcCatalogue } from "../../constants/srcCatalogue";
 import Spotli from "../core/Spotli";
-import { useState } from "react";
+import { use, useState } from "react";
 export default function Art() {
   const [spotli, setSpotli] = useState<boolean>(false);
   const [name, setName] = useState<string>("rocky");
-  const turnOnSpotlight = (nameArg: string) => {
+  const [target, setTarget] = useState<string>("noFrame");
+  const [altA, setAltA] = useState<string>("alt");
+  const turnOnSpotlight = (
+    nameArg: string,
+    targetArg: string,
+    altArg: string
+  ) => {
     setSpotli(true);
     setName(nameArg);
+    setTarget(targetArg);
+    setAltA(altArg);
   };
 
   return (
@@ -19,7 +27,6 @@ export default function Art() {
           structures all garbled in rawest form.
         </p>
         <p>Prices on request via email. Commissions considered.</p>
-        <button onClick={() => setSpotli(false)}>Home</button>
       </div>
       <div
         style={{
@@ -36,48 +43,83 @@ export default function Art() {
         {!spotli && (
           <>
             <Artwork
-              onClick={() => turnOnSpotlight("rocky")}
+              onClick={() =>
+                turnOnSpotlight("rocky", "woodNFrame", srcCatalogue.rocky.alt)
+              }
               src={srcCatalogue.rocky.noFrame}
               alt={srcCatalogue.rocky.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("oddSignal")}
+              onClick={() =>
+                turnOnSpotlight(
+                  "oddSignal",
+                  "woodNFrame",
+                  srcCatalogue.oddSignal.alt
+                )
+              }
               src={srcCatalogue.oddSignal.noFrame}
               alt={srcCatalogue.oddSignal.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("topo")}
+              onClick={() =>
+                turnOnSpotlight("topo", "frame", srcCatalogue.topo.alt)
+              }
               src={srcCatalogue.topo.noFrame}
               alt={srcCatalogue.topo.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("autumn")}
+              onClick={() =>
+                turnOnSpotlight("autumn", "woodNFrame", srcCatalogue.autumn.alt)
+              }
               src={srcCatalogue.autumn.noFrame}
               alt={srcCatalogue.autumn.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("jellyfish")}
+              onClick={() =>
+                turnOnSpotlight(
+                  "jellyfish",
+                  "woodNFrame",
+                  srcCatalogue.jellyfish.alt
+                )
+              }
               src={srcCatalogue.jellyfish.noFrame}
               alt={srcCatalogue.jellyfish.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("october")}
+              onClick={() =>
+                turnOnSpotlight(
+                  "october",
+                  "woodNFrame",
+                  srcCatalogue.october.alt
+                )
+              }
               src={srcCatalogue.october.noFrame}
               alt={srcCatalogue.october.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("saturn")}
+              onClick={() =>
+                turnOnSpotlight("saturn", "woodNFrame", srcCatalogue.saturn.alt)
+              }
               src={srcCatalogue.saturn.noFrame}
               alt={srcCatalogue.saturn.alt}
             />
             <Artwork
-              onClick={() => turnOnSpotlight("sucker")}
+              onClick={() =>
+                turnOnSpotlight("sucker", "woodNFrame", srcCatalogue.saturn.alt)
+              }
               src={srcCatalogue.sucker.noFrame}
               alt={srcCatalogue.sucker.alt}
             />
           </>
         )}
-        {spotli && <Spotli name={name} onClick={() => setSpotli(false)} />}
+        {spotli && (
+          <Spotli
+            name={name}
+            target={target}
+            alt={altA}
+            onClick={() => setSpotli(false)}
+          />
+        )}
       </div>
 
       {/* context */}

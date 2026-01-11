@@ -26,6 +26,7 @@ body,
   padding: 0;
   color: whitesmoke;
   font-family: "Futura", Arial, sans-serif;
+  overflow: scroll;
 }
 
 button:hover {
@@ -54,6 +55,10 @@ body {
 
 h1 {
   letter-spacing: 10px;
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2rem;
 }
 
 p {
@@ -277,6 +282,74 @@ p {
 
 .artwork:hover {
   cursor: pointer;
+}
+
+.shopContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.shop {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  padding: 80px;
+  flex-wrap: wrap;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 400px;
+  height: 600px;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+  text-align: center;
+  @include media(820px) {
+    min-width: 450px;
+    height: 550px;
+  }
+  h2:hover {
+    cursor: pointer;
+  }
+  &__image {
+    max-width: 300px;
+    max-height: 200px;
+  }
+  &__image:hover {
+    cursor: pointer;
+  }
+  &__description {
+    text-align: left;
+    white-space: pre-line;
+  }
+  &__button {
+    font-size: 1.6rem;
+    padding: 40px;
+    color: whitesmoke;
+    border: solid rgba(0, 0, 0, 0);
+    align-content: center;
+    justify-content: center;
+    height: 30px;
+  }
+  &__button:hover {
+    border-radius: 20px;
+    border: 1.5px rgb(2, 236, 236) solid;
+    color: gold;
+  }
+}
+
+.button-flex-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .lore {

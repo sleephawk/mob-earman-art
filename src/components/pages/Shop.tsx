@@ -1,72 +1,35 @@
 import { srcCatalogue } from "../../constants/srcCatalogue";
+import ShopItem from "../core/ShopItem";
 
 export default function Shop() {
   return (
     <section
-      aria-label="a catalogue of Mob Earman named original pieces."
-      className="page"
-      style={{
-        position: "relative",
-
-        display: "flex",
-        margin: 0,
-        padding: 0,
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        overflow: "auto",
-      }} // maybe chonk into css
+      aria-label="the shop front for all of Mob Earman's current pieces"
+      className="page shop"
     >
       <h1>SHOP</h1>
-
-      <div
-        className="calendar cssStandardBorder"
-        style={{
-          display: "flex",
-          padding: "30px",
-          margin: "20px",
-          backgroundImage: "url(/assets/bgs/basePaper.png)",
-        }}
-      >
-        <div>
-          <p style={{ color: "black", marginTop: "20px" }}>
-            {srcCatalogue.calendar.info}
-          </p>
-          <div
-            aria-hidden="true"
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-          >
-            <button>GET IT ON ETSY</button>
-            <button>RETURN</button>
-          </div>
-        </div>
-        <div
-          className="calendar cssStandardBorder"
-          style={{
-            width: "80%",
-            maxHeight: "800px",
-            display: "flex",
-            padding: "30px",
-            margin: "20px",
-            backgroundColor: "#c28335",
-          }}
-        >
-          <img
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            src={srcCatalogue.calendar.front}
-            alt={srcCatalogue.calendar.alt}
-          />
-          <img
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            src={srcCatalogue.calendar.jan}
-            alt={srcCatalogue.calendar.altFront}
-          />
-          <img
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            src={srcCatalogue.calendar.feb}
-            alt={srcCatalogue.calendar.altFront}
-          />
-        </div>
+      <div className="shopContainer">
+        <ShopItem
+          src={srcCatalogue.calendar.front}
+          alt={srcCatalogue.calendar.altFront}
+          productName="2026 Printed Calendar"
+          desc={`My 2026 calendar! Let the earmen guide you through the strange corners of the year with their odd spirit architecture. \n
+            Gelato Print Details: \n
+            High-Quality Printing: Printed in vibrant, full-color on 250gsm coated silk paper (100 lb cover) with professional packaging for a flawless delivery. \n
+            Eco-Friendly: Made with FSC/PESC-certified papers and local production to minimize our environmental impact. `}
+          href="https://mobearman.etsy.com/uk/listing/4433019455/calendar-2026"
+          button="Buy on Etsy"
+        />
+        <ShopItem
+          src={srcCatalogue.calenDigi1.src}
+          alt={srcCatalogue.calenDigi1.alt}
+          productName="2026 Digital Calendar (PDF Download)"
+          desc={`A digital download for those who want or need to print something themselves, be it cause Gelato doesn't post there (e.g. untuk teman-temanku di Indonesia) \n
+            or because you gotta keep that budget on a leash, I got you covered! \n
+          Featuring 12 earmen summons for you enthusiasts or curiosity chasers. `}
+          href="https://mobearman.etsy.com/uk/listing/4433153595/digital-calendar-pdf-download"
+          button="Buy on Etsy"
+        />
       </div>
     </section>
   );

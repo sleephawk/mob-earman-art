@@ -74,4 +74,16 @@ export const srcCatalogue: Catalogue = {
     src: "/assets/irl/openStudio/setup.jpg",
     alt: "artist Matt in a colourful unique jumper painting signage in ready for the Open Studios in Illife Yard, London",
   },
+  calenDigi1: {
+    src: "/assets/art/calendar/digital/mobCalendarPreview1.jpg",
+    alt: "front page of the print-your-own calendar on Etsy, with the title calendar 2026 and art named Topology Vents on the front",
+  },
+  calenDigi2: {
+    src: "/assets/art/calendar/digital/mobCalendarPreview2.jpg",
+    alt: "January page of the print-your-own calendar including art named Creatures in the Fauna",
+  },
+  calenDigi3: {
+    src: "/assets/art/calendar/digital/mobCalendarPreview3.jpg",
+    alt: "February page of the print-your-own calendar including art named The Odd Signal",
+  },
 };
