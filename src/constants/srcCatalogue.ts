@@ -50,6 +50,7 @@ export const srcCatalogue: Catalogue = {
     front: "/assets/art/calendar/calendarFront.jpeg",
     jan: "/assets/art/calendar/jan.jpeg",
     feb: "/assets/art/calendar/feb.jpeg",
+    composite: "/assets/art/calendar/calendar.jpg",
     altFront:
       "the front page of Mob's 2026 calendar with the art piece Topology Vents on the front",
     info: "For now this is the info about the calendar",
@@ -85,5 +86,9 @@ export const srcCatalogue: Catalogue = {
   calenDigi3: {
     src: "/assets/art/calendar/digital/mobCalendarPreview3.jpg",
     alt: "February page of the print-your-own calendar including art named The Odd Signal",
+  },
+  calenDigiMini: {
+    src: "/assets/art/calendar/digital/calenDigi.jpg",
+    alt: "Front page of the PDF calendar condensed for shop view",
   },
 };

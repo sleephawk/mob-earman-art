@@ -289,7 +289,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  align-items: center;
   justify-content: center;
 }
 
@@ -309,35 +308,44 @@ p {
   background-color: teal;
   flex-direction: column;
   box-sizing: border-box;
-  max-width: 400px;
-  height: 600px;
   align-items: center;
-  padding: 30px;
+  height: 500px;
+  min-width: 350px;
+  padding: 0 30px 30px 30px;
+  max-width: 40%;
   overflow: hidden;
   text-align: center;
   @include media(820px) {
-    min-width: 450px;
+    max-width: 80%;
     height: 550px;
+    padding: 0;
   }
-  h2:hover {
+  &__heading {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  &__heading:hover {
     cursor: pointer;
   }
-  &__image {
-    max-width: 300px;
-    max-height: 200px;
+  &__image-box {
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 300px;
+    max-height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: whitesmoke;
   }
-  &__image:hover {
+  &__image-box:hover {
     cursor: pointer;
   }
   &__button {
+    display: flex;
     font-size: 1.6rem;
-    padding: 40px;
+    padding: 20px;
     color: whitesmoke;
     background-color: #362f2a;
     border: solid rgba(0, 0, 0, 0);
-    align-content: center;
-    justify-content: center;
-    height: 30px;
     border-radius: 20px;
     &--buy {
       color: gold;
@@ -354,11 +362,6 @@ p {
     text-align: left;
     white-space: pre-line;
   }
-}
-.shop-image-box {
-  width: 100%;
-  border-radius: 20px;
-  background-color: whitesmoke;
 }
 
 .button-flex-box {

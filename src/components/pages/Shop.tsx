@@ -10,9 +10,9 @@ export default function Shop() {
       <h1>SHOP</h1>
       <div className="shop-container">
         <ShopItem
-          src={srcCatalogue.calendar.front}
+          src={srcCatalogue.calendar.composite}
           alt={srcCatalogue.calendar.altFront}
-          productName="2026 Printed Calendar"
+          productName="2026 Calendar"
           desc={`My 2026 calendar! Let the earmen guide you through the strange corners of the year with their odd spirit architecture. \n
             Gelato Print Details: \n
             High-Quality Printing: Printed in vibrant, full-color on 250gsm coated silk paper (100 lb cover) with professional packaging for a flawless delivery. \n
@@ -21,9 +21,9 @@ export default function Shop() {
           button="Buy on Etsy"
         />
         <ShopItem
-          src={srcCatalogue.calenDigi1.src}
-          alt={srcCatalogue.calenDigi1.alt}
-          productName="2026 Digital Calendar (PDF Download)"
+          src={srcCatalogue.calenDigiMini.src}
+          alt={srcCatalogue.calenDigiMini.alt}
+          productName="PDF Calendar"
           desc={`A digital download for those who want or need to print something themselves, be it cause Gelato doesn't post there (e.g. untuk teman-temanku di Indonesia) \n
             or because you gotta keep that budget on a leash, I got you covered! \n
           Featuring 12 earmen summons for you enthusiasts or curiosity chasers. `}
