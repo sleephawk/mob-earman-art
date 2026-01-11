@@ -5,8 +5,11 @@ export default function Lore() {
     <section className="page lore">
       {/*these are the same style rules as ABOUT so make into page component rulings*/}
       <article className="cssStandardBorder lore__article">
-        <HeadingVertical heading="lore"></HeadingVertical>
-        <p style={{ fontSize: "1.5rem", margin: "30px" }}>
+        <HeadingVertical
+          classes="vertical-heading-large"
+          heading="lore"
+        ></HeadingVertical>
+        <p className="lore__quote">
           <em>
             "The night I decided to meet the bird known as Mob Earman was the
             same night the ghost greeted me at 3:15 with a new friend..."
@@ -24,28 +27,20 @@ export default function Lore() {
           started arriving with, well, <em>other</em> things. After seeing one
           of these things painted and named an 'earman' on a band poster for a
           local artist known as
-          <strong>
-            <span style={{ fontSize: "1rem" }}> Mob Earman</span>
-          </strong>
-          , the rare magpie-wheatear, Snoozy knew his week was going to play out
-          more strangely than usual.
+          <strong>Mob Earman</strong>, the rare magpie-wheatear, Snoozy knew his
+          week was going to play out more strangely than usual.
           <br></br>
           <br></br>
-          This is the story of{" "}
-          <strong>
-            <span style={{ fontSize: "1rem" }}>Snoozy & Mob</span>
-          </strong>
-          . It is a story about music, the unknown, and of all things, the
-          balancing of those two forces tranquility and chaos.
+          This is the story of <strong>Snoozy & Mob</strong>. It is a story
+          about music, the unknown, and of all things, the balancing of those
+          two forces tranquility and chaos.
           <br></br>
           <br></br>
           It is <em>also</em> a story I don't want to tell with one medium. Yes
           yes, you'll get your words, but I want to show you{" "}
           <strong>
-            <span style={{ fontSize: "1rem" }}>
-              the songs, the summonings, the world in 3d video game form, the
-              magic as it happened for them
-            </span>
+            the songs, the summonings, the world in 3d video game form, the
+            magic as it happened for them
           </strong>
           . You will see this tale from multiple angles, and every follow, sale
           and share will support its creation. If you like the sound of that,

@@ -12,7 +12,7 @@ export default function Art() {
 
   return (
     <section aria-label="a catalogue of Mob Earman named original pieces.">
-      <div className="artworkPage">
+      <div className="artworkPage page">
         <h1>ARTWORK</h1>
         <p>
           Each piece is hand painted or penned, summoning earmen around existing

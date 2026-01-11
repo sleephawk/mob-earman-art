@@ -3,3 +3,8 @@
     @content;
   }
 }
+@mixin mediaMin($break) {
+  @media (min-width: $break) {
+    @content;
+  }
+}

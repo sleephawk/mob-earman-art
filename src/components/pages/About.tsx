@@ -9,8 +9,11 @@ export default function About() {
       aria-label="the about page with a bio of the artist and some details around the work"
     >
       <article className="cssStandardBorder page about__article">
-        <div aria-hidden="true">
-          <HeadingVertical heading="about"></HeadingVertical>
+        <div aria-hidden="true" className="about-box-carousel">
+          <HeadingVertical
+            classes="vertical-heading-large"
+            heading="about"
+          ></HeadingVertical>
           <Carousel
             images={[
               {
@@ -28,16 +31,18 @@ export default function About() {
         </div>
         <p>
           I am a cartoonist of surreal and abstract art under the monika Mob
-          Earman. My focus on fun and expression combine with perspective and
-          composition play to make unique geometric oddscapes, critters, knots
-          &, ultimately, <em>earmen</em>,<br></br>
+          Earman. My focus is on dream expression, perspective and composition
+          play to make unique geometric oddscapes & critters.
           <br></br>
           My approach is therapeutic, using them as a coping mechanism for the
           daily symptoms of ADHD and Autism, which have been the subject of a
-          life of searching for relief. Since diagnosis, I changed my approach
-          to creating art, since I found the pressure of perfectionism is
-          debilitating, whilst creating these pieces is a form of low pressure
-          meditation that yields unique, insightful results every time.
+          life of searching for relief.
+          <br></br>
+          <br></br>
+          Since diagnosis in 2025, I changed my approach to creating art, since
+          I found the pressure of perfectionism is debilitating, whilst creating
+          these pieces is a form of low pressure meditation that yields unique,
+          insightful results every time.
           <br></br>
           <br></br>
           They are experimental, with the simple motif of large, often green,
@@ -53,8 +58,11 @@ export default function About() {
           has a story that's intertwined with the character Snoozecrow, and will
           be soundtracked by my music persona Sleephawk. Yes, I am three birds
           in a trenchcoat. Needless to say, this is only gonna grow, however
-          slow or chaotically. For now, enjoy the strange world of the earmen,
-          created via the soothing of my central nervous system.
+          slow or chaotically.
+          <br></br>
+          <br></br>
+          For now, enjoy the strange world of the earmen, created via the
+          soothing of my central nervous system.
         </p>
       </article>
     </section>

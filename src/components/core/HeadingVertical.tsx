@@ -1,10 +1,17 @@
-export default function HeadingVertical({ heading }: { heading: string }) {
+export default function HeadingVertical({
+  heading,
+  classes,
+}: {
+  heading: string;
+  classes?: string;
+}) {
   const headingL = heading.toUpperCase();
   const arr: string[] = headingL.split("");
   return (
     <>
       <h1 hidden={true}>{heading}</h1>
       <div
+        className={`vertical-heading ${classes}`}
         aria-hidden={true}
         style={{ fontSize: "40px", textAlign: "center", padding: "30px" }}
       >

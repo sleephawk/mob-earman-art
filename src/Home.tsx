@@ -1,7 +1,6 @@
 import MobCanvas from "./components/core/mobCanvas.tsx";
 import { ModeContext } from "./ModeContext.js";
 import {
-  use,
   useEffect,
   useRef,
   useState,
@@ -150,7 +149,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               <CSSTransition
                 key={activePage}
                 nodeRef={nodeRef}
-                timeout={800}
+                timeout={100}
                 classNames="fade"
                 unmountOnExit
               >

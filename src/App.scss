@@ -31,7 +31,7 @@ body,
 button:hover {
   cursor: pointer;
   background-color: black;
-  border: 1.5px blue solid;
+  border: 1.5px rgb(2, 236, 236) solid;
 }
 
 button {
@@ -56,6 +56,13 @@ h1 {
   letter-spacing: 10px;
 }
 
+p {
+  font-size: 1.3rem;
+  @include mediaMin(1080px) {
+    font-size: 1.6rem;
+  }
+}
+
 /** CORE **/
 
 .cssStandardBorder {
@@ -65,6 +72,31 @@ h1 {
   overflow: scroll;
   max-width: 100%;
   object-fit: contain;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__button {
+    height: 100px;
+    z-index: 10;
+    font-size: 30px;
+    &--left {
+      position: absolute;
+      bottom: 0%;
+    }
+    &--right {
+      position: absolute;
+      bottom: 00%;
+      transform: translate(-100%, 0%);
+    }
+  }
 }
 
 .nav {
@@ -111,13 +143,6 @@ h1 {
     &--burg:hover {
       cursor: pointer;
     }
-  }
-}
-
-.mobile-pages {
-  display: none;
-  @include media(820px) {
-    display: block;
   }
 }
 
@@ -173,6 +198,16 @@ h1 {
   }
 }
 
+.vertical-heading {
+  font-size: 40px;
+  text-align: center;
+  padding: 30px;
+}
+
+.vertical-heading-large {
+  font-size: 70px !important;
+}
+
 /** PAGES **/
 
 .page {
@@ -183,6 +218,13 @@ h1 {
 
 .home {
   display: flex;
+}
+
+.mobile-pages {
+  display: none;
+  @include media(820px) {
+    display: block;
+  }
 }
 
 .about {
@@ -203,6 +245,12 @@ h1 {
       display: block;
     }
   }
+}
+
+.about-box-carousel {
+  display: flex;
+  height: 600px;
+  margin-bottom: 30px;
 }
 
 .contact {
@@ -235,6 +283,14 @@ h1 {
   position: relative;
   top: 30px;
   overflow: hidden;
+
+  &__quote {
+    margin: 30px;
+    font-size: 40px;
+    @include mediaMin(1920px) {
+      font-size: 50px;
+    }
+  }
 
   &__article {
     display: flex;
