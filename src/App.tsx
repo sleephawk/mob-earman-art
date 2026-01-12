@@ -3,7 +3,7 @@ import "./App.scss";
 import { Home } from "./Home";
 
 function App() {
-  const [background, setBackground] = useState<string | undefined>("#c28335");
+  const [background, setBackground] = useState<string | undefined>("#362f2a");
   function handleCB(bg: string): void {
     setBackground(bg);
   }

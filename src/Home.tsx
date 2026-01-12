@@ -58,7 +58,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   useEffect(() => {
     const backgrounds = {
       paper: "black",
-      primary: "#9c692b",
+      primary: "#c18133",
       paint: "#379f79",
     };
     const animations = {
@@ -105,9 +105,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 <ThemeMenu
                   cb={setMode}
                   themes={[
-                    { color: "white", theme: "paper" },
+                    { color: "#362f2a", theme: "paper" },
                     { color: "#379f79", theme: "paint" },
-                    { color: "orange", theme: "primary" },
+                    { color: "#c18133", theme: "primary" },
                   ]}
                 />
               </div>
