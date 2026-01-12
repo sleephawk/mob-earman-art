@@ -58,7 +58,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   useEffect(() => {
     const backgrounds = {
       paper: "black",
-      primary: "#c28335",
+      primary: "#9c692b",
       paint: "#379f79",
     };
     const animations = {
