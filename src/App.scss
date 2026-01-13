@@ -91,19 +91,35 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @include media(820px) {
+      object-fit: contain;
+    }
   }
   &__button {
     height: 100px;
     z-index: 10;
     font-size: 30px;
+    @include media(820px) {
+      height: unset;
+      max-height: 100%;
+      width: unset;
+      border-radius: 0;
+      justify-items: center;
+    }
     &--left {
       position: absolute;
       bottom: 0%;
+      @include media(820px) {
+        bottom: 3%;
+      }
     }
     &--right {
       position: absolute;
-      bottom: 00%;
+      bottom: 0%;
       transform: translate(-100%, 0%);
+      @include media(820px) {
+        bottom: 3%;
+      }
     }
   }
 }
@@ -217,6 +233,7 @@ p {
   display: none;
   @include media(820px) {
     display: block;
+    text-align: center;
   }
 }
 
@@ -269,15 +286,21 @@ p {
     justify-self: center;
     padding: 30px;
     @include media(820px) {
+      flex-direction: column;
       display: block;
+      width: 90%;
     }
   }
 }
 
 .about-box-carousel {
   display: flex;
+  flex-wrap: wrap;
   height: 600px;
   margin-bottom: 30px;
+  @include media(820px) {
+    height: 200%;
+  }
 }
 
 .contact {
@@ -422,8 +445,8 @@ p {
 .lore {
   position: relative;
   padding: 50px;
-
   overflow: hidden;
+  background-color: black;
 
   &__quote {
     margin: 30px;
@@ -437,6 +460,9 @@ p {
     display: flex;
     padding: 20px;
     margin: 30px;
+    @include media(820px) {
+      flex-direction: column;
+    }
   }
 }
 

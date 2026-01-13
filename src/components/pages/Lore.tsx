@@ -3,7 +3,6 @@ import HeadingVertical from "../core/HeadingVertical";
 export default function Lore() {
   return (
     <section className="page lore">
-      {/*these are the same style rules as ABOUT so make into page component rulings*/}
       <article className="cssStandardBorder lore__article">
         <HeadingVertical
           classes="vertical-heading-large"
