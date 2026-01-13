@@ -9,7 +9,7 @@ export default function HeadingVertical({
   const arr: string[] = headingL.split("");
   return (
     <>
-      <h1 hidden={true}>{heading}</h1>
+      <h1 className="reg-heading">{headingL}</h1>
       <div
         className={`vertical-heading ${classes}`}
         aria-hidden={true}

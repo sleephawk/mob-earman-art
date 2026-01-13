@@ -14,7 +14,7 @@ import { ClipNameContext } from "../../ClipNameContext";
 
 export function MobV6(props) {
   const group = React.useRef(null);
-  const { scene, animations } = useGLTF("assets/glb/MobV5.2-transformed.glb");
+  const { scene, animations } = useGLTF("assets/glb/MobV5.3-transformed.glb");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
   const { actions, mixer } = useAnimations(animations, group);
@@ -427,4 +427,4 @@ export function MobV6(props) {
   );
 }
 
-useGLTF.preload("/assets/glb/MobV5.2-transformed.glb");
+useGLTF.preload("/assets/glb/MobV5.3-transformed.glb");

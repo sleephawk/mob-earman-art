@@ -213,10 +213,20 @@ p {
   }
 }
 
+.reg-heading {
+  display: none;
+  @include media(820px) {
+    display: block;
+  }
+}
+
 .vertical-heading {
   font-size: 40px;
   text-align: center;
   padding: 30px;
+  @include media(820px) {
+    display: none;
+  }
 }
 
 .vertical-heading-large {
