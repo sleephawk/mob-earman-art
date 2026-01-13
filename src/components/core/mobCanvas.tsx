@@ -9,7 +9,6 @@ export default function MobCanvas() {
         top: "0",
         width: "100%",
         height: "100vh",
-        border: "solid blue",
       }}
       id="canvas-container"
     >

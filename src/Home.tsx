@@ -15,6 +15,7 @@ import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
+import { Backgrounds } from "./constants/backgrounds.ts";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
 import ThemeMenu from "./components/core/ThemeMenu.tsx";
@@ -56,11 +57,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   };
 
   useEffect(() => {
-    const backgrounds = {
-      paper: "black",
-      primary: "#c18133",
-      paint: "#379f79",
-    };
     const animations = {
       idle: "Idle",
       checkout: "checkout",
@@ -73,13 +69,13 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
     switch (mode) {
       case "paint":
-        handleCase(backgrounds.paint, animations.idle);
+        handleCase(Backgrounds.PAINT, animations.idle);
         break;
       case "paper":
-        handleCase(backgrounds.paper, animations.idle);
+        handleCase(Backgrounds.PAPER, animations.idle);
         break;
       case "primary":
-        handleCase(backgrounds.primary, animations.idle);
+        handleCase(Backgrounds.PRIMARY, animations.idle);
         break;
     }
   }, [mode, cb]);
@@ -101,13 +97,16 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 <img
                   className="nav__icon nav__icon--mob"
                   src={srcCatalogue.icons.mob}
+                  onClick={() => {
+                    setClipName("checkout");
+                  }}
                 />
                 <ThemeMenu
                   cb={setMode}
                   themes={[
-                    { color: "#362f2a", theme: "paper" },
-                    { color: "#379f79", theme: "paint" },
-                    { color: "#c18133", theme: "primary" },
+                    { color: Backgrounds.PAPER, theme: "paper" },
+                    { color: Backgrounds.PAINT, theme: "paint" },
+                    { color: Backgrounds.PRIMARY, theme: "primary" },
                   ]}
                 />
               </div>
@@ -163,8 +162,10 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           )}
         </div>
         <MobilePages></MobilePages>
-        <ClipNameContext.Provider value={clipName}>
-          {/* <MobCanvas /> */}
+        <ClipNameContext.Provider
+          value={{ clip: clipName, setClip: setClipName }}
+        >
+          <MobCanvas />
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>

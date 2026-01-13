@@ -1,3 +1,11 @@
-import { createContext } from "react";
+import { createContext, type Dispatch, type SetStateAction } from "react";
 
-export const ClipNameContext = createContext<string | null>(null);
+type ClipNameContextType = {
+  clip: string;
+  setClip: Dispatch<SetStateAction<string>>;
+};
+
+export const ClipNameContext = createContext<ClipNameContextType>({
+  clip: "idle",
+  setClip: () => {}, // placeholder, never actually used
+});

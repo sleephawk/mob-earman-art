@@ -1,10 +1,10 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 // import MobPaper from "../MobPaper";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import MobV2 from "../MobV2";
+
+import { MobV6 } from "./MobV6";
 
 export default function Mob3d() {
-  console.dir(MobV2);
   /**workflow for debug helpers:
    * 1) Create a reference to store the light so it doent change with state
    * useHelper, the drei hook, allows us to pass in the ref and make a pointer
@@ -23,8 +23,7 @@ export default function Mob3d() {
         />
         <ambientLight intensity={2} />
       </EffectComposer>
-      <MobV2 scale={2}></MobV2>
-      {/* <MobV2 scale={2.5} /> */}
+      <MobV6 scale={5}></MobV6>
 
       <OrbitControls enableZoom={true} />
     </>
