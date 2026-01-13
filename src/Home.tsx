@@ -165,7 +165,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >
-          {/* <MobCanvas /> */}
+          <MobCanvas />
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>
