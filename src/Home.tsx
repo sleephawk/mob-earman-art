@@ -24,7 +24,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
     "home" | "about" | "art" | "shop" | "lore" | "contact" | null
-  >(null);
+  >("home");
   const [burgOrientation, setBurgOrientation] = useState<
     "normal" | "turn" | null
   >("normal");
@@ -33,7 +33,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   function renderPage(page: typeof activePage) {
     switch (page) {
       case "home":
-        setActivePage(null);
         return null;
       case "about":
         return <About />;
@@ -46,7 +45,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       case "contact":
         return <Contact />;
       default:
-        return null;
+        return;
     }
   }
   const [mode, setMode]: [string, Dispatch<SetStateAction<string>>] =
@@ -80,6 +79,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     }
   }, [mode, cb]);
 
+  console.log(activePage);
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
@@ -165,7 +165,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >
-          <MobCanvas />
+          <MobCanvas page={activePage} />
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>

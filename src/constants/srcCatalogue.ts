@@ -88,4 +88,10 @@ export const srcCatalogue: Catalogue = {
     src: "/assets/art/calendar/digital/calenDigi.jpg",
     alt: "Front page of the PDF calendar condensed for shop view",
   },
+  videoBackgrounds: {
+    orange: "/assets/webm/orangeBackground.webm",
+    green: "/assets/webm/greenBackground.webm",
+    black: "/assets/webm/blackBackground.webm",
+    paper: "/assets/webm/paperBackground.webm",
+  },
 };
