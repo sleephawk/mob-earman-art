@@ -1,29 +1,22 @@
 import Mob3d from "../models/Mob3d.js";
 import { Canvas } from "@react-three/fiber";
 import { ModeContext } from "../../ModeContext.js";
-import { useContext, useRef, type ReactNode } from "react";
+import { useContext, useEffect, useRef, type ReactNode } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-
+import VideoBackground from "./VideoBackground.tsx";
+import { srcCatalogue } from "../../constants/srcCatalogue.ts";
 
 export default function MobCanvas({ page }: { page: string | null }) {
   const mode = useContext(ModeContext);
   const ref = useRef(null);
   console.log(mode);
   console.log(page);
-
-const handleMode = (): ReactNode => {
-  switch(mode) {
-    case "primary": 
-    return <BackgroundVideo src={}>
-  }
-}
-
   return (
     <SwitchTransition mode="out-in">
       <CSSTransition
         key={page}
-        nodeRef={mode}
-        timeout={100}
+        nodeRef={ref}
+        timeout={200}
         classNames="fade"
         unmountOnExit
       >
@@ -37,7 +30,15 @@ const handleMode = (): ReactNode => {
               </Canvas>
             </div>
           )}
-          {page && !page?.includes("home") && }
+          {page && !page?.includes("home") && mode?.includes("paint") && (
+            <VideoBackground src={srcCatalogue.videoBackgrounds.green} />
+          )}
+          {page && !page?.includes("home") && mode?.includes("primary") && (
+            <VideoBackground src={srcCatalogue.videoBackgrounds.orange} />
+          )}
+          {page && !page?.includes("home") && mode?.includes("paper") && (
+            <VideoBackground src={srcCatalogue.videoBackgrounds.black} />
+          )}
         </div>
       </CSSTransition>
     </SwitchTransition>
