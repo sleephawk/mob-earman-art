@@ -8,7 +8,7 @@ export default function Shop() {
       className="page shop"
     >
       <h1>SHOP</h1>
-      <p>
+      <p className="cssStandardBorder shop__copy">
         Brand new shop over here, passionate about not filling your houses up
         with junk, so taking the time to make some meaningful products for you
         all, starting out with a year full of summons, in calendar form.

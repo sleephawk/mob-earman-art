@@ -215,7 +215,15 @@ p {
   width: 100%;
 
   &__spotli {
-    position: relative;
+    position: fixed;
+    height: 80%;
+    object-fit: contain;
+    border: solid 10px black;
+    background-color: black;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 900px;
     @include media(820px) {
       width: 80%;
@@ -305,6 +313,7 @@ p {
 }
 
 .contact {
+  background-color: rgb(54, 47, 42, 0.8);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -325,6 +334,10 @@ p {
 
 .artworkPage {
   padding: 50px;
+  &__copy {
+    padding: 30px;
+    background-color: rgb(54, 47, 42, 0.8);
+  }
 }
 
 .artwork:hover {
@@ -347,8 +360,10 @@ p {
   padding: 50px;
   justify-content: center;
   flex-wrap: wrap;
-  p {
-    width: 70%;
+  &__copy {
+    width: 75%;
+    padding: 30px;
+    background-color: rgb(54, 47, 42, 0.8);
   }
 }
 

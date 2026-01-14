@@ -22,11 +22,13 @@ export default function Art() {
     <section aria-label="a catalogue of Mob Earman named original pieces.">
       <div className="artworkPage page">
         <h1>ARTWORK</h1>
-        <p>
+        <p className="cssStandardBorder artworkPage__copy">
           Each piece is hand painted or penned, summoning earmen around existing
           structures all garbled in rawest form.
+          <br />
+          <br />
+          Prices on request via email. Commissions considered.
         </p>
-        <p>Prices on request via email. Commissions considered.</p>
       </div>
       <div
         style={{
@@ -40,78 +42,72 @@ export default function Art() {
           alignItems: "center",
         }}
       >
-        {!spotli && (
-          <>
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight("rocky", "woodNFrame", srcCatalogue.rocky.alt)
-              }
-              src={srcCatalogue.rocky.noFrame}
-              alt={srcCatalogue.rocky.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight(
-                  "oddSignal",
-                  "woodNFrame",
-                  srcCatalogue.oddSignal.alt
-                )
-              }
-              src={srcCatalogue.oddSignal.noFrame}
-              alt={srcCatalogue.oddSignal.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight("topo", "frame", srcCatalogue.topo.alt)
-              }
-              src={srcCatalogue.topo.noFrame}
-              alt={srcCatalogue.topo.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight("autumn", "woodNFrame", srcCatalogue.autumn.alt)
-              }
-              src={srcCatalogue.autumn.noFrame}
-              alt={srcCatalogue.autumn.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight(
-                  "jellyfish",
-                  "woodNFrame",
-                  srcCatalogue.jellyfish.alt
-                )
-              }
-              src={srcCatalogue.jellyfish.noFrame}
-              alt={srcCatalogue.jellyfish.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight(
-                  "october",
-                  "woodNFrame",
-                  srcCatalogue.october.alt
-                )
-              }
-              src={srcCatalogue.october.noFrame}
-              alt={srcCatalogue.october.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight("saturn", "woodNFrame", srcCatalogue.saturn.alt)
-              }
-              src={srcCatalogue.saturn.noFrame}
-              alt={srcCatalogue.saturn.alt}
-            />
-            <Artwork
-              onClick={() =>
-                turnOnSpotlight("sucker", "woodNFrame", srcCatalogue.saturn.alt)
-              }
-              src={srcCatalogue.sucker.noFrame}
-              alt={srcCatalogue.sucker.alt}
-            />
-          </>
-        )}
+        <>
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("rocky", "woodNFrame", srcCatalogue.rocky.alt)
+            }
+            src={srcCatalogue.rocky.noFrame}
+            alt={srcCatalogue.rocky.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight(
+                "oddSignal",
+                "woodNFrame",
+                srcCatalogue.oddSignal.alt
+              )
+            }
+            src={srcCatalogue.oddSignal.noFrame}
+            alt={srcCatalogue.oddSignal.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("topo", "frame", srcCatalogue.topo.alt)
+            }
+            src={srcCatalogue.topo.noFrame}
+            alt={srcCatalogue.topo.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("autumn", "woodNFrame", srcCatalogue.autumn.alt)
+            }
+            src={srcCatalogue.autumn.noFrame}
+            alt={srcCatalogue.autumn.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight(
+                "jellyfish",
+                "woodNFrame",
+                srcCatalogue.jellyfish.alt
+              )
+            }
+            src={srcCatalogue.jellyfish.noFrame}
+            alt={srcCatalogue.jellyfish.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("october", "woodNFrame", srcCatalogue.october.alt)
+            }
+            src={srcCatalogue.october.noFrame}
+            alt={srcCatalogue.october.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("saturn", "woodNFrame", srcCatalogue.saturn.alt)
+            }
+            src={srcCatalogue.saturn.noFrame}
+            alt={srcCatalogue.saturn.alt}
+          />
+          <Artwork
+            onClick={() =>
+              turnOnSpotlight("sucker", "woodNFrame", srcCatalogue.saturn.alt)
+            }
+            src={srcCatalogue.sucker.noFrame}
+            alt={srcCatalogue.sucker.alt}
+          />
+        </>
         {spotli && (
           <Spotli
             name={name}
@@ -121,8 +117,6 @@ export default function Art() {
           />
         )}
       </div>
-
-      {/* context */}
     </section>
   );
 }
