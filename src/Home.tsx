@@ -1,6 +1,7 @@
 import MobCanvas from "./components/core/mobCanvas.tsx";
 import { ModeContext } from "./ModeContext.js";
 import {
+  useContext,
   useEffect,
   useRef,
   useState,
@@ -8,6 +9,7 @@ import {
   type SetStateAction,
 } from "react";
 import { ClipNameContext } from "./ClipNameContext.ts";
+import { ScreenSizeContext } from "./ScreenSizeContext.ts";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
 import Shop from "./components/pages/Shop.tsx";
@@ -15,11 +17,14 @@ import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
+
 import { Backgrounds } from "./constants/Backgrounds.ts";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
 import ThemeMenu from "./components/core/ThemeMenu.tsx";
 import MobilePages from "./components/core/MobilePages.tsx";
+import { screenSize } from "three/tsl";
+
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
   const [activePage, setActivePage] = useState<
@@ -28,7 +33,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const [burgOrientation, setBurgOrientation] = useState<
     "normal" | "turn" | null
   >("normal");
+
   const nodeRef = useRef<HTMLDivElement>(null);
+  const screenWidth = useContext(ScreenSizeContext);
 
   function renderPage(page: typeof activePage) {
     switch (page) {
@@ -169,12 +176,12 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           )}
         </div>
         <div>
-          <MobilePages></MobilePages>
+          {screenWidth && screenWidth < 820 && <MobilePages></MobilePages>}
         </div>
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >
-          <MobCanvas page={activePage} />
+          {screenWidth && screenWidth > 820 && <MobCanvas page={activePage} />}
         </ClipNameContext.Provider>
       </div>
     </ModeContext.Provider>

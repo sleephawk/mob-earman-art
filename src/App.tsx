@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
 import { Home } from "./Home";
-import ScreenSizeContext from "./screenSizeContext";
+import { ScreenSizeContext } from "./ScreenSizeContext";
 
 function App() {
   const [background, setBackground] = useState<string | undefined>("#362f2a");
