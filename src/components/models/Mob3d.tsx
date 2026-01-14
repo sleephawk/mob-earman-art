@@ -23,7 +23,7 @@ export default function Mob3d() {
         />
         <ambientLight intensity={2} />
       </EffectComposer>
-      <MobV6 scale={5}></MobV6>
+      <MobV6 scale={6}></MobV6>
 
       <OrbitControls enableZoom={true} />
     </>

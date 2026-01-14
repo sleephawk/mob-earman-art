@@ -101,6 +101,13 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                     setClipName("checkout");
                   }}
                 />
+                <img
+                  className="nav__icon nav__icon--mob"
+                  src={srcCatalogue.icons.mob}
+                  onClick={() => {
+                    setMode("2d");
+                  }}
+                />
                 <ThemeMenu
                   cb={setMode}
                   themes={[
