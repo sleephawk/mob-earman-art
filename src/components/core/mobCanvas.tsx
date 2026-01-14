@@ -13,38 +13,30 @@ export default function MobCanvas({ page }: { page: string | null }) {
   console.log(mode);
   console.log(page);
   return (
-    // <SwitchTransition mode="out-in">
-    //   <CSSTransition
-    //     key={page}
-    //     nodeRef={ref}
-    //     timeout={200}
-    //     classNames="fade"
-    //     unmountOnExit
-    //   >
-    <div ref={ref} className="webSized">
-      {mode?.includes("2d") && (
-        <VideoBackground src={srcCatalogue.videoBackgrounds.paper} />
-      )}
-      {page && page.includes("home") && !mode?.includes("2d") && (
-        <div className="background-file" id="canvas-container">
-          <Canvas>
-            <mesh>
-              <Mob3d />
-            </mesh>
-          </Canvas>
-        </div>
-      )}
-      {page && !page?.includes("home") && mode?.includes("paint") && (
-        <VideoBackground src={srcCatalogue.videoBackgrounds.green} />
-      )}
-      {page && !page?.includes("home") && mode?.includes("primary") && (
-        <VideoBackground src={srcCatalogue.videoBackgrounds.orange} />
-      )}
-      {page && !page?.includes("home") && mode?.includes("paper") && (
-        <VideoBackground src={srcCatalogue.videoBackgrounds.black} />
-      )}
-    </div>
-    //   </CSSTransition>
-    // </SwitchTransition>
+    <>
+      <div ref={ref} className="webSized">
+        {mode?.includes("2d") && (
+          <VideoBackground src={srcCatalogue.videoBackgrounds.paper} />
+        )}
+        {page && page.includes("home") && !mode?.includes("2d") && (
+          <div className="background-file" id="canvas-container">
+            <Canvas>
+              <mesh>
+                <Mob3d />
+              </mesh>
+            </Canvas>
+          </div>
+        )}
+        {page && !page?.includes("home") && mode?.includes("paint") && (
+          <VideoBackground src={srcCatalogue.videoBackgrounds.green} />
+        )}
+        {page && !page?.includes("home") && mode?.includes("primary") && (
+          <VideoBackground src={srcCatalogue.videoBackgrounds.orange} />
+        )}
+        {page && !page?.includes("home") && mode?.includes("paper") && (
+          <VideoBackground src={srcCatalogue.videoBackgrounds.black} />
+        )}
+      </div>
+    </>
   );
 }

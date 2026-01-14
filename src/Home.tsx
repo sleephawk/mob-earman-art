@@ -15,7 +15,7 @@ import Lore from "./components/pages/Lore.tsx";
 import Contact from "./components/pages/Contact.tsx";
 import Anchor from "./components/basic/Anchor.tsx";
 import Nav from "./components/core/Nav.tsx";
-import { Backgrounds } from "./constants/backgrounds.ts";
+import { Backgrounds } from "./constants/Backgrounds.ts";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
 import ThemeMenu from "./components/core/ThemeMenu.tsx";

@@ -1,10 +1,11 @@
+import { Canvas } from "@react-three/fiber";
 import useElementOnScreen from "../../hooks/useElementOnScreen";
 import About from "../pages/About";
 import Art from "../pages/Art";
 import Contact from "../pages/Contact";
 import Lore from "../pages/Lore";
 import Shop from "../pages/Shop";
-import MobMiniCanvas from "./mobMiniCanvas";
+import MobMini3d from "../models/MobMini3d";
 
 export default function MobilePages() {
   const [aboutRef, aboutVisible] = useElementOnScreen({ threshold: 0.1 }); // these are hooks using the
@@ -15,8 +16,12 @@ export default function MobilePages() {
 
   return (
     <div className="mobile-pages">
-      <div className="mobileSized">
-        <MobMiniCanvas />
+      <div className="phoneSized">
+        <Canvas>
+          <mesh>
+            <MobMini3d />
+          </mesh>
+        </Canvas>
       </div>
       <div
         ref={aboutRef}

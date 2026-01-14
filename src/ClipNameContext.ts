@@ -7,5 +7,6 @@ type ClipNameContextType = {
 
 export const ClipNameContext = createContext<ClipNameContextType>({
   clip: "idle",
-  setClip: () => {}, // placeholder, never actually used
+  setClip: () => {}, // allows setting of clip the receiver instead of just
+  //the provider
 });
