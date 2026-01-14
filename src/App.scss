@@ -469,6 +469,22 @@ p {
     }
   }
 }
+.webSized {
+  @include media(820px) {
+    display: none;
+  }
+}
+
+.mobileSized {
+  @include borders(black);
+  height: 700px;
+  width: 90%;
+  canvas {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
 /**TRANSITIONS**/
 

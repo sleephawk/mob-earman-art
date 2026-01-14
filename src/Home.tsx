@@ -168,7 +168,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
             renderPage(activePage)
           )}
         </div>
-        <MobilePages></MobilePages>
+        <div>
+          <MobilePages></MobilePages>
+        </div>
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >

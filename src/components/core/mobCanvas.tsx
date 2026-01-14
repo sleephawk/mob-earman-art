@@ -21,7 +21,7 @@ export default function MobCanvas({ page }: { page: string | null }) {
     //     classNames="fade"
     //     unmountOnExit
     //   >
-    <div ref={ref}>
+    <div ref={ref} className="webSized">
       {mode?.includes("2d") && (
         <VideoBackground src={srcCatalogue.videoBackgrounds.paper} />
       )}
