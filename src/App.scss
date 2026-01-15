@@ -294,8 +294,12 @@ p {
 
 .mobile-pages {
   display: none;
+
   @include media(820px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -523,6 +527,7 @@ p {
   @include media(820px) {
     justify-self: unset;
     height: 700px;
+    border: solid black;
     width: 90%;
     canvas {
       height: 100%;
