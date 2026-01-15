@@ -322,6 +322,9 @@ p {
   justify-content: center;
   flex-direction: column;
   z-index: 50;
+  a:hover {
+    color: #34c0c2;
+  }
 }
 
 .home {
@@ -625,6 +628,9 @@ canvas {
   color: #362f2a;
   a {
     color: #362f2a;
+  }
+  a:hover {
+    color: #106f71;
   }
 }
 

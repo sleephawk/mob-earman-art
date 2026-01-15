@@ -63,6 +63,34 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const handleNavClick = (pageName: string) => {
     setActivePage(pageName as any);
   };
+  const handleBurgNav = () => {
+    setBurgMenu(false);
+    setBurgOrientation("normal");
+  };
+
+  useEffect(() => {
+    if (!burgMenu) return; // only attach listeners when menu is open
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleBurgNav(); // closes menu
+      }
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (burgRef.current && !burgRef.current.contains(e.target as Node)) {
+        handleBurgNav(); // closes menu if click is outside
+      }
+    };
+
+    document.addEventListener("keydown", handleEsc);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [burgMenu]); // only re-run when burgMenu changes
 
   useEffect(() => {
     const animations = {
@@ -88,10 +116,6 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     }
   }, [mode, cb]);
 
-  const handleBurgNav = () => {
-    setBurgMenu(false);
-    setBurgOrientation("normal");
-  };
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>

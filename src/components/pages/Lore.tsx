@@ -25,9 +25,9 @@ export default function Lore() {
           <br></br>This was all under his wing, he thought, until the ghost
           started arriving with, well, <em>other</em> things. After seeing one
           of these things painted and named an 'earman' on a band poster for a
-          local artist known as
-          <strong>Mob Earman</strong>, the rare magpie-wheatear, Snoozy knew his
-          week was going to play out more strangely than usual.
+          local artist known as <strong>Mob Earman</strong>, the rare
+          magpie-wheatear, Snoozy knew his week was going to play out more
+          strangely than usual.
           <br></br>
           <br></br>
           This is the story of <strong>Snoozy & Mob</strong>. It is a story
