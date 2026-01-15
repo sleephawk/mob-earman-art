@@ -23,7 +23,6 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { srcCatalogue } from "./constants/srcCatalogue.ts";
 import ThemeMenu from "./components/core/ThemeMenu.tsx";
 import MobilePages from "./components/core/MobilePages.tsx";
-import { screenSize } from "three/tsl";
 
 export function Home({ cb }: { cb: (bg: string) => void }) {
   const [clipName, setClipName] = useState("Idle");
@@ -37,6 +36,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   const [burgMenu, setBurgMenu] = useState<boolean>(false);
 
   const nodeRef = useRef<HTMLDivElement>(null);
+  const burgRef = useRef<HTMLDivElement>(null);
   const screenWidth = useContext(ScreenSizeContext);
 
   function renderPage(page: typeof activePage) {
@@ -88,8 +88,10 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     }
   }, [mode, cb]);
 
-  console.log(activePage);
-  console.log(burgMenu);
+  const handleBurgNav = () => {
+    setBurgMenu(false);
+    setBurgOrientation("normal");
+  };
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
@@ -138,7 +140,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                     setBurgOrientation(
                       burgOrientation === "normal" ? "turn" : "normal"
                     );
-                    setBurgMenu(true);
+                    setBurgMenu(burgMenu ? false : true);
                   }}
                 />
               </div>
@@ -147,55 +149,91 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         >
           <></>
         </Nav>
-        <div className={`home `}>
-          <Nav
-            className={` main-menu ${mode === "2d" && "darkText"}`}
-            aria={"main menu"}
-            border={false}
-            anchors={[
-              <Anchor cb={handleNavClick} link={"home"} />,
-              <Anchor cb={handleNavClick} link={"about"} />,
-              <Anchor cb={handleNavClick} link={"art"} />,
-              <Anchor cb={handleNavClick} link={"shop"} />,
-              <Anchor cb={handleNavClick} link={"lore"} />,
-              <Anchor cb={handleNavClick} link={"contact"} />,
-            ]}
-          ></Nav>
-          {activePage ? (
-            <SwitchTransition mode="out-in">
-              <CSSTransition
-                key={activePage}
-                nodeRef={nodeRef}
-                timeout={100}
-                classNames="fade"
-                unmountOnExit
-              >
-                <div ref={nodeRef} className="page">
-                  {renderPage(activePage)}
-                </div>
-              </CSSTransition>
-            </SwitchTransition>
-          ) : (
-            renderPage(activePage)
-          )}
-        </div>
+        {screenWidth && screenWidth > 820 && (
+          <div className={`home `}>
+            <Nav
+              className={` main-menu ${mode === "2d" && "darkText"}`}
+              aria={"main menu"}
+              border={false}
+              anchors={[
+                <Anchor cb={handleNavClick} link={"home"} />,
+                <Anchor cb={handleNavClick} link={"about"} />,
+                <Anchor cb={handleNavClick} link={"art"} />,
+                <Anchor cb={handleNavClick} link={"shop"} />,
+                <Anchor cb={handleNavClick} link={"lore"} />,
+                <Anchor cb={handleNavClick} link={"contact"} />,
+              ]}
+            ></Nav>
+            {activePage ? (
+              <SwitchTransition mode="out-in">
+                <CSSTransition
+                  key={activePage}
+                  nodeRef={nodeRef}
+                  timeout={100}
+                  classNames="fade"
+                  unmountOnExit
+                >
+                  <div ref={nodeRef} className="page">
+                    {renderPage(activePage)}
+                  </div>
+                </CSSTransition>
+              </SwitchTransition>
+            ) : (
+              renderPage(activePage)
+            )}
+          </div>
+        )}
 
         <div>
           {screenWidth && screenWidth < 820 && (
             <MobilePages>
-              <Nav
-                aria="burger menu for mobile pages"
-                className="burg-menu"
-                border={false}
-                anchors={[
-                  <Anchor href="#" link="Home"></Anchor>,
-                  <Anchor href="#about" link="About"></Anchor>,
-                  <Anchor href="#art" link="Art"></Anchor>,
-                  <Anchor href="#shop" link="Shop"></Anchor>,
-                  <Anchor href="#lore" link="Lore"></Anchor>,
-                  <Anchor href="#contact" link="Contact"></Anchor>,
-                ]}
-              />
+              <CSSTransition
+                in={burgMenu}
+                timeout={400}
+                classNames="fade"
+                unmountOnExit
+                nodeRef={burgRef}
+              >
+                <div ref={burgRef}>
+                  <Nav
+                    aria="burger menu for mobile pages"
+                    className="burg-menu"
+                    border={false}
+                    anchors={[
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#"
+                        link="Home"
+                      />,
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#about"
+                        link="About"
+                      />,
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#art"
+                        link="Art"
+                      />,
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#shop"
+                        link="Shop"
+                      />,
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#lore"
+                        link="Lore"
+                      />,
+                      <Anchor
+                        cb={() => handleBurgNav()}
+                        href="#contact"
+                        link="Contact"
+                      />,
+                    ]}
+                  />
+                </div>
+              </CSSTransition>
             </MobilePages>
           )}
         </div>

@@ -5,11 +5,12 @@ import HeadingVertical from "../core/HeadingVertical";
 export default function About() {
   return (
     <section
+      id="about"
       className="about"
       aria-label="the about page with a bio of the artist and some details around the work"
     >
       <article className="cssStandardBorder page about__article">
-        <div id="about" className="about-box-carousel">
+        <div className="about-box-carousel">
           <HeadingVertical
             classes="vertical-heading-large"
             heading="about"

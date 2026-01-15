@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import type { ReactNode, Ref, RefObject } from "react";
 
 type NavProps = {
   anchors?: ReactNode[];
   content?: ReactNode[];
+
   aria: string;
   border: boolean;
   className: string;
