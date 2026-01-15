@@ -27,6 +27,7 @@ export default function Art() {
     <section aria-label="a catalogue of Mob Earman named original pieces.">
       <div className="artworkPage page">
         <h1
+          id="art"
           className={`artworkPage__heading ${
             mode === "2d" && " cssStandardBorder cssStandardBg"
           }`}

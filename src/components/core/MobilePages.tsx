@@ -6,8 +6,9 @@ import Contact from "../pages/Contact";
 import Lore from "../pages/Lore";
 import Shop from "../pages/Shop";
 import MobMini3d from "../models/MobMini3d";
+import type { ReactNode } from "react";
 
-export default function MobilePages() {
+export default function MobilePages({ content }: { content: ReactNode }) {
   const [aboutRef, aboutVisible] = useElementOnScreen({ threshold: 0.1 }); // these are hooks using the
   const [artRef, artVisible] = useElementOnScreen({ threshold: 0.1 }); //    intersection observer
   const [shopRef, shopVisible] = useElementOnScreen({ threshold: 0.1 });
@@ -23,6 +24,7 @@ export default function MobilePages() {
           </mesh>
         </Canvas>
       </div>
+      {content}
       <div
         ref={aboutRef}
         className="opacityTransition"

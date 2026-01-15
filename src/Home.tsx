@@ -34,6 +34,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     "normal" | "turn" | null
   >("normal");
 
+  const [burgMenu, setBurgMenu] = useState<boolean>(false);
+
   const nodeRef = useRef<HTMLDivElement>(null);
   const screenWidth = useContext(ScreenSizeContext);
 
@@ -131,11 +133,12 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                   }`}
                   src="/assets/mini-burg.png"
                   alt="burger icon"
-                  onClick={() =>
+                  onClick={() => {
                     setBurgOrientation(
                       burgOrientation === "normal" ? "turn" : "normal"
-                    )
-                  }
+                    );
+                    setBurgMenu(true);
+                  }}
                 />
               </div>
             </>
@@ -176,9 +179,26 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
           )}
         </div>
 
-        {/* <div>
-          {screenWidth && screenWidth < 820 && <MobilePages></MobilePages>}
-        </div> */}
+        <div>
+          {screenWidth && screenWidth < 820 && (
+            <MobilePages
+              content={
+                burgMenu && (
+                  <Nav
+                    aria="burger menu for mobile pages"
+                    className="burg-menu"
+                    border={false}
+                    anchors={[
+                      <Anchor href="#" link={"Home"}></Anchor>,
+                      <Anchor href="#about" link={"About"}></Anchor>,
+                      <Anchor href="#art" link={"Art"}></Anchor>,
+                    ]}
+                  />
+                )
+              }
+            ></MobilePages>
+          )}
+        </div>
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >

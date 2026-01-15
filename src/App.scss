@@ -168,6 +168,10 @@ p {
   }
 }
 
+.burg-menu {
+  position: fixed;
+}
+
 .theme-box {
   color: black;
   padding-right: 40px;
@@ -527,7 +531,6 @@ p {
   @include media(820px) {
     justify-self: unset;
     height: 700px;
-    border: solid black;
     width: 90%;
     canvas {
       height: 100%;

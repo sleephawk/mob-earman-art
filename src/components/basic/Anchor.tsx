@@ -1,18 +1,20 @@
 export default function Anchor({
   cb,
   link,
+  href,
 }: {
-  cb: (l: string) => void;
+  cb?: (l: string) => void;
   link: string;
+  href?: string;
 }) {
   return (
     <a
       style={{ textDecoration: "none" }}
       onClick={(e) => {
         e.preventDefault();
-        cb(link);
+        if (cb) cb(link);
       }}
-      href=""
+      href={href ?? ""}
     >
       {link}
     </a>

@@ -9,7 +9,7 @@ export default function About() {
       aria-label="the about page with a bio of the artist and some details around the work"
     >
       <article className="cssStandardBorder page about__article">
-        <div aria-hidden="true" className="about-box-carousel">
+        <div id="about" className="about-box-carousel">
           <HeadingVertical
             classes="vertical-heading-large"
             heading="about"
