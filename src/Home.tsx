@@ -109,8 +109,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                   }}
                 />
                 <img
-                  className="nav__icon nav__icon--mob"
-                  src={srcCatalogue.icons.mob}
+                  className="nav__icon nav__icon--2d"
+                  src={srcCatalogue.icons.TwoD}
                   onClick={() => {
                     setMode("2d");
                   }}
@@ -175,9 +175,10 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
             renderPage(activePage)
           )}
         </div>
-        <div>
+
+        {/* <div>
           {screenWidth && screenWidth < 820 && <MobilePages></MobilePages>}
-        </div>
+        </div> */}
         <ClipNameContext.Provider
           value={{ clip: clipName, setClip: setClipName }}
         >

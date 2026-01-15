@@ -61,6 +61,7 @@ export const srcCatalogue: Catalogue = {
   icons: {
     snoozy: "/assets/snoozecrowstudio.svg",
     mob: "/assets/fav3.png",
+    TwoD: "assets/2dIcon.png",
   },
   topoWindow: {
     src: "/assets/irl/openStudio/topoWindow.jpg",
