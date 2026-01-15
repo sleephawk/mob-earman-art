@@ -74,15 +74,6 @@ p {
 
 /** CORE **/
 
-.cssStandardBorder {
-  border: 5px solid teal;
-  box-sizing: border-box;
-  border-radius: 30px;
-  overflow: scroll;
-  max-width: 100%;
-  object-fit: contain;
-}
-
 .carousel {
   width: 100%;
   height: 100%;
@@ -334,6 +325,9 @@ p {
 
 .artworkPage {
   padding: 50px;
+  &__heading {
+    text-align: center;
+  }
   &__copy {
     padding: 30px;
     background-color: rgb(54, 47, 42, 0.8);
@@ -353,6 +347,7 @@ p {
 
 .shop {
   position: relative;
+  display: flex;
   margin: 0;
   padding: 0;
   align-items: center;
@@ -360,6 +355,10 @@ p {
   padding: 50px;
   justify-content: center;
   flex-wrap: wrap;
+  &__heading {
+    width: 75%;
+    text-align: center;
+  }
   &__copy {
     width: 75%;
     padding: 30px;
@@ -544,4 +543,26 @@ p {
 
 canvas {
   z-index: 1;
+}
+
+/**MODIFIERS**/
+
+.darkText {
+  color: #362f2a;
+  a {
+    color: #362f2a;
+  }
+}
+
+.cssStandardBorder {
+  border: 5px solid teal;
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow: scroll;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.cssStandardBg {
+  background-color: rgb(54, 47, 42, 0.8);
 }

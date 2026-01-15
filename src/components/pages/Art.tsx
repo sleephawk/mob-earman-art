@@ -1,12 +1,15 @@
 import Artwork from "../core/Artwork";
 import { srcCatalogue } from "../../constants/srcCatalogue";
 import Spotli from "../core/Spotli";
-import { use, useState } from "react";
+import { useContext, useState } from "react";
+import { ModeContext } from "../../ModeContext";
+
 export default function Art() {
   const [spotli, setSpotli] = useState<boolean>(false);
   const [name, setName] = useState<string>("rocky");
   const [target, setTarget] = useState<string>("noFrame");
   const [altA, setAltA] = useState<string>("alt");
+  const mode = useContext(ModeContext);
   const turnOnSpotlight = (
     nameArg: string,
     targetArg: string,
@@ -21,7 +24,13 @@ export default function Art() {
   return (
     <section aria-label="a catalogue of Mob Earman named original pieces.">
       <div className="artworkPage page">
-        <h1>ARTWORK</h1>
+        <h1
+          className={`artworkPage__heading ${
+            mode === "2d" && " cssStandardBorder cssStandardBg"
+          }`}
+        >
+          ARTWORK
+        </h1>
         <p className="cssStandardBorder artworkPage__copy">
           Each piece is hand painted or penned, summoning earmen around existing
           structures all garbled in rawest form.

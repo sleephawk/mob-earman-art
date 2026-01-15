@@ -1,13 +1,22 @@
+import { useContext } from "react";
 import { srcCatalogue } from "../../constants/srcCatalogue";
 import ShopItem from "../core/ShopItem";
+import { ModeContext } from "../../ModeContext";
 
 export default function Shop() {
+  const mode = useContext(ModeContext);
   return (
     <section
       aria-label="the shop front for all of Mob Earman's current pieces"
       className="page shop"
     >
-      <h1>SHOP</h1>
+      <h1
+        className={`shop__heading ${
+          mode === "2d" && "cssStandardBorder cssStandardBg"
+        }`}
+      >
+        SHOP
+      </h1>
       <p className="cssStandardBorder shop__copy">
         Brand new shop over here, passionate about not filling your houses up
         with junk, so taking the time to make some meaningful products for you

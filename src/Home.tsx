@@ -143,9 +143,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         >
           <></>
         </Nav>
-        <div className={"home"}>
+        <div className={`home `}>
           <Nav
-            className={"main-menu"}
+            className={` main-menu ${mode === "2d" && "darkText"}`}
             aria={"main menu"}
             border={false}
             anchors={[
