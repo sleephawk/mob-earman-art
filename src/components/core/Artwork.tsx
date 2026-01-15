@@ -16,7 +16,7 @@ export default function Artwork({
       className="artwork"
       style={{
         objectFit: "contain",
-        width: width ? width : "300px",
+        width: width ? width : "40%",
         height: height ? height : "auto",
       }}
     >
