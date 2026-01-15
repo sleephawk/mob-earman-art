@@ -13,10 +13,43 @@ export default function Anchor({
       onClick={(e) => {
         e.preventDefault();
         if (cb) cb(link);
+        const id = href?.replace("#", "");
+        const el = document.getElementById(id!);
+
+        el?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }}
-      href={href ?? ""}
+      // href={href ?? ""}
     >
       {link}
     </a>
   );
 }
+
+// type AnchorProps = {
+//   href: string;
+//   link: string;
+// };
+
+// export default function Anchor({ href, link }: AnchorProps) {
+//   return (
+//     <a
+//       href={href}
+//       onClick={(e) => {
+//         e.preventDefault();
+
+//         const id = href.replace("#", "");
+//         const el = document.getElementById(id);
+
+//         el?.scrollIntoView({
+//           behavior: "smooth",
+//           block: "start",
+//         });
+//       }}
+//     >
+//       {link}
+//     </a>
+//   );
+// }

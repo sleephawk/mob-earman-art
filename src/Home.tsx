@@ -89,6 +89,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   }, [mode, cb]);
 
   console.log(activePage);
+  console.log(burgMenu);
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
@@ -181,22 +182,18 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
         <div>
           {screenWidth && screenWidth < 820 && (
-            <MobilePages
-              content={
-                burgMenu && (
-                  <Nav
-                    aria="burger menu for mobile pages"
-                    className="burg-menu"
-                    border={false}
-                    anchors={[
-                      <Anchor href="#" link={"Home"}></Anchor>,
-                      <Anchor href="#about" link={"About"}></Anchor>,
-                      <Anchor href="#art" link={"Art"}></Anchor>,
-                    ]}
-                  />
-                )
-              }
-            ></MobilePages>
+            <MobilePages>
+              <Nav
+                aria="burger menu for mobile pages"
+                className="burg-menu"
+                border={false}
+                anchors={[
+                  <Anchor href="#" link="Home"></Anchor>,
+                  <Anchor href="#about" link="About"></Anchor>,
+                  <Anchor href="#art" link="Art"></Anchor>,
+                ]}
+              />
+            </MobilePages>
           )}
         </div>
         <ClipNameContext.Provider

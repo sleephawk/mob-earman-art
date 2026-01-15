@@ -17,7 +17,7 @@ export default function Nav({
 }: NavProps) {
   return (
     <nav
-      className={`${className} ${border && "cssStandardBorder"}`}
+      className={`${className} ${border ? "cssStandardBorder" : ""}`}
       aria-label={aria}
     >
       {anchors && (
