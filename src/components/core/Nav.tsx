@@ -23,6 +23,8 @@ export default function Nav({
       {anchors && (
         <ul
           style={{
+            margin: "0",
+            padding: "0",
             listStyle: "none",
             textDecoration: "none",
             fontSize: "3rem",

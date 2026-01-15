@@ -191,6 +191,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                   <Anchor href="#" link="Home"></Anchor>,
                   <Anchor href="#about" link="About"></Anchor>,
                   <Anchor href="#art" link="Art"></Anchor>,
+                  <Anchor href="#shop" link="Shop"></Anchor>,
+                  <Anchor href="#lore" link="Lore"></Anchor>,
+                  <Anchor href="#contact" link="Contact"></Anchor>,
                 ]}
               />
             </MobilePages>

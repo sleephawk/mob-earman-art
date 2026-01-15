@@ -2,7 +2,7 @@ import HeadingVertical from "../core/HeadingVertical";
 
 export default function Lore() {
   return (
-    <section className="page lore">
+    <section id="lore" className="page lore">
       <article className="cssStandardBorder lore__article">
         <HeadingVertical
           classes="vertical-heading-large"

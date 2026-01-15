@@ -7,6 +7,7 @@ export default function Shop() {
   const mode = useContext(ModeContext);
   return (
     <section
+      id="shop"
       aria-label="the shop front for all of Mob Earman's current pieces"
       className="page shop"
     >

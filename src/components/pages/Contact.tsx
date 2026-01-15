@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="contact cssStandardBorder">
+    <div id="contact" className="contact cssStandardBorder">
       <h1 className="contact__heading">CONTACT</h1>
       <div className="contact-link-container">
         <a
