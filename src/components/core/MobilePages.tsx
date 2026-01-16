@@ -17,7 +17,7 @@ export default function MobilePages({ children }: { children: ReactNode }) {
 
   return (
     <div className="mobile-pages">
-      <div className="phoneSized">
+      <div id="eye" className="phoneSized">
         <Canvas>
           <mesh>
             <MobMini3d />

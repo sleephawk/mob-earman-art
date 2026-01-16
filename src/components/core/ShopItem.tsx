@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ShopItem({
   src,
@@ -17,15 +17,29 @@ export default function ShopItem({
   href: string;
 }) {
   const [shopHighlight, setShopHighlight] = useState<boolean>(false);
+  const shopHighlightRef = useRef<HTMLDivElement>(null);
+  const handleShopHighlight = () => {
+    setShopHighlight(false);
+  };
+  useEffect(() => {
+    if (!shopHighlight) return; // only attach listeners when menu is open
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleShopHighlight(); // closes menu
+      }
+    };
+
+    document.addEventListener("keydown", handleEsc);
+
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, [shopHighlight]); // only re-run when burgMenu changes
 
   return (
     <>
-      <div
-        className={"shop-item cssStandardBorder"}
-        style={{
-          display: `${shopHighlight ? "none" : "flex"}`,
-        }}
-      >
+      <div ref={shopHighlightRef} className={"shop-item cssStandardBorder"}>
         <div
           onClick={() => setShopHighlight(true)}
           className="shop-item__image-box"

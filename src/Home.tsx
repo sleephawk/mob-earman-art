@@ -37,6 +37,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
   const nodeRef = useRef<HTMLDivElement>(null);
   const burgRef = useRef<HTMLDivElement>(null);
+  const burgButtonRef = useRef<HTMLImageElement | null>(null);
   const screenWidth = useContext(ScreenSizeContext);
 
   function renderPage(page: typeof activePage) {
@@ -78,6 +79,10 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     };
 
     const handleClickOutside = (e: MouseEvent) => {
+      // ignore clicks on the nav button itself
+      if (burgButtonRef.current?.contains(e.target as Node)) {
+        return;
+      }
       if (burgRef.current && !burgRef.current.contains(e.target as Node)) {
         handleBurgNav(); // closes menu if click is outside
       }
@@ -155,6 +160,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               </div>
               <div className="nav__container nav___container--right">
                 <img
+                  ref={burgButtonRef}
                   className={`nav__icon--burg ${
                     burgOrientation === "turn" ? "turn" : ""
                   }`}
@@ -226,7 +232,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                     anchors={[
                       <Anchor
                         cb={() => handleBurgNav()}
-                        href="#"
+                        href="#eye"
                         link="Home"
                       />,
                       <Anchor

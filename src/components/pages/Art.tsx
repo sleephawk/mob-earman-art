@@ -26,6 +26,7 @@ export default function Art() {
   return (
     <section
       id="art"
+      className="artworkPageContainer"
       aria-label="a catalogue of Mob Earman named original pieces."
     >
       <div className="artworkPage page">

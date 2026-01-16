@@ -400,6 +400,12 @@ p {
   gap: 40px;
 }
 
+// .artworkPageContainer {
+//   @include media(820px) {
+//     margin-bottom: 300px;
+//   }
+// }
+
 .artworkPage {
   padding: 50px;
   &__heading {
@@ -420,6 +426,8 @@ p {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  @include media(820px) {
+  }
 }
 
 .shop {
