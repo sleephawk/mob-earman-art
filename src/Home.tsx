@@ -74,12 +74,11 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
 
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        handleBurgNav(); // closes menu
+        handleBurgNav();
       }
     };
 
     const handleClickOutside = (e: MouseEvent) => {
-      // ignore clicks on the nav button itself
       if (burgButtonRef.current?.contains(e.target as Node)) {
         return;
       }
@@ -95,7 +94,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
       document.removeEventListener("keydown", handleEsc);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [burgMenu]); // only re-run when burgMenu changes
+  }, [burgMenu]);
 
   useEffect(() => {
     const animations = {
