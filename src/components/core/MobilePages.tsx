@@ -9,6 +9,7 @@ import MobMini3d from "../models/MobMini3d";
 import type { ReactNode } from "react";
 
 export default function MobilePages({ children }: { children: ReactNode }) {
+  const [eyeRef, eyeVisible] = useElementOnScreen({ threshold: 0.01 });
   const [aboutRef, aboutVisible] = useElementOnScreen({ threshold: 0.1 }); // these are hooks using the
   const [artRef, artVisible] = useElementOnScreen({ threshold: 0.1 }); //    intersection observer
   const [shopRef, shopVisible] = useElementOnScreen({ threshold: 0.1 });
@@ -17,7 +18,12 @@ export default function MobilePages({ children }: { children: ReactNode }) {
 
   return (
     <div className="mobile-pages">
-      <div id="eye" className="phoneSized">
+      <div
+        id="eye"
+        ref={eyeRef}
+        className="phoneSized opacityTransition"
+        style={{ opacity: eyeVisible ? 1 : 0 }}
+      >
         <Canvas>
           <mesh>
             <MobMini3d />
