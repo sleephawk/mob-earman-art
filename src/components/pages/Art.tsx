@@ -42,7 +42,10 @@ export default function Art() {
           structures all garbled in rawest form.
           <br />
           <br />
-          Prices on request via email. Commissions considered.
+          Prices labelled. <a href="mailto:mob.earman.art@gmail.com">
+            Contact
+          </a>{" "}
+          to buy or for more info.
         </p>
       </div>
       <SwitchTransition mode="out-in">

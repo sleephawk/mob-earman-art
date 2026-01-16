@@ -1,4 +1,4 @@
-export type Catalogue = Record<string, Record<string, string>>;
+import type { Catalogue } from "../types";
 
 export const srcCatalogue: Catalogue = {
   rocky: {

@@ -18,7 +18,7 @@ export default function Shop() {
       >
         SHOP
       </h1>
-      <p className="cssStandardBorder shop__copy">
+      <p className="cssStandardBorder cssStandardBg shop__copy">
         Brand new shop over here, passionate about not filling your houses up
         with junk, so taking the time to make some meaningful products for you
         all, starting out with a year full of summons, in calendar form.
@@ -36,7 +36,7 @@ export default function Shop() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          instagram
+          instagram.
         </a>
       </p>
       <div className="shop-container">
