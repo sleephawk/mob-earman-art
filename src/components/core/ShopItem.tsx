@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ShopItem({
   src,
@@ -17,6 +17,7 @@ export default function ShopItem({
   href: string;
 }) {
   const [shopHighlight, setShopHighlight] = useState<boolean>(false);
+
   return (
     <>
       <div
@@ -68,7 +69,6 @@ export default function ShopItem({
           src={spotlightSrc}
           alt={spotlightAlt}
         />
-        <p className="shop-highlight__description">{desc}</p>
         <div aria-hidden="true" className="button-flex-box">
           <a
             className="shop-item__button shop-item__button--view"
@@ -89,6 +89,7 @@ export default function ShopItem({
             BUY
           </a>
         </div>
+        <p className="shop-highlight__description">{desc}</p>
       </div>
     </>
   );
