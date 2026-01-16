@@ -62,6 +62,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
     useState("primary");
 
   const handleNavClick = (pageName: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setActivePage(pageName as any);
   };
   const handleBurgNav = () => {
@@ -123,60 +124,54 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
   return (
     <ModeContext.Provider value={mode}>
       <div style={{ position: "relative" }}>
-        <Nav
-          aria="nav-bar"
-          className="nav"
-          border={false}
-          content={
-            <>
-              <div className="nav__container nav__container--left">
-                <img
-                  className="nav__icon nav__icon--snoozy"
-                  src={srcCatalogue.icons.snoozy}
-                />
-                <img
-                  className="nav__icon nav__icon--mob"
-                  src={srcCatalogue.icons.mob}
-                  onClick={() => {
-                    setClipName("checkout");
-                  }}
-                />
-                <img
-                  className="nav__icon nav__icon--2d"
-                  src={srcCatalogue.icons.TwoD}
-                  onClick={() => {
-                    setMode("2d");
-                  }}
-                />
-                <ThemeMenu
-                  cb={setMode}
-                  themes={[
-                    { color: Backgrounds.PAPER, theme: "paper" },
-                    { color: Backgrounds.PAINT, theme: "paint" },
-                    { color: Backgrounds.PRIMARY, theme: "primary" },
-                  ]}
-                />
-              </div>
-              <div className="nav__container nav___container--right">
-                <img
-                  ref={burgButtonRef}
-                  className={`nav__icon--burg ${
-                    burgOrientation === "turn" ? "turn" : ""
-                  }`}
-                  src="/assets/mini-burg.png"
-                  alt="burger icon"
-                  onClick={() => {
-                    setBurgOrientation(
-                      burgOrientation === "normal" ? "turn" : "normal"
-                    );
-                    setBurgMenu(burgMenu ? false : true);
-                  }}
-                />
-              </div>
-            </>
-          }
-        >
-          <></>
+        <Nav aria="nav-bar" className="nav" border={false}>
+          {" "}
+          <>
+            <div className="nav__container nav__container--left">
+              <img
+                className="nav__icon nav__icon--snoozy"
+                src={srcCatalogue.icons.snoozy}
+              />
+              <img
+                className="nav__icon nav__icon--mob"
+                src={srcCatalogue.icons.mob}
+                onClick={() => {
+                  setClipName("checkout");
+                }}
+              />
+              <img
+                className="nav__icon nav__icon--2d"
+                src={srcCatalogue.icons.TwoD}
+                onClick={() => {
+                  setMode("2d");
+                }}
+              />
+              <ThemeMenu
+                cb={setMode}
+                themes={[
+                  { color: Backgrounds.PAPER, theme: "paper" },
+                  { color: Backgrounds.PAINT, theme: "paint" },
+                  { color: Backgrounds.PRIMARY, theme: "primary" },
+                ]}
+              />
+            </div>
+            <div className="nav__container nav___container--right">
+              <img
+                ref={burgButtonRef}
+                className={`nav__icon--burg ${
+                  burgOrientation === "turn" ? "turn" : ""
+                }`}
+                src="/assets/mini-burg.png"
+                alt="burger icon"
+                onClick={() => {
+                  setBurgOrientation(
+                    burgOrientation === "normal" ? "turn" : "normal"
+                  );
+                  setBurgMenu(burgMenu ? false : true);
+                }}
+              />
+            </div>
+          </>
         </Nav>
         {screenWidth && screenWidth > 820 && (
           <div className={`home `}>

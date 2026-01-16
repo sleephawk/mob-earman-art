@@ -1,8 +1,8 @@
-import type { ReactNode, Ref, RefObject } from "react";
+import type { ReactNode } from "react";
 
 type NavProps = {
   anchors?: ReactNode[];
-  content?: ReactNode[];
+  children?: ReactNode[];
 
   aria: string;
   border: boolean;
@@ -12,7 +12,7 @@ type NavProps = {
 export default function Nav({
   border,
   className,
-  content,
+  children,
   anchors,
   aria,
 }: NavProps) {
@@ -36,7 +36,7 @@ export default function Nav({
           ))}
         </ul>
       )}
-      {content}
+      {children}
     </nav>
   );
 }
