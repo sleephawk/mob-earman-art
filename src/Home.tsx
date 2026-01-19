@@ -135,6 +135,9 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
               />
               <img
                 className="nav__icon nav__icon--mob"
+                style={{
+                  display: `${screenWidth && screenWidth < 820 ? "none" : "flex"}`,
+                }}
                 src={srcCatalogue.icons.mob}
                 onClick={() => {
                   setClipName("checkout");
