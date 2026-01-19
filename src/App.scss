@@ -26,7 +26,7 @@ body,
   padding: 0;
   color: whitesmoke;
   font-family: "Futura", Arial, sans-serif;
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 button:hover {
@@ -37,6 +37,7 @@ button:hover {
 
 .root-dork {
   overflow: scroll;
+  max-width: 100%;
 }
 
 button {
@@ -60,15 +61,24 @@ body {
 h1 {
   letter-spacing: 10px;
   font-size: 4rem;
+  @include media(820px) {
+    font-size: 2.5rem;
+  }
 }
 h2 {
   font-size: 2rem;
+  @include media(820px) {
+    font-size: 1.5rem;
+  }
 }
 
 p {
   font-size: 1.3rem;
   @include mediaMin(1080px) {
     font-size: 1.6rem;
+  }
+  @include media(820px) {
+    font-size: 1rem;
   }
 }
 
@@ -119,13 +129,13 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   // box-sizing: border-box;
   @include media(820px) {
     position: fixed;
     z-index: 100;
     // padding: 5px;
     background-color: #362f2a;
-    width: 100%;
   }
   &__container {
     &--left {
@@ -253,6 +263,8 @@ p {
   @include media(820px) {
     flex-direction: column;
     // padding-top: 200px;
+    box-sizing: border-box;
+    padding: 5px;
   }
 
   &__spotli {
@@ -344,11 +356,14 @@ p {
 
 .about {
   position: relative;
-  margin: 50px;
+  // margin: 50px;
   padding: 50px;
+  h1 {
+    text-align: center;
+  }
   box-sizing: border-box;
   @include media(820px) {
-    top: 20px;
+    // top: 20px;
   }
 
   &__article {
@@ -381,12 +396,21 @@ p {
 }
 
 .contact {
+  position: relative;
   background-color: rgb(54, 47, 42, 0.8);
   text-align: center;
   justify-content: center;
   align-items: center;
+
   padding: 100px;
-  margin: 50px;
+  right: 30px;
+  @include media(820px) {
+    width: 70%;
+    align-self: center;
+    justify-self: center;
+    right: 0;
+  }
+  // margin: 50px;
   &__heading {
     font-size: 3rem;
   }
@@ -400,14 +424,9 @@ p {
   gap: 40px;
 }
 
-// .artworkPageContainer {
-//   @include media(820px) {
-//     margin-bottom: 300px;
-//   }
-// }
-
 .artworkPage {
   padding: 50px;
+
   &__heading {
     text-align: center;
   }
@@ -425,8 +444,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
   justify-content: center;
   @include media(820px) {
+    max-width: 80%;
   }
 }
 
@@ -556,20 +577,24 @@ p {
   overflow: hidden;
   @include media(820px) {
     background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
   }
 
   &__quote {
-    margin: 30px;
+    // margin: 30px;
     font-size: 40px;
     @include mediaMin(1920px) {
       font-size: 50px;
+    }
+    @include media(820px) {
+      font-size: 1.5rem;
     }
   }
 
   &__article {
     display: flex;
     padding: 20px;
-    margin: 30px;
+    // margin: 30px;
     background-color: rgba(54, 47, 42, 0.9);
     @include media(820px) {
       flex-direction: column;
@@ -582,14 +607,22 @@ p {
   }
 }
 
+.main-heading-mobile {
+  text-align: center;
+  max-width: 80%;
+}
+
 .phoneSized {
   @include media(820px) {
     justify-self: unset;
-    height: 700px;
-    width: 90%;
+    height: 300px;
+    width: 70%;
+    margin-top: 40px;
+    margin-bottom: 0;
+
     canvas {
       height: 100%;
-      width: 100%;
+      width: 50%;
       object-fit: cover;
     }
   }
