@@ -9,7 +9,7 @@ import {
   type SetStateAction,
 } from "react";
 import { ClipNameContext } from "./ClipNameContext.ts";
-import { ScreenSizeContext } from "./ScreenSizeContext.ts";
+import { ScreenSizeContext } from "./ScreenSizeContext";
 import About from "./components/pages/About.tsx";
 import Art from "./components/pages/Art.tsx";
 import Shop from "./components/pages/Shop.tsx";
