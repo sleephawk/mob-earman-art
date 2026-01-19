@@ -8,9 +8,13 @@ import React, { useContext } from "react";
 import { useGLTF } from "@react-three/drei";
 import { ModeContext } from "../../ModeContext";
 
-export function MobMini(props) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function MobMini(props: any) {
   const group = React.useRef(null);
-  const { nodes, materials } = useGLTF("/assets/glb/MobMiniV4-transformed.glb");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const gltf = useGLTF("/assets/glb/MobMiniV4-transformed.glb") as any;
+  const { nodes, materials } = gltf;
+
   const mode = useContext(ModeContext);
 
   return (

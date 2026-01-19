@@ -1,8 +1,8 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 // import MobPaper from "../MobPaper";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-
-import { MobV6 } from "./MobV6";
+import React, { Suspense } from "react";
+const MobV6 = React.lazy(() => import("./MobV6"));
 
 export default function Mob3d() {
   /**workflow for debug helpers:
@@ -23,8 +23,9 @@ export default function Mob3d() {
         />
         <ambientLight intensity={2} />
       </EffectComposer>
-      <MobV6 scale={6}></MobV6>
-
+      <Suspense fallback={null}>
+        <MobV6 scale={6}></MobV6>
+      </Suspense>
       <OrbitControls enableZoom={true} />
     </>
   );

@@ -12,8 +12,6 @@ export default function Spotli({
   name: string;
   target: string;
   alt: string;
-  em: string;
-  desc: string;
 }) {
   const ref = useRef(null);
   return (

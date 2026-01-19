@@ -1,12 +1,15 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import React, { Suspense } from "react";
 
-import { MobMini } from "./MobMini";
+const MobMini = React.lazy(() => import("./MobMini"));
 
 export default function Mob3d() {
   return (
     <>
       <ambientLight intensity={2} />
-      <MobMini scale={6}></MobMini>
+      <Suspense fallback={null}>
+        <MobMini scale={6}></MobMini>
+      </Suspense>
 
       <OrbitControls autoRotate={true} enableZoom={false} />
     </>

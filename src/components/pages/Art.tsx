@@ -50,9 +50,9 @@ export default function Art() {
       </div>
       <SwitchTransition mode="out-in">
         <CSSTransition
-          key={spotli}
+          key={String(spotli)}
           nodeRef={ref}
-          transition={200}
+          timeout={200}
           classNames="fade"
           unmountOnExit
         >

@@ -11,14 +11,25 @@ import { SkeletonUtils } from "three-stdlib";
 import { LoopOnce, type Material } from "three";
 import { ModeContext } from "../../ModeContext";
 import { ClipNameContext } from "../../ClipNameContext";
+import * as THREE from "three";
 
-export function MobV6(props) {
-  const group = React.useRef(null);
-  const { scene, animations } = useGLTF("assets/glb/MobV5.3-transformed.glb");
-  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
-  const { nodes, materials } = useGraph(clone);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function MobV6(props: any) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const gltf = useGLTF("assets/glb/MobV5.3-transformed.glb") as any;
+  const { scene, animations } = gltf;
+  const group = React.useRef<THREE.Group>(null);
+  const clone = React.useMemo(
+    () => SkeletonUtils.clone(scene) as THREE.Group,
+    [scene]
+  ); //explicit typing in these things is kind of almost impossible to intuit
+
+  const { nodes, materials } = useGraph(clone) as unknown as {
+    nodes: Record<string, THREE.Mesh | THREE.SkinnedMesh>;
+    materials: Record<string, THREE.Material>;
+  };
+
   const { actions, mixer } = useAnimations(animations, group);
-  // the use animation
   const mode = useContext(ModeContext);
   const { clip, setClip } = useContext(ClipNameContext);
   //switch mode needs to take in the parameters of each item material then push them into the cases. So far we have 3
@@ -390,7 +401,7 @@ export function MobV6(props) {
           name="Cube019"
           geometry={nodes.Cube019.geometry}
           material={handMaterial}
-          skeleton={nodes.Cube019.skeleton}
+          skeleton={(nodes.Cube019 as THREE.SkinnedMesh).skeleton}
           position={[0.197, 0.02, -0.297]}
           rotation={[2.02, -1.399, 0.928]}
           scale={0.029}
@@ -399,7 +410,7 @@ export function MobV6(props) {
           name="bigSqPaw"
           geometry={nodes.bigSqPaw.geometry}
           material={bigSqPawMaterial}
-          skeleton={nodes.bigSqPaw.skeleton}
+          skeleton={(nodes.bigSqPaw as THREE.SkinnedMesh).skeleton}
           position={[-0.225, -0.235, -0.052]}
           rotation={[1.198, -0.347, 0.094]}
           scale={0.167}
@@ -408,7 +419,7 @@ export function MobV6(props) {
           name="Cube001"
           geometry={nodes.Cube001.geometry}
           material={smallPawMaterial}
-          skeleton={nodes.Cube001.skeleton}
+          skeleton={(nodes.Cube001 as THREE.SkinnedMesh).skeleton}
           position={[-0.405, 0.125, -0.078]}
           rotation={[2.192, 0.926, -0.832]}
           scale={[-0.075, 0.075, 0.075]}
@@ -417,7 +428,7 @@ export function MobV6(props) {
           name="Cube008"
           geometry={nodes.Cube008.geometry}
           material={smallPawMaterial}
-          skeleton={nodes.Cube008.skeleton}
+          skeleton={(nodes.Cube008 as THREE.SkinnedMesh).skeleton}
           position={[-0.405, 0.125, -0.078]}
           rotation={[2.192, 0.926, -0.832]}
           scale={[-0.075, 0.075, 0.075]}

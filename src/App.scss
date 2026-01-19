@@ -43,7 +43,7 @@ button {
   width: 100px;
   padding: 10px;
   background-color: #362f2a;
-  color: rgb(255, 255, 136);
+  color: #a6f484;
   font-weight: bold;
   border-radius: 20px;
   border: 1.5px solid #362f2a;
@@ -286,6 +286,7 @@ p {
 
   &__copy {
     font-size: 2rem;
+    max-width: 75%;
   }
   &__button {
     font-size: 1.5rem;

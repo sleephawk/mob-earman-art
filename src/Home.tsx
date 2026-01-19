@@ -193,7 +193,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 <CSSTransition
                   key={activePage}
                   nodeRef={nodeRef}
-                  timeout={100}
+                  timeout={200}
                   classNames="fade"
                   unmountOnExit
                 >
@@ -211,14 +211,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
         <div>
           {screenWidth && screenWidth < 820 && (
             <MobilePages>
-              <CSSTransition
-                in={burgMenu}
-                timeout={400}
-                classNames="fade"
-                unmountOnExit
-                nodeRef={burgRef}
-              >
-                <div ref={burgRef}>
+              <div ref={burgRef}>
+                {burgMenu && (
                   <Nav
                     aria="burger menu for mobile pages"
                     className="burg-menu"
@@ -256,8 +250,8 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                       />,
                     ]}
                   />
-                </div>
-              </CSSTransition>
+                )}
+              </div>
             </MobilePages>
           )}
         </div>
