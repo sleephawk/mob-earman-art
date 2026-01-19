@@ -15,38 +15,34 @@ export default function Lore() {
           </em>
         </p>
         <p className="lore__body">
-          Snoozecrow is an ambient musician (who also happens to be a crow) with
-          a strange collaborator; a small, relatively friendly, sheet ghost.
-          Appearing from his first days hatched and proceeding to haunt him
-          throughout his 30 years on earth, the ghost makes snoozy's life a
-          balancing act, but one adapts. The music helped.
-          <br></br>
-          <br></br>Mob Earman is a bird of unknown species; by his own
-          unscientific diagnosis he is a 'wheatear magpie'. He is also a
-          musician (though his genre is as elusive as his origins) but primarily
-          a painter of the spirits he claims to have discovered and therefore
-          named after himself - the earmen. Whilst using them as a muse, he
-          presumed no one else could see or experience them. This is until the
-          day he met a crow known as Snoozy and his companion, a small friendly
-          sheet ghost...
-          <br></br>
-          <br></br>
-          This is the story of{" "}
-          <strong>Snoozy, Mob and the Other Realms.</strong> It is a story about
-          the magic of music, the maddening power of the unknown, and of all
-          things, the balancing of those two warring states of being:
-          tranquility and chaos.
-          <br></br>
-          <br></br>
-          It is <em>also</em> a story I don't want to tell with one medium. Yes
-          yes, you'll get your words, but I want to show you{" "}
-          <strong>
-            the songs, the summonings, the world in 3d video game form, the
-            magic as it happened for them
-          </strong>
-          . You will see this tale from multiple angles, and every follow, sale
-          and share will support its creation. If you like the sound of that,
-          you're in the right place.
+          Snoozecrow is an ambient, atmospheric musician. He also happens to be
+          a crow. His strange collaborator, a small, relatively friendly sheet
+          ghost, hatched in Snoozy’s early days and continued to haunt him ever
+          since. The sheet ghost makes Snoozy's life a balancing act, but one
+          adapts. The music helps.
+          <br />
+          <br />
+          Mob Earman is a bird of unknown species, though he has
+          unscientifically diagnosed himself a 'wheatear magpie'. He is also a
+          musician, though his genre is as elusive as his origins, and a painter
+          of the spirits he discovered and dubbed the Earmen. The Earmen serve
+          as Mob’s muse, and he has always presumed that no one else could
+          experience them. That is, until the day he meets a crow named Snoozy
+          and his companion, a small friendly sheet ghost...
+          <br />
+          <br />
+          This is the story of Snoozy, Mob and the Other Realms. It is a story
+          about the magic of music, the maddening power of the unknown. Above
+          all things, it is a story of the balance between those two warring
+          states of being: tranquillity and chaos.
+          <br />
+          <br />
+          It is also a story I don't want to tell with one medium. Yes, yes,
+          you'll get your words. But I want to show you the songs, the
+          summonings, the world in 3D video game form, and the magic as it
+          happened for them. This tale will unfold from multiple angles, and
+          every follow, sale and share will support its creation. If you want to
+          experience the story, follow along.
         </p>
       </article>
     </section>
