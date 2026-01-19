@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../ScreenSizeContext";
+
 export default function Contact() {
+  const screenWidth = useContext(ScreenSizeContext);
   return (
-    <div id="contact" className="page contact cssStandardBorder">
+    <div
+      id="contact"
+      className={`page contact ${screenWidth && screenWidth > 820 ? "cssStandardBorder" : ""}`}
+    >
       <h1 className="contact__heading">CONTACT</h1>
       <div className="contact-link-container">
         <a
