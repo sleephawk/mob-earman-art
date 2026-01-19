@@ -33,19 +33,19 @@ In mobile, the page is laid out for ease of scrolling with conditional rendering
 
 - The contexts are Background, ClipName, ScreenSize and Mode:
 
-#### Background
+### Background
 
     Background passes the standard colours across the tree to make sure react modules can access them when changing modes
 
-#### ClipName
+### ClipName
 
     Currently only containing two values, this signals to the 2d model MobV6 which amimation action should be playing. The options are Idle and Checkout, the latter triggering at the push of the eye logo top left in the nav.
 
-#### Screensize
+### Screensize
 
     Speaks for itself; allows for conditional rendering rather than simply hiding content, mainly to deal with background loading of the 3d models.
 
-#### Mode
+### Mode
 
     This is the most important and defines what the current page mode is. Similar to dark mode in a standard set up, there's a few options, but each changes the skin of the model, background video animations and sometimes the entire web-look.
 
