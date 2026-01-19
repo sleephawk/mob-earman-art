@@ -1,5 +1,6 @@
 import MobCanvas from "./components/core/mobCanvas.tsx";
 import { ModeContext } from "./ModeContext.js";
+//adding comment to force redeploy
 import {
   useContext,
   useEffect,
@@ -165,7 +166,7 @@ export function Home({ cb }: { cb: (bg: string) => void }) {
                 alt="burger icon"
                 onClick={() => {
                   setBurgOrientation(
-                    burgOrientation === "normal" ? "turn" : "normal"
+                    burgOrientation === "normal" ? "turn" : "normal",
                   );
                   setBurgMenu(burgMenu ? false : true);
                 }}
