@@ -15,24 +15,27 @@ export default function Lore() {
           </em>
         </p>
         <p>
-          Snoozecrow is an ambient musician with a strange collaborator; a
-          small, relatively friendly, sheet ghost who found him in the nest,
-          proceeding to haunt him throughout his 30 years on earth. It's a
-          balancing act, living a normal life with an inexplicable, clearly
-          visible, sheet ghost on your shoulder, but one adapts. The music
-          helped.
+          Snoozecrow is an ambient musician (who also happens to be a crow) with
+          a strange collaborator; a small, relatively friendly, sheet ghost.
+          Appearing from his first days hatched and proceeding to haunt him
+          throughout his 30 years on earth, the ghost makes snoozy's life a
+          balancing act, but one adapts. The music helped.
           <br></br>
-          <br></br>This was all under his wing, he thought, until the ghost
-          started arriving with, well, <em>other</em> things. After seeing one
-          of these things painted and named an 'earman' on a band poster for a
-          local artist known as <strong>Mob Earman</strong>, the rare
-          magpie-wheatear, Snoozy knew his week was going to play out more
-          strangely than usual.
+          <br></br>Mob Earman is a bird of unknown species; by his own
+          unscientific diagnosis he is a 'wheatear magpie'. He is also a
+          musician (though his genre is as elusive as his origins) but primarily
+          a painter of the spirits he claims to have discovered and therefore
+          named after himself - the earmen. Whilst using them as a muse, he
+          presumed no one else could see or experience them. This is until the
+          day he met a crow known as Snoozy and his companion, a small friendly
+          sheet ghost...
           <br></br>
           <br></br>
-          This is the story of <strong>Snoozy & Mob</strong>. It is a story
-          about music, the unknown, and of all things, the balancing of those
-          two forces tranquility and chaos.
+          This is the story of{" "}
+          <strong>Snoozy, Mob and the Other Realms.</strong> It is a story about
+          the magic of music, the maddening power of the unknown, and of all
+          things, the balancing of those two warring states of being:
+          tranquility and chaos.
           <br></br>
           <br></br>
           It is <em>also</em> a story I don't want to tell with one medium. Yes
