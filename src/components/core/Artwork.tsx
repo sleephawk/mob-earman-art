@@ -1,6 +1,4 @@
 export default function Artwork({
-  width,
-  height,
   src,
   alt,
   onClick,
@@ -12,14 +10,7 @@ export default function Artwork({
   onClick?: () => void;
 }) {
   return (
-    <div
-      className="artwork"
-      style={{
-        objectFit: "contain",
-        width: width ? width : "40%",
-        height: height ? height : "auto",
-      }}
-    >
+    <div className="artwork">
       <img
         src={src}
         alt={alt}

@@ -441,8 +441,17 @@ p {
   }
 }
 
+.artwork {
+  object-fit: contain;
+  width: 40%;
+  height: auto;
+  @include media(820px) {
+    width: 90%;
+  }
+}
+
 .artworkPage {
-  padding: 50px;
+  padding: 10px 50px;
 
   &__heading {
     text-align: center;
