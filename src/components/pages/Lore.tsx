@@ -14,7 +14,7 @@ export default function Lore() {
             same night the ghost greeted me at 3:15 with a new friend..."
           </em>
         </p>
-        <p>
+        <p className="lore__body">
           Snoozecrow is an ambient musician (who also happens to be a crow) with
           a strange collaborator; a small, relatively friendly, sheet ghost.
           Appearing from his first days hatched and proceeding to haunt him
