@@ -16,7 +16,7 @@ export default function HeadingVertical({
         style={{ fontSize: "40px", textAlign: "center", padding: "30px" }}
       >
         {arr.map((l) => (
-          <div aria-hidden={true}>{l}</div>
+          <div>{l}</div>
         ))}
       </div>
     </>

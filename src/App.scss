@@ -312,6 +312,8 @@ p {
   @include media(820px) {
     display: block;
     text-align: center;
+    justify-self: center;
+    align-self: center;
   }
 }
 
@@ -359,9 +361,11 @@ p {
   position: relative;
   // margin: 50px;
   padding: 50px;
-  h1 {
-    text-align: center;
+  width: 100%;
+  @include media(820px) {
+    padding: 0px;
   }
+
   box-sizing: border-box;
   @include media(820px) {
     // top: 20px;
@@ -371,16 +375,16 @@ p {
     display: flex;
     position: relative;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     align-content: center;
     justify-content: center;
     align-self: center;
     justify-self: center;
-    padding: 30px;
     background-color: rgba(54, 47, 42, 0.9);
     @include media(820px) {
       flex-direction: column;
-      display: block;
+      box-sizing: border-box;
+      padding: 10px;
       width: 90%;
     }
   }
@@ -390,6 +394,10 @@ p {
   display: flex;
   height: 600px;
   margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   @include media(820px) {
     height: 200%;
     flex-wrap: wrap;
@@ -612,7 +620,8 @@ p {
   }
 }
 
-.main-heading-mobile {
+.main-heading-mobile,
+.sub-heading-mobile {
   text-align: center;
   max-width: 80%;
 }

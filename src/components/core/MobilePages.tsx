@@ -31,6 +31,7 @@ export default function MobilePages({ children }: { children: ReactNode }) {
         </Canvas>
       </div>
       <h1 className="main-heading-mobile">MOB EARMAN</h1>
+      <h2 className="sub-heading-mobile">Geometric Oddscapes & Earmen</h2>
       {children}
       <div
         ref={aboutRef}
