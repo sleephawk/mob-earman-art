@@ -22,7 +22,7 @@ export const srcCatalogue: Catalogue = {
     alt: "a surreal painting of a tree stump with a lamppost pole that resolved to the head of a flower with an eye, which observes a little monster.",
   },
   autumn: {
-    noFrame: "/assets/art/photos/noFrame/autumnNoFrame.png",
+    noFrame: "/assets/art/photos/noFrame/autumnNoFrame.jpg",
     woodNFrame: "/assets/art/photos/woodNFrame/autumnW.png",
     alt: "an abstract surreal pen drawing in natural greens and browns depicting a fractured, rocky, leaf-covered fantasy creature with one eye",
   },
