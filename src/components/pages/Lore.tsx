@@ -15,11 +15,17 @@ export default function Lore() {
           </em>
         </p>
         <p className="lore__body">
-          Snoozecrow is an ambient, atmospheric musician. He also happens to be
-          a crow. His strange collaborator, a small, relatively friendly sheet
-          ghost, hatched in Snoozy’s early days and continued to haunt him ever
-          since. The sheet ghost makes Snoozy's life a balancing act, but one
-          adapts. The music helps.
+          <a
+            aria-label="snoozecrow music: link to bandcamp"
+            href="https://sleephawk.bandcamp.com/album/snoozecrow-i-spectre-by-the-sea"
+          >
+            Snoozecrow
+          </a>{" "}
+          is an ambient, atmospheric musician. He also happens to be a crow. His
+          strange collaborator, a small, relatively friendly sheet ghost,
+          hatched in Snoozy’s early days and continued to haunt him ever since.
+          The sheet ghost makes Snoozy's life a balancing act, but one adapts.
+          The music helps.
           <br />
           <br />
           Mob Earman is a bird of unknown species, though he has
