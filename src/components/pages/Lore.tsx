@@ -17,6 +17,8 @@ export default function Lore() {
         <p className="lore__body">
           <a
             aria-label="snoozecrow music: link to bandcamp"
+            target="_blank"
+            rel="noreferrer noopener"
             href="https://sleephawk.bandcamp.com/album/snoozecrow-i-spectre-by-the-sea"
           >
             Snoozecrow
